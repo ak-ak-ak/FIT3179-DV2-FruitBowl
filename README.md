@@ -1,6 +1,6 @@
 # Where Your Fruit Bowl Comes From
 
-FIT3179 Data Visualisation 2, Monash University, Semester 2 2026. Akshara Balreddy.
+FIT3179 Data Visualisation 2, Monash University, Semester 2 2026. Akshara Balreddygari.
 
 - `index.html` – the page
 - `specs/` – Vega-Lite JSON spec for each chart and map
