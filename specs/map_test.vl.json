@@ -1,0 +1,21 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Australian states and territories (test map)",
+  "background": "transparent",
+  "width": "container",
+  "height": 500,
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [-18, -36],
+    "rotate": [-133, 0]
+  },
+  "data": {
+    "url": "data/au_states.topojson",
+    "format": { "type": "topojson", "feature": "states" }
+  },
+  "mark": { "type": "geoshape", "fill": "#e9e2d3", "stroke": "#fbf8f2", "strokeWidth": 1.5 },
+  "encoding": {
+    "tooltip": [{ "field": "properties.name", "type": "nominal", "title": "State" }]
+  },
+  "config": { "view": { "stroke": null } }
+}

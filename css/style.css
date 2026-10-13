@@ -1,0 +1,59 @@
+/* ---------- Tokens ---------- */
+:root {
+  --ink: #2b2a26;
+  --muted: #6b675e;
+  --paper: #fbf8f2;
+  --rule: #e4ddd0;
+  --accent: #c2502a;   /* swap once the palette is decided */
+  --max: 1100px;       /* fits a small laptop with no horizontal scroll */
+  --text: 68ch;        /* comfortable line length for body text */
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+html { font-size: 17px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  line-height: 1.55;
+}
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+h1 { font-size: 2.8rem; }
+h2 { font-size: 1.9rem; margin-top: 2.5em; }
+h3 { font-size: 1.2rem; }
+p  { max-width: var(--text); margin: 0 0 1em; }
+
+/* ---------- Layout ---------- */
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.hero { padding: 72px 0 40px; border-bottom: 1px solid var(--rule); }
+.lede { font-size: 1.25rem; color: var(--muted); }
+
+section { padding-bottom: 32px; border-bottom: 1px solid var(--rule); }
+
+/* Two-column row: text beside a chart. Use <div class="row"> */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 800px) {
+  .row { grid-template-columns: 1fr; }
+}
+
+.chart { width: 100%; margin: 16px 0; }
+
+/* ---------- Footer ---------- */
+footer { padding: 40px 24px 64px; color: var(--muted); font-size: 0.9rem; }
+.sources { padding-left: 1.2em; }
+.meta { margin-top: 1.5em; }

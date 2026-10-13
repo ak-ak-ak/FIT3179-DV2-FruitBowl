@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Where Your Fruit Bowl Comes From</title>
+  <meta name="author" content="Akshara Balreddy">
+
+  <!-- Fonts: Fraunces (headings) + Source Sans 3 (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Vega libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <h1>Where Your Fruit Bowl Comes From</h1>
+      <p class="lede">A short story of how Australia grows, eats and exports its fruit.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- Section 1: Hook -->
+    <section id="s1-hook">
+      <h2>What's in the bowl?</h2>
+      <p>Intro text goes here.</p>
+    </section>
+
+    <!-- Section 2: Where it grows -->
+    <section id="s2-where">
+      <h2>Where it grows</h2>
+      <p>Test map: confirms Vega-Lite and the TopoJSON load correctly. Replace once real maps are built.</p>
+      <div class="chart" id="map_test"></div>
+    </section>
+
+    <!-- Section 3: Change over time -->
+    <section id="s3-change">
+      <h2>How it has changed</h2>
+    </section>
+
+    <!-- Section 4: Beyond our borders -->
+    <section id="s4-exports">
+      <h2>Beyond our borders</h2>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <h3>Sources</h3>
+    <ul class="sources">
+      <li>State boundaries: Natural Earth, Admin 1 States and Provinces (1:50m), public domain. naturalearthdata.com</li>
+    </ul>
+    <p class="meta">
+      Created by Akshara Balreddy, Monash University, FIT3179 Data Visualisation, October 2026.<br>
+      AI use: Claude (Anthropic) assisted with code scaffolding. [Update this before submitting.]
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
