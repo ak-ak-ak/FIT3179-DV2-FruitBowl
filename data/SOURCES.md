@@ -71,4 +71,8 @@ Fresh supply per person and general fruit supply pathways remain unverified and 
 
 ## Reproduction and deployment
 
+The treemap uses `fruit_value_tree.json`, derived from 2024-25 national Table 2 values. Its 29 fruit categories total AUD 7,327.8 million, slightly below the headline fruit total of AUD 7,336.3 million; it does not claim to cover unreported categories. The hierarchy's root is a structural node with zero value, not a data observation. Rectangle areas encode farmgate value, and tooltip shares use the sum of the shown categories. Colour groups are editorial groupings of related fruits, not additional measured totals.
+
+The heatmap uses `fruit_state_matrix.csv`, a complete display grid of ten selected fruits by eight states/territories. Its 80 cells include 56 reported observations and 24 explicit not-reported cells. The latter have blank numeric fields and never become numeric zero. Each share divides the published state tonnes by that fruit's national tonnes; rounded cells need not sum to exactly 100%. Values below 1% but above zero are displayed as <1%, while tooltips retain two decimal places. Colour uses the same 0-100% domain for every fruit. No independent state survey or new measurement is implied.
+
 Run `scripts/prepare_data.py` using Python with openpyxl and pypdf installed. It extracts source tables, validates key totals and writes small CSVs. Raw reports/workbooks are development sources, not browser chart requests. Charts must load only the prepared CSVs and simplified geometry. Downloaded source files do not need to be publicly redistributed; check permission before committing the report itself. The source links above provide provenance.

@@ -59,6 +59,40 @@ for record in records.values():
     state.append(row)
 save("fruit_state.csv", state)
 
+latest = [r for r in national if r["year"] == "2024-25"]
+value_total = sum(r["farmgate_value_aud_million"] for r in latest)
+groups = {
+    "Berries": {"Blueberries", "Rubus berries", "Strawberries"},
+    "Citrus": {"Grapefruit", "Lemons and limes", "Mandarins", "Oranges"},
+    "Apples and pears": {"Apples", "Pears", "Nashi"},
+    "Stone fruit": {"Apricots", "Cherries", "Nectarines and peaches", "Plums"},
+    "Tropical fruit": {"Avocados", "Bananas", "Custard Apples", "Lychees", "Mangoes", "Papaya/Pawpaw", "Passionfruit", "Pineapples"},
+    "Melons": {"Muskmelons", "Watermelons"}
+}
+tree = [{"id": "root", "parent": None, "value": 0}]
+for row in latest:
+    group = next((name for name, fruits in groups.items() if row["fruit"] in fruits), "Other fruit")
+    tree.append({"id": row["fruit"], "parent": "root", "fruit": row["fruit"], "group": group,
+                 "value": row["farmgate_value_aud_million"],
+                 "share_pct": row["farmgate_value_aud_million"] / value_total * 100})
+(DATA / "fruit_value_tree.json").write_text(json.dumps(tree, indent=2) + "\n")
+print(f"fruit_value_tree.json: {len(latest)} fruit categories, AUD {value_total:,.1f} million")
+
+state_order = [("1", "NSW", "New South Wales"), ("2", "VIC", "Victoria"), ("3", "QLD", "Queensland"),
+               ("4", "SA", "South Australia"), ("5", "WA", "Western Australia"), ("6", "TAS", "Tasmania"),
+               ("7", "NT", "Northern Territory"), ("8", "ACT", "Australian Capital Territory")]
+matrix = []
+for fruit in sorted(FOCUS):
+    total = records[(fruit, "0", "Australia", "2024-25")]["production_tonnes"]
+    for code, abbreviation, region in state_order:
+        record = records.get((fruit, code, region, "2024-25"))
+        tonnes = record["production_tonnes"] if record else ""
+        valid = isinstance(tonnes, (int, float))
+        matrix.append({"fruit": fruit, "state": abbreviation, "region": region, "year": "2024-25",
+                       "production_tonnes": tonnes, "national_share_pct": tonnes / total * 100 if valid else "",
+                       "status": "Reported" if valid else "Not reported"})
+save("fruit_state_matrix.csv", matrix)
+
 areas = {r["region"]: float(r["land_area_km2"]) for r in csv.DictReader((RAW / "state_land_area.csv").open())}
 map_rows = []
 for region, area in areas.items():

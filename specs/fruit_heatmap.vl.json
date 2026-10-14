@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Each cell shows a state's share of national production for one fruit, not its share of all fruit. Unreported values are grey, not zero.",
+  "width": "container",
+  "height": 360,
+  "background": "transparent",
+  "data": {"url": "data/fruit_state_matrix.csv", "format": {"type": "csv", "parse": {"production_tonnes": "number", "national_share_pct": "number"}}},
+  "transform": [
+    {"calculate": "datum.status === 'Not reported' ? '-' : datum.national_share_pct > 0 && datum.national_share_pct < 1 ? '<1%' : format(datum.national_share_pct, '.0f') + '%'", "as": "cell_label"}
+  ],
+  "encoding": {
+    "x": {"field": "state", "type": "ordinal", "sort": ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"], "axis": {"title": null, "orient": "top", "labelAngle": 0, "labelPadding": 10, "ticks": false, "domain": false}},
+    "y": {"field": "fruit", "type": "ordinal", "sort": ["Apples", "Pears", "Table grapes", "Oranges", "Mandarins", "Bananas", "Mangoes", "Avocados", "Strawberries", "Blueberries"], "axis": {"title": null, "labelPadding": 10, "labelLimit": 100, "ticks": false, "domain": false}},
+    "tooltip": [
+      {"field": "fruit", "type": "nominal", "title": "Fruit"},
+      {"field": "region", "type": "nominal", "title": "State / territory"},
+      {"field": "status", "type": "nominal", "title": "Data availability"},
+      {"field": "national_share_pct", "type": "quantitative", "title": "Share of national production (%)", "format": ".2f"},
+      {"field": "production_tonnes", "type": "quantitative", "title": "Production (tonnes)", "format": ",.0f"}
+    ]
+  },
+  "layer": [
+    {"mark": {"type": "rect", "color": "#e8eae7", "stroke": "#ffffff", "strokeWidth": 2}},
+    {
+      "transform": [{"filter": "datum.status === 'Reported'"}],
+      "mark": {"type": "rect", "stroke": "#ffffff", "strokeWidth": 2},
+      "encoding": {
+        "color": {"field": "national_share_pct", "type": "quantitative", "scale": {"domain": [0, 100], "range": ["#edf5f7", "#12516a"]}, "legend": {"title": "Share of national production (%)", "orient": "bottom", "direction": "horizontal", "gradientLength": 200, "values": [0, 25, 50, 75, 100]}}
+      }
+    },
+    {
+      "mark": {"type": "text", "fontSize": 11},
+      "encoding": {
+        "text": {"field": "cell_label"},
+        "color": {"condition": {"test": "datum.status === 'Reported' && datum.national_share_pct >= 60", "value": "#ffffff"}, "value": "#233b45"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "font": "Source Sans 3",
+    "axis": {"labelFontSize": 12},
+    "legend": {"labelFontSize": 12, "titleFontSize": 13, "titleFontWeight": "normal"}
+  }
+}

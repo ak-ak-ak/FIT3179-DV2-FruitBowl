@@ -1,0 +1,81 @@
+fruit,state,region,year,production_tonnes,national_share_pct,status
+Apples,NSW,New South Wales,2024-25,40389,13.659191520878213,Reported
+Apples,VIC,Victoria,2024-25,134976,45.647652447994695,Reported
+Apples,QLD,Queensland,2024-25,31184,10.546144454853208,Reported
+Apples,SA,South Australia,2024-25,28261,9.557612507651568,Reported
+Apples,WA,Western Australia,2024-25,30269,10.236699798100043,Reported
+Apples,TAS,Tasmania,2024-25,30611,10.35236107964057,Reported
+Apples,NT,Northern Territory,2024-25,,,Not reported
+Apples,ACT,Australian Capital Territory,2024-25,,,Not reported
+Avocados,NSW,New South Wales,2024-25,13151,10.009514023670892,Reported
+Avocados,VIC,Victoria,2024-25,566,0.4307949918179396,Reported
+Avocados,QLD,Queensland,2024-25,76501,58.226585987745935,Reported
+Avocados,SA,South Australia,2024-25,4261,3.2431403889332877,Reported
+Avocados,WA,Western Australia,2024-25,36889,28.07702553563953,Reported
+Avocados,TAS,Tasmania,2024-25,17,0.012939072192411614,Reported
+Avocados,NT,Northern Territory,2024-25,,,Not reported
+Avocados,ACT,Australian Capital Territory,2024-25,,,Not reported
+Bananas,NSW,New South Wales,2024-25,14748,3.9999891511007566,Reported
+Bananas,VIC,Victoria,2024-25,,,Not reported
+Bananas,QLD,Queensland,2024-25,346579,94.00001627334886,Reported
+Bananas,SA,South Australia,2024-25,,,Not reported
+Bananas,WA,Western Australia,2024-25,6452,1.7499274479863085,Reported
+Bananas,TAS,Tasmania,2024-25,,,Not reported
+Bananas,NT,Northern Territory,2024-25,922,0.25006712756406957,Reported
+Bananas,ACT,Australian Capital Territory,2024-25,,,Not reported
+Blueberries,NSW,New South Wales,2024-25,24116,84.969346769079,Reported
+Blueberries,VIC,Victoria,2024-25,564,1.9871749700514412,Reported
+Blueberries,QLD,Queensland,2024-25,1057,3.7241913889084635,Reported
+Blueberries,SA,South Australia,2024-25,141,0.4967937425128603,Reported
+Blueberries,WA,Western Australia,2024-25,606,2.1351560848425057,Reported
+Blueberries,TAS,Tasmania,2024-25,1900,6.694383764357692,Reported
+Blueberries,NT,Northern Territory,2024-25,,,Not reported
+Blueberries,ACT,Australian Capital Territory,2024-25,,,Not reported
+Mandarins,NSW,New South Wales,2024-25,37497,15.59217584391607,Reported
+Mandarins,VIC,Victoria,2024-25,39502,16.425904210640123,Reported
+Mandarins,QLD,Queensland,2024-25,120019,49.90685528471512,Reported
+Mandarins,SA,South Australia,2024-25,37034,15.399649044019196,Reported
+Mandarins,WA,Western Australia,2024-25,6433,2.674999792087689,Reported
+Mandarins,TAS,Tasmania,2024-25,,,Not reported
+Mandarins,NT,Northern Territory,2024-25,,,Not reported
+Mandarins,ACT,Australian Capital Territory,2024-25,,,Not reported
+Mangoes,NSW,New South Wales,2024-25,792,1.0843521954024562,Reported
+Mangoes,VIC,Victoria,2024-25,100,0.1369131559851586,Reported
+Mangoes,QLD,Queensland,2024-25,33080,45.29087199989047,Reported
+Mangoes,SA,South Australia,2024-25,38,0.052026999274360275,Reported
+Mangoes,WA,Western Australia,2024-25,1860,2.54658470132395,Reported
+Mangoes,TAS,Tasmania,2024-25,,,Not reported
+Mangoes,NT,Northern Territory,2024-25,37168,50.88788181656375,Reported
+Mangoes,ACT,Australian Capital Territory,2024-25,,,Not reported
+Oranges,NSW,New South Wales,2024-25,352479,61.564082858839555,Reported
+Oranges,VIC,Victoria,2024-25,84096,14.688231389946555,Reported
+Oranges,QLD,Queensland,2024-25,5604,0.9787962413106508,Reported
+Oranges,SA,South Australia,2024-25,116744,20.39054039892409,Reported
+Oranges,WA,Western Australia,2024-25,13618,2.3785237712648897,Reported
+Oranges,TAS,Tasmania,2024-25,,,Not reported
+Oranges,NT,Northern Territory,2024-25,,,Not reported
+Oranges,ACT,Australian Capital Territory,2024-25,,,Not reported
+Pears,NSW,New South Wales,2024-25,722,0.9996815418910874,Reported
+Pears,VIC,Victoria,2024-25,58501,81.00051230217521,Reported
+Pears,QLD,Queensland,2024-25,722,0.9996815418910874,Reported
+Pears,SA,South Australia,2024-25,6500,8.999903077966852,Reported
+Pears,WA,Western Australia,2024-25,5056,7.0005399941846775,Reported
+Pears,TAS,Tasmania,2024-25,722,0.9996815418910874,Reported
+Pears,NT,Northern Territory,2024-25,,,Not reported
+Pears,ACT,Australian Capital Territory,2024-25,,,Not reported
+Strawberries,NSW,New South Wales,2024-25,721,0.9258783644955825,Reported
+Strawberries,VIC,Victoria,2024-25,25599,32.87317649476063,Reported
+Strawberries,QLD,Queensland,2024-25,30287,38.89331210191082,Reported
+Strawberries,SA,South Australia,2024-25,5048,6.48243271008835,Reported
+Strawberries,WA,Western Australia,2024-25,7572,9.723649065132525,Reported
+Strawberries,TAS,Tasmania,2024-25,8645,11.101551263612082,Reported
+Strawberries,NT,Northern Territory,2024-25,,,Not reported
+Strawberries,ACT,Australian Capital Territory,2024-25,,,Not reported
+Table grapes,NSW,New South Wales,2024-25,36621,15.99994757123758,Reported
+Table grapes,VIC,Victoria,2024-25,160217,69.9998252374586,Reported
+Table grapes,QLD,Queensland,2024-25,18311,8.000192238795536,Reported
+Table grapes,SA,South Australia,2024-25,1144,0.49982086839506823,Reported
+Table grapes,WA,Western Australia,2024-25,11444,4.999956309364651,Reported
+Table grapes,TAS,Tasmania,2024-25,,,Not reported
+Table grapes,NT,Northern Territory,2024-25,1144,0.49982086839506823,Reported
+Table grapes,ACT,Australian Capital Territory,2024-25,,,Not reported

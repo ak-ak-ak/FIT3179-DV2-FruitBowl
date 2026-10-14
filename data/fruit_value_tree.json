@@ -1,0 +1,239 @@
+[
+  {
+    "id": "root",
+    "parent": null,
+    "value": 0
+  },
+  {
+    "id": "Apples",
+    "parent": "root",
+    "fruit": "Apples",
+    "group": "Apples and pears",
+    "value": 672,
+    "share_pct": 9.170555964955375
+  },
+  {
+    "id": "Apricots",
+    "parent": "root",
+    "fruit": "Apricots",
+    "group": "Stone fruit",
+    "value": 10,
+    "share_pct": 0.13646660662135976
+  },
+  {
+    "id": "Avocados",
+    "parent": "root",
+    "fruit": "Avocados",
+    "group": "Tropical fruit",
+    "value": 718.7,
+    "share_pct": 9.807855017877126
+  },
+  {
+    "id": "Bananas",
+    "parent": "root",
+    "fruit": "Bananas",
+    "group": "Tropical fruit",
+    "value": 719.4,
+    "share_pct": 9.81740768034062
+  },
+  {
+    "id": "Blueberries",
+    "parent": "root",
+    "fruit": "Blueberries",
+    "group": "Berries",
+    "value": 532.2,
+    "share_pct": 7.262752804388767
+  },
+  {
+    "id": "Cherries",
+    "parent": "root",
+    "fruit": "Cherries",
+    "group": "Stone fruit",
+    "value": 301,
+    "share_pct": 4.107644859302929
+  },
+  {
+    "id": "Custard Apples",
+    "parent": "root",
+    "fruit": "Custard Apples",
+    "group": "Tropical fruit",
+    "value": 9.8,
+    "share_pct": 0.13373727448893258
+  },
+  {
+    "id": "Dried grapes",
+    "parent": "root",
+    "fruit": "Dried grapes",
+    "group": "Other fruit",
+    "value": 39.2,
+    "share_pct": 0.5349490979557303
+  },
+  {
+    "id": "Grapefruit",
+    "parent": "root",
+    "fruit": "Grapefruit",
+    "group": "Citrus",
+    "value": 15.8,
+    "share_pct": 0.2156172384617484
+  },
+  {
+    "id": "Kiwifruit",
+    "parent": "root",
+    "fruit": "Kiwifruit",
+    "group": "Other fruit",
+    "value": 18.1,
+    "share_pct": 0.24700455798466117
+  },
+  {
+    "id": "Lemons and limes",
+    "parent": "root",
+    "fruit": "Lemons and limes",
+    "group": "Citrus",
+    "value": 221,
+    "share_pct": 3.0159120063320506
+  },
+  {
+    "id": "Lychees",
+    "parent": "root",
+    "fruit": "Lychees",
+    "group": "Tropical fruit",
+    "value": 40.5,
+    "share_pct": 0.552689756816507
+  },
+  {
+    "id": "Mandarins",
+    "parent": "root",
+    "fruit": "Mandarins",
+    "group": "Citrus",
+    "value": 456.2,
+    "share_pct": 6.225606594066432
+  },
+  {
+    "id": "Mangoes",
+    "parent": "root",
+    "fruit": "Mangoes",
+    "group": "Tropical fruit",
+    "value": 232.5,
+    "share_pct": 3.1728486039466137
+  },
+  {
+    "id": "Muskmelons",
+    "parent": "root",
+    "fruit": "Muskmelons",
+    "group": "Melons",
+    "value": 108.9,
+    "share_pct": 1.4861213461066078
+  },
+  {
+    "id": "Nashi",
+    "parent": "root",
+    "fruit": "Nashi",
+    "group": "Apples and pears",
+    "value": 8,
+    "share_pct": 0.1091732852970878
+  },
+  {
+    "id": "Nectarines and peaches",
+    "parent": "root",
+    "fruit": "Nectarines and peaches",
+    "group": "Stone fruit",
+    "value": 239.5,
+    "share_pct": 3.268375228581566
+  },
+  {
+    "id": "Olives",
+    "parent": "root",
+    "fruit": "Olives",
+    "group": "Other fruit",
+    "value": 141.1,
+    "share_pct": 1.9255438194273862
+  },
+  {
+    "id": "Oranges",
+    "parent": "root",
+    "fruit": "Oranges",
+    "group": "Citrus",
+    "value": 541.8,
+    "share_pct": 7.39376074674527
+  },
+  {
+    "id": "Papaya/Pawpaw",
+    "parent": "root",
+    "fruit": "Papaya/Pawpaw",
+    "group": "Tropical fruit",
+    "value": 46.3,
+    "share_pct": 0.6318403886568955
+  },
+  {
+    "id": "Passionfruit",
+    "parent": "root",
+    "fruit": "Passionfruit",
+    "group": "Tropical fruit",
+    "value": 30.8,
+    "share_pct": 0.42031714839378803
+  },
+  {
+    "id": "Pears",
+    "parent": "root",
+    "fruit": "Pears",
+    "group": "Apples and pears",
+    "value": 112.3,
+    "share_pct": 1.5325199923578698
+  },
+  {
+    "id": "Persimmons",
+    "parent": "root",
+    "fruit": "Persimmons",
+    "group": "Other fruit",
+    "value": 16.8,
+    "share_pct": 0.2292638991238844
+  },
+  {
+    "id": "Pineapples",
+    "parent": "root",
+    "fruit": "Pineapples",
+    "group": "Tropical fruit",
+    "value": 78.6,
+    "share_pct": 1.0726275280438875
+  },
+  {
+    "id": "Plums",
+    "parent": "root",
+    "fruit": "Plums",
+    "group": "Stone fruit",
+    "value": 76,
+    "share_pct": 1.0371462103223341
+  },
+  {
+    "id": "Rubus berries",
+    "parent": "root",
+    "fruit": "Rubus berries",
+    "group": "Berries",
+    "value": 319.1,
+    "share_pct": 4.35464941728759
+  },
+  {
+    "id": "Strawberries",
+    "parent": "root",
+    "fruit": "Strawberries",
+    "group": "Berries",
+    "value": 529.8,
+    "share_pct": 7.230000818799639
+  },
+  {
+    "id": "Table grapes",
+    "parent": "root",
+    "fruit": "Table grapes",
+    "group": "Other fruit",
+    "value": 874.9,
+    "share_pct": 11.939463413302764
+  },
+  {
+    "id": "Watermelons",
+    "parent": "root",
+    "fruit": "Watermelons",
+    "group": "Melons",
+    "value": 217.5,
+    "share_pct": 2.9681486940145745
+  }
+]
