@@ -158,12 +158,12 @@
         "Strawberries"
       ],
       "range": [
-        "#315f50",
-        "#72518b",
-        "#3f7892",
-        "#d28b26",
-        "#9a5c2e",
-        "#ba4266"
+        "#398965",
+        "#716096",
+        "#ce6777",
+        "#dd952f",
+        "#d37339",
+        "#bc466d"
       ]
     }
   ],
@@ -326,7 +326,7 @@
             "field": "y"
           },
           "dy": {
-            "signal": "datum.destination_code === 'PNG' ? 20 : datum.destination_code === 'NZL' ? -12 : datum.rank === 1 ? -24 : datum.rank === 2 ? -6 : 18"
+            "signal": "datum.destination_code === 'PNG' ? 20 : datum.destination_code === 'NZL' ? (width < 500 ? -20 : 20) : datum.rank === 1 ? -24 : datum.rank === 2 ? -6 : 18"
           },
           "text": {
             "field": "destination"

@@ -170,7 +170,7 @@
         "align": "left",
         "dx": 7,
         "dy": {
-          "expr": "width < 500 && datum.fruit === 'Blueberries' && datum.year === '2023-24' ? 16 : -12"
+          "expr": "(datum.fruit === 'Blueberries' && datum.year === '2023-24') || (datum.fruit === 'Pears' && datum.year === '2022-23') ? 18 : -12"
         },
         "fontSize": 12
       },

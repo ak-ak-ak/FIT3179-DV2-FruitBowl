@@ -189,7 +189,7 @@
             "value": 600
           },
           "fill": {
-            "signal": "indexof(['Table grapes','Avocados','Strawberries','Blueberries'],datum.fruit) >= 0 ? '#ffffff' : '#172c23'"
+            "signal": "indexof(['Table grapes','Strawberries','Blueberries'],datum.fruit) >= 0 ? '#ffffff' : '#080f0b'"
           },
           "limit": {
             "signal": "datum.x1 - datum.x0 - 16"
@@ -227,7 +227,7 @@
             "value": 12
           },
           "fill": {
-            "signal": "indexof(['Table grapes','Avocados','Strawberries','Blueberries'],datum.fruit) >= 0 ? '#ffffff' : '#172c23'"
+            "signal": "indexof(['Table grapes','Strawberries','Blueberries'],datum.fruit) >= 0 ? '#ffffff' : '#080f0b'"
           },
           "limit": {
             "signal": "datum.x1 - datum.x0 - 16"

@@ -101,7 +101,7 @@ trajectory["layer"] = [
     {"mark": {"type": "line", "strokeWidth": 2.5}, "encoding": {"order": {"field": "year", "type": "ordinal", "sort": "ascending"}}},
     {"mark": {"type": "point", "filled": True, "size": 90}},
     {"mark": {"type": "text", "align": "left", "dx": 7,
-              "dy": {"expr": "width < 500 && datum.fruit === 'Blueberries' && datum.year === '2023-24' ? 16 : -12"}, "fontSize": 12},
+              "dy": {"expr": "(datum.fruit === 'Blueberries' && datum.year === '2023-24') || (datum.fruit === 'Pears' && datum.year === '2022-23') ? 18 : -12"}, "fontSize": 12},
      "encoding": {"text": {"field": "year", "type": "ordinal"}}}
 ]
 save("fruit_trajectory.vl.json", trajectory)

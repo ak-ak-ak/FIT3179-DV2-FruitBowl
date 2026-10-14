@@ -112,9 +112,9 @@
         "color": {
           "condition": {
             "test": "fruitChoice === 'Bananas'",
-            "value": "#daac30"
+            "value": "#b89d32"
           },
-          "value": "#b94d65"
+          "value": "#398965"
         },
         "size": {
           "field": "properties.production_t",
@@ -141,7 +141,7 @@
             ],
             "format": ",.0f",
             "symbolFillColor": {
-              "expr": "fruitChoice === 'Bananas' ? '#daac30' : '#b94d65'"
+              "expr": "fruitChoice === 'Bananas' ? '#b89d32' : '#398965'"
             }
           }
         },
