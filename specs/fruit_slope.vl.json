@@ -1,0 +1,202 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Slope chart comparing production tonnes for ten fruits between 2020-21 and 2024-25. Intermediate years are not shown. Lines connect comparable observations; zero is included on the quantity axis.",
+  "width": "container",
+  "height": 400,
+  "background": "transparent",
+  "data": {
+    "url": "data/fruit_history.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "production_tonnes": "number",
+        "farmgate_value_aud_million": "number"
+      }
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Source Sans 3",
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleFontWeight": "normal",
+      "titlePadding": 12,
+      "gridColor": "#e7ece8",
+      "domain": false,
+      "tickColor": "#c4cec6"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "symbolStrokeWidth": 3
+    }
+  },
+  "params": [
+    {
+      "name": "slopeFruit",
+      "value": "All fruits",
+      "bind": {
+        "input": "select",
+        "name": "Highlight fruit: ",
+        "options": [
+          "All fruits",
+          "Apples",
+          "Pears",
+          "Table grapes",
+          "Oranges",
+          "Mandarins",
+          "Bananas",
+          "Mangoes",
+          "Avocados",
+          "Strawberries",
+          "Blueberries"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": {
+        "field": "year",
+        "oneOf": [
+          "2020-21",
+          "2024-25"
+        ]
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "sort": [
+        "2020-21",
+        "2024-25"
+      ],
+      "scale": {
+        "padding": 0.5
+      },
+      "axis": {
+        "title": null,
+        "labelAngle": 0,
+        "ticks": false
+      }
+    },
+    "y": {
+      "field": "production_tonnes",
+      "type": "quantitative",
+      "scale": {
+        "zero": true
+      },
+      "axis": {
+        "title": "Production (thousand tonnes)",
+        "labelExpr": "format(datum.value / 1000, ',.0f')",
+        "tickCount": 6
+      }
+    },
+    "color": {
+      "field": "fruit",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Apples",
+          "Pears",
+          "Table grapes",
+          "Oranges",
+          "Mandarins",
+          "Bananas",
+          "Mangoes",
+          "Avocados",
+          "Strawberries",
+          "Blueberries"
+        ],
+        "range": [
+          "#3f7892",
+          "#8b672d",
+          "#72518b",
+          "#d28b26",
+          "#9a5c2e",
+          "#b79826",
+          "#b14a43",
+          "#438764",
+          "#ba4266",
+          "#4d59a1"
+        ]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom",
+        "direction": "horizontal",
+        "columns": {
+          "expr": "width < 500 ? 2 : 5"
+        },
+        "labelLimit": 120,
+        "columnPadding": 14,
+        "rowPadding": 7
+      }
+    },
+    "opacity": {
+      "condition": {
+        "test": "slopeFruit === 'All fruits' || datum.fruit === slopeFruit",
+        "value": 1
+      },
+      "value": 0.15
+    },
+    "tooltip": [
+      {
+        "field": "fruit",
+        "type": "nominal",
+        "title": "Fruit"
+      },
+      {
+        "field": "year",
+        "type": "ordinal",
+        "title": "Financial year"
+      },
+      {
+        "field": "production_tonnes",
+        "type": "quantitative",
+        "title": "Production (tonnes)",
+        "format": ",.0f"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 65
+      },
+      "name": "slope_points"
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year === '2024-25' && indexof(['Oranges', 'Avocados', 'Pears'], datum.fruit) >= 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 9,
+        "fontSize": 12,
+        "fontWeight": 600
+      },
+      "encoding": {
+        "text": {
+          "field": "fruit",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

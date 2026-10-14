@@ -1,0 +1,185 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Time-ordered connected scatterplot for a selected fruit: production tonnes versus nominal farmgate value, 2020-21 to 2024-25. Axes adjust to the selected fruit and do not start at zero. Connections represent annual sequence, not causation.",
+  "width": "container",
+  "height": 400,
+  "background": "transparent",
+  "data": {
+    "url": "data/fruit_history.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "production_tonnes": "number",
+        "farmgate_value_aud_million": "number"
+      }
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Source Sans 3",
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleFontWeight": "normal",
+      "titlePadding": 12,
+      "gridColor": "#e7ece8",
+      "domain": false,
+      "tickColor": "#c4cec6"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "symbolStrokeWidth": 3
+    }
+  },
+  "params": [
+    {
+      "name": "fruitChoice",
+      "value": "Apples",
+      "bind": {
+        "input": "select",
+        "name": "Fruit: ",
+        "options": [
+          "Apples",
+          "Pears",
+          "Table grapes",
+          "Oranges",
+          "Mandarins",
+          "Bananas",
+          "Mangoes",
+          "Avocados",
+          "Strawberries",
+          "Blueberries"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.fruit === fruitChoice"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "production_tonnes",
+      "type": "quantitative",
+      "scale": {
+        "zero": false,
+        "nice": true
+      },
+      "axis": {
+        "title": "Production (thousand tonnes)",
+        "labelExpr": "format(datum.value / 1000, ',.1f')",
+        "tickCount": 4
+      }
+    },
+    "y": {
+      "field": "farmgate_value_aud_million",
+      "type": "quantitative",
+      "scale": {
+        "zero": false,
+        "nice": true
+      },
+      "axis": {
+        "title": "Farmgate value (A$ million)",
+        "format": ",.0f",
+        "tickCount": 5
+      }
+    },
+    "color": {
+      "field": "fruit",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Apples",
+          "Pears",
+          "Table grapes",
+          "Oranges",
+          "Mandarins",
+          "Bananas",
+          "Mangoes",
+          "Avocados",
+          "Strawberries",
+          "Blueberries"
+        ],
+        "range": [
+          "#3f7892",
+          "#8b672d",
+          "#72518b",
+          "#d28b26",
+          "#9a5c2e",
+          "#b79826",
+          "#b14a43",
+          "#438764",
+          "#ba4266",
+          "#4d59a1"
+        ]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "fruit",
+        "type": "nominal",
+        "title": "Fruit"
+      },
+      {
+        "field": "year",
+        "type": "ordinal",
+        "title": "Financial year"
+      },
+      {
+        "field": "production_tonnes",
+        "type": "quantitative",
+        "title": "Production (tonnes)",
+        "format": ",.0f"
+      },
+      {
+        "field": "farmgate_value_aud_million",
+        "type": "quantitative",
+        "title": "Farmgate value (A$ million)",
+        "format": ",.1f"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5
+      },
+      "encoding": {
+        "order": {
+          "field": "year",
+          "type": "ordinal",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 90
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 7,
+        "dy": {
+          "expr": "width < 500 && datum.fruit === 'Blueberries' && datum.year === '2023-24' ? 16 : -12"
+        },
+        "fontSize": 11
+      },
+      "encoding": {
+        "text": {
+          "field": "year",
+          "type": "ordinal"
+        }
+      }
+    }
+  ]
+}

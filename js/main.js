@@ -5,6 +5,9 @@ const charts = [
   ["#fruit_heatmap", "specs/fruit_heatmap.vl.json"],
   ["#fruit_choropleth", "specs/fruit_choropleth.vl.json"],
   ["#fruit_symbols", "specs/fruit_symbols.vl.json"],
+  ["#fruit_slope", "specs/fruit_slope.vl.json"],
+  ["#fruit_bump", "specs/fruit_bump.vl.json"],
+  ["#fruit_trajectory", "specs/fruit_trajectory.vl.json"],
 ];
 
 const embedOptions = { actions: false, renderer: "svg" };
@@ -12,6 +15,9 @@ const embedOptions = { actions: false, renderer: "svg" };
 function chartHeight(id, width) {
   if (id === "#fruit_treemap") return width < 600 ? 460 : 430;
   if (id === "#fruit_heatmap") return 360;
+  if (id === "#fruit_slope") return 400;
+  if (id === "#fruit_bump") return 420;
+  if (id === "#fruit_trajectory") return width < 600 ? 340 : 380;
   return Math.min(440, Math.max(220, width * 0.65));
 }
 
