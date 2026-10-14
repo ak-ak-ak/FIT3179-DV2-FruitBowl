@@ -62,6 +62,11 @@ a { color: #315f50; text-underline-offset: 3px; }
 .vega-bindings { font-size: 0.9rem; margin-top: 8px; }
 .vega-bindings select { font: inherit; padding: 5px 8px; background: white; border: 1px solid #b7bdb6; border-radius: 4px; }
 select:focus-visible { outline: 2px solid #315f50; outline-offset: 2px; }
+.export-table { width: 100%; max-width: 680px; border-collapse: collapse; font-size: 0.9rem; margin: 16px 0 24px; }
+.export-table caption { text-align: left; font-weight: 600; margin-bottom: 8px; }
+.export-table th, .export-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+.export-table th { color: var(--muted); font-weight: 600; }
+.export-table th:nth-child(n+2), .export-table td:nth-child(n+2) { text-align: right; font-variant-numeric: tabular-nums; }
 @media (max-width: 600px) {
   .wrap { padding-left: 16px; padding-right: 16px; }
   h1 { font-size: 2rem; }

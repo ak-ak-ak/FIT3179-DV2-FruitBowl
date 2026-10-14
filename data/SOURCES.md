@@ -63,9 +63,30 @@ The historical table runs 2014/15 to 2024/25. Use this report consistently for a
 
 Export destination shares are Hong Kong 42.06%, Singapore 23.60%, Malaysia 18.54%, Japan 4.34%, other countries 11.46%. Total exports: 14,235 tonnes. Retained as reference data, not selected for the main export map: the project covers fruit production broadly. Do not present percentage-derived tonnages as exact source measurements. The four named markets cover 88.54%.
 
-## Sources not yet adopted
+## Fruit export flow map
 
-Hort Innovation 2024/25 fruit handbook downloads failed via available official hosts. The trade PDF can be read online, but its national and regional snapshot tables contain conflicting crop totals. These snapshot figures have not been added to chart data. Broader fruit destination data must be verified before building the third map; the avocado-only export map is no longer in the main lineup.
+Source: Australian-reported UN Comtrade merchandise export quantities for calendar 2025, displayed by World Bank WITS. The financial-year production data is a different reference period; no export-to-production ratios are calculated across these datasets.
+
+- Fresh grapes, HS 080610: https://wits.worldbank.org/trade/comtrade/en/country/AUS/year/2025/tradeflow/Exports/partner/ALL/product/080610
+- Fresh apples, HS 080810: https://wits.worldbank.org/trade/comtrade/en/country/AUS/year/2025/tradeflow/Exports/partner/ALL/product/080810
+- Oranges, fresh or dried, HS 080510: https://wits.worldbank.org/trade/comtrade/en/country/AUS/year/2025/tradeflow/Exports/partner/ALL/product/080510
+- Mandarins and related citrus, fresh or dried, HS 080520: https://wits.worldbank.org/trade/comtrade/en/country/AUS/year/2025/tradeflow/Exports/partner/ALL/product/080520
+- Fresh strawberries, HS 081010: https://wits.worldbank.org/trade/comtrade/en/country/AUS/year/2025/tradeflow/Exports/partner/ALL/product/081010
+
+Original source pages: `raw/exports_2025_*.html`. `scripts/prepare_exports.py` parses their HTML tables with lxml, checks reporter, flow, year, category and quantity unit, and converts kilograms to tonnes by dividing by 1,000. It retains all bilateral records in `fruit_export_destinations.csv`. The World row is identified by its displayed label, not solely its link: WITS incorrectly links two tiny Cote d'Ivoire entries to WLD; these are joined to CIV without changing their reported quantities.
+
+World totals are respectively 141,134; 1,728.810; 199,492; 120,010; and 3,039 tonnes. Their combined total is 465,403.810 tonnes. Bilateral sums differ from reported world totals by less than 0.5 tonnes per category, reflecting source rounding; these differences are retained, not forced to balance. Shares use the reported World total. Trade values are USD, retained only in the source CSV and not compared with AUD farmgate values.
+
+`fruit_exports.json` contains the eight largest geographic destinations by tonnes for each selection, plus coverage and totals. The aggregate includes only these five non-overlapping fruit categories, not all fruit or all fresh fruit. Coverage is 75.5% for the aggregate and is calculated separately for individual selections. Non-geographic partner codes BUN and OAS are not drawn as invented destinations. They remain in the extracted source table and in the source World denominator. No other destination is reassigned to a fictitious point. Figures describe Australia's reported exports and may include re-exports, not traced journeys of the local crop.
+
+Natural Earth 1:110m populated-place metadata provides representative national locations, prioritising capital cities and using Hong Kong's populated-place coordinate. The Australian origin is a representative national point, not a port. Geographic paths are great-circle connections rendered in a Pacific-centred Equal Earth projection, not actual shipping routes. The top three destinations are labelled; all eight are available through tooltips and the accompanying table. Width encodes tonnes linearly within each selection, with a zero width baseline and a rescaled domain; do not compare line widths across selections.
+
+Location source: https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_populated_places.geojson
+World basemap: the course-supplied Natural Earth 1:110m countries TopoJSON in the Week 8 source archive. `world_countries.topojson` keeps the original shapes but strips unused properties. Natural Earth data is public domain.
+
+## Deferred handbook data
+
+Hort Innovation 2024/25 fruit handbook downloads failed via available official hosts. The trade PDF can be read online, but its national and regional snapshot tables contain conflicting crop totals. These snapshot figures have not been added to chart data. The main export map instead uses verified UN Comtrade destination data across five fruit categories; the avocado-only export map is no longer in the main lineup.
 
 Fresh supply per person and general fruit supply pathways remain unverified and are deferred beyond the initial eight charts.
 

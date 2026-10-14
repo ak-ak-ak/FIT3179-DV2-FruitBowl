@@ -1,0 +1,1207 @@
+{
+  "origin": [
+    {
+      "name": "Australia",
+      "longitude": 149.129026,
+      "latitude": -35.283029
+    }
+  ],
+  "flows": [
+    {
+      "fruit": "All five categories",
+      "destination": "China",
+      "destination_code": "CHN",
+      "year": 2025,
+      "tonnes": 113084.64,
+      "share_pct": 24.29817667371481,
+      "rank": 1,
+      "longitude": 116.394201,
+      "latitude": 39.90172,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            116.394201,
+            39.90172
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "All five categories",
+      "destination": "Japan",
+      "destination_code": "JPN",
+      "year": 2025,
+      "tonnes": 59175.09999999999,
+      "share_pct": 12.714786327168227,
+      "rank": 2,
+      "longitude": 139.749462,
+      "latitude": 35.686963,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            139.749462,
+            35.686963
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "All five categories",
+      "destination": "Indonesia",
+      "destination_code": "IDN",
+      "year": 2025,
+      "tonnes": 47641.704,
+      "share_pct": 10.236638157302579,
+      "rank": 3,
+      "longitude": 106.827492,
+      "latitude": -6.172472,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            106.827492,
+            -6.172472
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "All five categories",
+      "destination": "Hong Kong",
+      "destination_code": "HKG",
+      "year": 2025,
+      "tonnes": 37951.849,
+      "share_pct": 8.154606426621218,
+      "rank": 4,
+      "longitude": 114.183064,
+      "latitude": 22.306927,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            114.183064,
+            22.306927
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "All five categories",
+      "destination": "Thailand",
+      "destination_code": "THA",
+      "year": 2025,
+      "tonnes": 25822.224000000002,
+      "share_pct": 5.548348218292412,
+      "rank": 5,
+      "longitude": 100.514699,
+      "latitude": 13.751945,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            100.514699,
+            13.751945
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "All five categories",
+      "destination": "South Korea",
+      "destination_code": "KOR",
+      "year": 2025,
+      "tonnes": 25031.77,
+      "share_pct": 5.378505603553181,
+      "rank": 6,
+      "longitude": 126.997785,
+      "latitude": 37.568295,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            126.997785,
+            37.568295
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "All five categories",
+      "destination": "Vietnam",
+      "destination_code": "VNM",
+      "year": 2025,
+      "tonnes": 21719.97,
+      "share_pct": 4.666908506829801,
+      "rank": 7,
+      "longitude": 105.848068,
+      "latitude": 21.035273,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            105.848068,
+            21.035273
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "All five categories",
+      "destination": "Philippines",
+      "destination_code": "PHL",
+      "year": 2025,
+      "tonnes": 20823.75,
+      "share_pct": 4.474340250888793,
+      "rank": 8,
+      "longitude": 120.980271,
+      "latitude": 14.606105,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            120.980271,
+            14.606105
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Table grapes",
+      "destination": "China",
+      "destination_code": "CHN",
+      "year": 2025,
+      "tonnes": 44840.8,
+      "share_pct": 31.771791347230295,
+      "rank": 1,
+      "longitude": 116.394201,
+      "latitude": 39.90172,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            116.394201,
+            39.90172
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Table grapes",
+      "destination": "Indonesia",
+      "destination_code": "IDN",
+      "year": 2025,
+      "tonnes": 28308.6,
+      "share_pct": 20.057959102696728,
+      "rank": 2,
+      "longitude": 106.827492,
+      "latitude": -6.172472,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            106.827492,
+            -6.172472
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Table grapes",
+      "destination": "South Korea",
+      "destination_code": "KOR",
+      "year": 2025,
+      "tonnes": 9544.51,
+      "share_pct": 6.76272903765216,
+      "rank": 3,
+      "longitude": 126.997785,
+      "latitude": 37.568295,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            126.997785,
+            37.568295
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Table grapes",
+      "destination": "Philippines",
+      "destination_code": "PHL",
+      "year": 2025,
+      "tonnes": 9510.14,
+      "share_pct": 6.738376294868706,
+      "rank": 4,
+      "longitude": 120.980271,
+      "latitude": 14.606105,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            120.980271,
+            14.606105
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Table grapes",
+      "destination": "Japan",
+      "destination_code": "JPN",
+      "year": 2025,
+      "tonnes": 9117.24,
+      "share_pct": 6.459988379837601,
+      "rank": 5,
+      "longitude": 139.749462,
+      "latitude": 35.686963,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            139.749462,
+            35.686963
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Table grapes",
+      "destination": "Vietnam",
+      "destination_code": "VNM",
+      "year": 2025,
+      "tonnes": 7357.68,
+      "share_pct": 5.213258321878499,
+      "rank": 6,
+      "longitude": 105.848068,
+      "latitude": 21.035273,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            105.848068,
+            21.035273
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Table grapes",
+      "destination": "Thailand",
+      "destination_code": "THA",
+      "year": 2025,
+      "tonnes": 6691.44,
+      "share_pct": 4.741196309889892,
+      "rank": 7,
+      "longitude": 100.514699,
+      "latitude": 13.751945,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            100.514699,
+            13.751945
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Table grapes",
+      "destination": "New Zealand",
+      "destination_code": "NZL",
+      "year": 2025,
+      "tonnes": 6015.32,
+      "share_pct": 4.262133858602462,
+      "rank": 8,
+      "longitude": 174.777201,
+      "latitude": -41.292068,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            174.777201,
+            -41.292068
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Apples",
+      "destination": "Papua New Guinea",
+      "destination_code": "PNG",
+      "year": 2025,
+      "tonnes": 675.054,
+      "share_pct": 39.04732156801499,
+      "rank": 1,
+      "longitude": 147.192504,
+      "latitude": -9.464708,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            147.192504,
+            -9.464708
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Apples",
+      "destination": "Hong Kong",
+      "destination_code": "HKG",
+      "year": 2025,
+      "tonnes": 287.306,
+      "share_pct": 16.618714607157525,
+      "rank": 2,
+      "longitude": 114.183064,
+      "latitude": 22.306927,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            114.183064,
+            22.306927
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Apples",
+      "destination": "United Arab Emirates",
+      "destination_code": "ARE",
+      "year": 2025,
+      "tonnes": 155.445,
+      "share_pct": 8.991444982386728,
+      "rank": 3,
+      "longitude": 54.366593,
+      "latitude": 24.466684,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            54.366593,
+            24.466684
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Apples",
+      "destination": "Singapore",
+      "destination_code": "SGP",
+      "year": 2025,
+      "tonnes": 109.598,
+      "share_pct": 6.339505208785234,
+      "rank": 4,
+      "longitude": 103.853875,
+      "latitude": 1.294979,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            103.853875,
+            1.294979
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Apples",
+      "destination": "Malaysia",
+      "destination_code": "MYS",
+      "year": 2025,
+      "tonnes": 92.679,
+      "share_pct": 5.360855154701789,
+      "rank": 5,
+      "longitude": 101.688699,
+      "latitude": 3.139797,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            101.688699,
+            3.139797
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Apples",
+      "destination": "China",
+      "destination_code": "CHN",
+      "year": 2025,
+      "tonnes": 81.64,
+      "share_pct": 4.722323447920824,
+      "rank": 6,
+      "longitude": 116.394201,
+      "latitude": 39.90172,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            116.394201,
+            39.90172
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Apples",
+      "destination": "Thailand",
+      "destination_code": "THA",
+      "year": 2025,
+      "tonnes": 73.254,
+      "share_pct": 4.237249900220384,
+      "rank": 7,
+      "longitude": 100.514699,
+      "latitude": 13.751945,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            100.514699,
+            13.751945
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Apples",
+      "destination": "India",
+      "destination_code": "IND",
+      "year": 2025,
+      "tonnes": 49.824,
+      "share_pct": 2.88198240408142,
+      "rank": 8,
+      "longitude": 77.19998,
+      "latitude": 28.600023,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            77.19998,
+            28.600023
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Oranges",
+      "destination": "China",
+      "destination_code": "CHN",
+      "year": 2025,
+      "tonnes": 45597.4,
+      "share_pct": 22.856756160648047,
+      "rank": 1,
+      "longitude": 116.394201,
+      "latitude": 39.90172,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            116.394201,
+            39.90172
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Oranges",
+      "destination": "Japan",
+      "destination_code": "JPN",
+      "year": 2025,
+      "tonnes": 44451.2,
+      "share_pct": 22.282196779820744,
+      "rank": 2,
+      "longitude": 139.749462,
+      "latitude": 35.686963,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            139.749462,
+            35.686963
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Oranges",
+      "destination": "Hong Kong",
+      "destination_code": "HKG",
+      "year": 2025,
+      "tonnes": 26916.5,
+      "share_pct": 13.492521003348507,
+      "rank": 3,
+      "longitude": 114.183064,
+      "latitude": 22.306927,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            114.183064,
+            22.306927
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Oranges",
+      "destination": "South Korea",
+      "destination_code": "KOR",
+      "year": 2025,
+      "tonnes": 15441.9,
+      "share_pct": 7.7406111523269105,
+      "rank": 4,
+      "longitude": 126.997785,
+      "latitude": 37.568295,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            126.997785,
+            37.568295
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Oranges",
+      "destination": "United States",
+      "destination_code": "USA",
+      "year": 2025,
+      "tonnes": 10247.6,
+      "share_pct": 5.136847592885931,
+      "rank": 5,
+      "longitude": -77.011364,
+      "latitude": 38.901495,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            -77.011364,
+            38.901495
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Oranges",
+      "destination": "Canada",
+      "destination_code": "CAN",
+      "year": 2025,
+      "tonnes": 8861.11,
+      "share_pct": 4.44183726665731,
+      "rank": 6,
+      "longitude": -75.701961,
+      "latitude": 45.418643,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            -75.701961,
+            45.418643
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Oranges",
+      "destination": "Singapore",
+      "destination_code": "SGP",
+      "year": 2025,
+      "tonnes": 6031.49,
+      "share_pct": 3.0234244982254928,
+      "rank": 7,
+      "longitude": 103.853875,
+      "latitude": 1.294979,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            103.853875,
+            1.294979
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Oranges",
+      "destination": "Vietnam",
+      "destination_code": "VNM",
+      "year": 2025,
+      "tonnes": 5933.53,
+      "share_pct": 2.9743197722214423,
+      "rank": 8,
+      "longitude": 105.848068,
+      "latitude": 21.035273,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            105.848068,
+            21.035273
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Mandarins and related citrus",
+      "destination": "China",
+      "destination_code": "CHN",
+      "year": 2025,
+      "tonnes": 22564.8,
+      "share_pct": 18.802433130572453,
+      "rank": 1,
+      "longitude": 116.394201,
+      "latitude": 39.90172,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            116.394201,
+            39.90172
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Mandarins and related citrus",
+      "destination": "Thailand",
+      "destination_code": "THA",
+      "year": 2025,
+      "tonnes": 15415.6,
+      "share_pct": 12.845262894758772,
+      "rank": 2,
+      "longitude": 100.514699,
+      "latitude": 13.751945,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            100.514699,
+            13.751945
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Mandarins and related citrus",
+      "destination": "Indonesia",
+      "destination_code": "IDN",
+      "year": 2025,
+      "tonnes": 14172.9,
+      "share_pct": 11.809765852845596,
+      "rank": 3,
+      "longitude": 106.827492,
+      "latitude": -6.172472,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            106.827492,
+            -6.172472
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Mandarins and related citrus",
+      "destination": "New Zealand",
+      "destination_code": "NZL",
+      "year": 2025,
+      "tonnes": 9519.63,
+      "share_pct": 7.932363969669194,
+      "rank": 4,
+      "longitude": 174.777201,
+      "latitude": -41.292068,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            174.777201,
+            -41.292068
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Mandarins and related citrus",
+      "destination": "Vietnam",
+      "destination_code": "VNM",
+      "year": 2025,
+      "tonnes": 8428.76,
+      "share_pct": 7.023381384884593,
+      "rank": 5,
+      "longitude": 105.848068,
+      "latitude": 21.035273,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            105.848068,
+            21.035273
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Mandarins and related citrus",
+      "destination": "Canada",
+      "destination_code": "CAN",
+      "year": 2025,
+      "tonnes": 7322.72,
+      "share_pct": 6.101758186817766,
+      "rank": 6,
+      "longitude": -75.701961,
+      "latitude": 45.418643,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            -75.701961,
+            45.418643
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Mandarins and related citrus",
+      "destination": "Philippines",
+      "destination_code": "PHL",
+      "year": 2025,
+      "tonnes": 6644.53,
+      "share_pct": 5.536646946087826,
+      "rank": 7,
+      "longitude": 120.980271,
+      "latitude": 14.606105,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            120.980271,
+            14.606105
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Mandarins and related citrus",
+      "destination": "Japan",
+      "destination_code": "JPN",
+      "year": 2025,
+      "tonnes": 5606.66,
+      "share_pct": 4.671827347721023,
+      "rank": 8,
+      "longitude": 139.749462,
+      "latitude": 35.686963,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            139.749462,
+            35.686963
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Strawberries",
+      "destination": "Thailand",
+      "destination_code": "THA",
+      "year": 2025,
+      "tonnes": 1057.58,
+      "share_pct": 34.80026324448831,
+      "rank": 1,
+      "longitude": 100.514699,
+      "latitude": 13.751945,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            100.514699,
+            13.751945
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Strawberries",
+      "destination": "Singapore",
+      "destination_code": "SGP",
+      "year": 2025,
+      "tonnes": 667.679,
+      "share_pct": 21.970352089503127,
+      "rank": 2,
+      "longitude": 103.853875,
+      "latitude": 1.294979,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            103.853875,
+            1.294979
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Strawberries",
+      "destination": "New Zealand",
+      "destination_code": "NZL",
+      "year": 2025,
+      "tonnes": 579.975,
+      "share_pct": 19.08440276406713,
+      "rank": 3,
+      "longitude": 174.777201,
+      "latitude": -41.292068,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            174.777201,
+            -41.292068
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Strawberries",
+      "destination": "Malaysia",
+      "destination_code": "MYS",
+      "year": 2025,
+      "tonnes": 428.823,
+      "share_pct": 14.1106614017769,
+      "rank": 4,
+      "longitude": 101.688699,
+      "latitude": 3.139797,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            101.688699,
+            3.139797
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Strawberries",
+      "destination": "United Arab Emirates",
+      "destination_code": "ARE",
+      "year": 2025,
+      "tonnes": 128.288,
+      "share_pct": 4.221388614675881,
+      "rank": 5,
+      "longitude": 54.366593,
+      "latitude": 24.466684,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            54.366593,
+            24.466684
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Strawberries",
+      "destination": "Hong Kong",
+      "destination_code": "HKG",
+      "year": 2025,
+      "tonnes": 63.733,
+      "share_pct": 2.097170121750576,
+      "rank": 6,
+      "longitude": 114.183064,
+      "latitude": 22.306927,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            114.183064,
+            22.306927
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Strawberries",
+      "destination": "Indonesia",
+      "destination_code": "IDN",
+      "year": 2025,
+      "tonnes": 39.294,
+      "share_pct": 1.2929911154985192,
+      "rank": 7,
+      "longitude": 106.827492,
+      "latitude": -6.172472,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            106.827492,
+            -6.172472
+          ]
+        ]
+      }
+    },
+    {
+      "fruit": "Strawberries",
+      "destination": "Qatar",
+      "destination_code": "QAT",
+      "year": 2025,
+      "tonnes": 18.289,
+      "share_pct": 0.6018098058571899,
+      "rank": 8,
+      "longitude": 51.532968,
+      "latitude": 25.286556,
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            149.129026,
+            -35.283029
+          ],
+          [
+            51.532968,
+            25.286556
+          ]
+        ]
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "fruit": "All five categories",
+      "total_tonnes": 465403.81,
+      "coverage_pct": 75.47231016437101,
+      "destination_count": 45,
+      "shown_count": 8
+    },
+    {
+      "fruit": "Table grapes",
+      "total_tonnes": 141134.0,
+      "coverage_pct": 86.00743265265633,
+      "destination_count": 36,
+      "shown_count": 8
+    },
+    {
+      "fruit": "Apples",
+      "total_tonnes": 1728.81,
+      "coverage_pct": 88.1993972732689,
+      "destination_count": 27,
+      "shown_count": 8
+    },
+    {
+      "fruit": "Oranges",
+      "total_tonnes": 199492.0,
+      "coverage_pct": 81.94851422613438,
+      "destination_count": 43,
+      "shown_count": 8
+    },
+    {
+      "fruit": "Mandarins and related citrus",
+      "total_tonnes": 120010.0,
+      "coverage_pct": 74.72343971335722,
+      "destination_count": 37,
+      "shown_count": 8
+    },
+    {
+      "fruit": "Strawberries",
+      "total_tonnes": 3039.0,
+      "coverage_pct": 98.17903915761764,
+      "destination_count": 19,
+      "shown_count": 8
+    }
+  ]
+}

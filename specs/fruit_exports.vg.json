@@ -1,0 +1,96 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Equal Earth flow map of Australia's top eight destinations by export tonnes for five fruit categories, calendar 2025. Paths connect representative national locations and do not depict shipping routes. Line widths rescale within each selection.",
+  "width": 1000,
+  "height": 460,
+  "padding": 0,
+  "autosize": {"type": "pad", "resize": true},
+  "background": "transparent",
+  "signals": [
+    {
+      "name": "fruitChoice",
+      "value": "All five categories",
+      "bind": {"input": "select", "name": "Fruit: ", "options": ["All five categories", "Table grapes", "Apples", "Oranges", "Mandarins and related citrus", "Strawberries"]}
+    }
+  ],
+  "data": [
+    {"name": "sphere", "values": [{"type": "Sphere"}]},
+    {"name": "countries", "url": "data/world_countries.topojson", "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}},
+    {
+      "name": "routes",
+      "url": "data/fruit_exports.json",
+      "format": {"type": "json", "property": "flows"},
+      "transform": [
+        {"type": "filter", "expr": "datum.fruit === fruitChoice"},
+        {"type": "collect", "sort": {"field": "tonnes", "order": "descending"}},
+        {"type": "geopath", "projection": "world", "field": "geometry", "as": "path"},
+        {"type": "geopoint", "projection": "world", "fields": ["longitude", "latitude"], "as": ["x", "y"]}
+      ]
+    },
+    {"name": "destinationLabels", "source": "routes", "transform": [{"type": "filter", "expr": "datum.rank <= 3"}]},
+    {
+      "name": "origin",
+      "url": "data/fruit_exports.json",
+      "format": {"type": "json", "property": "origin"},
+      "transform": [{"type": "geopoint", "projection": "world", "fields": ["longitude", "latitude"], "as": ["x", "y"]}]
+    }
+  ],
+  "projections": [
+    {"name": "world", "type": "equalEarth", "rotate": [-150, 0], "fit": {"signal": "data('sphere')"}, "extent": {"signal": "[[12, 12], [width - 12, height - 12]]"}}
+  ],
+  "scales": [
+    {"name": "flowWidth", "type": "linear", "domain": {"data": "routes", "field": "tonnes"}, "zero": true, "range": [0, 8]},
+    {"name": "fruitColor", "type": "ordinal", "domain": ["All five categories", "Table grapes", "Apples", "Oranges", "Mandarins and related citrus", "Strawberries"], "range": ["#315f50", "#72518b", "#3f7892", "#d28b26", "#9a5c2e", "#ba4266"]}
+  ],
+  "legends": [
+    {"strokeWidth": "flowWidth", "title": "Export volume (tonnes)", "orient": "bottom", "direction": "horizontal", "columns": 3, "tickCount": 3, "format": ",.0f", "labelFont": "Source Sans 3", "labelFontSize": 11, "titleFont": "Source Sans 3", "titleFontSize": 12, "titleFontWeight": "normal", "symbolType": "stroke", "symbolStrokeColor": {"signal": "scale('fruitColor', fruitChoice)"}, "symbolSize": 400, "columnPadding": 16}
+  ],
+  "marks": [
+    {"type": "shape", "from": {"data": "sphere"}, "encode": {"update": {"fill": {"value": "#f3f7f8"}, "stroke": {"value": "#d9e3e5"}}}, "transform": [{"type": "geoshape", "projection": "world"}]},
+    {"type": "shape", "from": {"data": "countries"}, "encode": {"update": {"fill": {"value": "#e1e6df"}, "stroke": {"value": "#ffffff"}, "strokeWidth": {"value": 0.5}}}, "transform": [{"type": "geoshape", "projection": "world"}]},
+    {
+      "type": "path",
+      "name": "exportRoutes",
+      "from": {"data": "routes"},
+      "encode": {
+        "update": {
+          "path": {"field": "path"}, "fill": {"value": null},
+          "stroke": {"scale": "fruitColor", "signal": "fruitChoice"},
+          "strokeWidth": {"scale": "flowWidth", "field": "tonnes"}, "strokeOpacity": {"value": 0.6},
+          "tooltip": {"signal": "{'Destination': datum.destination, 'Fruit category': datum.fruit, 'Export volume': format(datum.tonnes, ',.1f') + ' tonnes', 'Share of selected exports': format(datum.share_pct, '.1f') + '%', 'Period': 'Calendar year 2025'}"}
+        },
+        "hover": {"strokeOpacity": {"value": 1}},
+        "leave": {"strokeOpacity": {"value": 0.6}}
+      }
+    },
+    {
+      "type": "symbol",
+      "name": "exportDestinations",
+      "from": {"data": "routes"},
+      "encode": {"update": {
+        "x": {"field": "x"}, "y": {"field": "y"}, "size": {"value": 45},
+        "fill": {"scale": "fruitColor", "signal": "fruitChoice"}, "stroke": {"value": "#ffffff"}, "strokeWidth": {"value": 1},
+        "tooltip": {"signal": "{'Destination': datum.destination, 'Export volume': format(datum.tonnes, ',.1f') + ' tonnes', 'Share': format(datum.share_pct, '.1f') + '%'}"}
+      }}
+    },
+    {
+      "type": "text", "interactive": false, "from": {"data": "destinationLabels"},
+      "encode": {"update": {
+        "x": {"field": "x"}, "y": {"field": "y"}, "dy": {"signal": "datum.destination_code === 'PNG' ? 20 : datum.destination_code === 'NZL' ? -12 : datum.rank === 1 ? -24 : datum.rank === 2 ? -6 : 18"},
+        "text": {"field": "destination"}, "align": {"value": "center"},
+        "font": {"value": "Source Sans 3"}, "fontSize": {"value": 12}, "fontWeight": {"value": 600}, "fill": {"value": "#263d33"}
+      }}
+    },
+    {
+      "type": "symbol", "interactive": false, "from": {"data": "origin"},
+      "encode": {"update": {"x": {"field": "x"}, "y": {"field": "y"}, "size": {"value": 80}, "fill": {"value": "#263d33"}, "stroke": {"value": "#ffffff"}}}
+    },
+    {
+      "type": "text", "interactive": false, "from": {"data": "origin"},
+      "encode": {"update": {
+        "x": {"field": "x"}, "y": {"field": "y"}, "dy": {"value": 20}, "text": {"value": "Australia"}, "align": {"value": "center"},
+        "font": {"value": "Source Sans 3"}, "fontSize": {"value": 12}, "fontWeight": {"value": 600}, "fill": {"value": "#263d33"}
+      }}
+    }
+  ]
+}

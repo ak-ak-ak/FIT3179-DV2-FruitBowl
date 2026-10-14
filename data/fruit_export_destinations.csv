@@ -1,0 +1,170 @@
+fruit,hs_code,year,destination_code,destination,tonnes,trade_value_usd
+Table grapes,080610,2025,CHN,China,44840.8,114351330.0
+Table grapes,080610,2025,IDN,Indonesia,28308.6,70080950.0
+Table grapes,080610,2025,KOR,South Korea,9544.51,29092510.0
+Table grapes,080610,2025,JPN,Japan,9117.24,24243200.0
+Table grapes,080610,2025,VNM,Vietnam,7357.68,22956410.0
+Table grapes,080610,2025,PHL,Philippines,9510.14,20591510.0
+Table grapes,080610,2025,NZL,New Zealand,6015.32,19197190.0
+Table grapes,080610,2025,HKG,Hong Kong,5695.48,17982220.0
+Table grapes,080610,2025,THA,Thailand,6691.44,15559440.0
+Table grapes,080610,2025,SGP,Singapore,3368.63,10559060.0
+Table grapes,080610,2025,ARE,United Arab Emirates,3544.73,9257120.0
+Table grapes,080610,2025,MYS,Malaysia,1724.62,5155340.0
+Table grapes,080610,2025,OAS,"Other Asia, nes",1482.43,3906950.0
+Table grapes,080610,2025,LKA,Sri Lanka,649.95,1582910.0
+Table grapes,080610,2025,QAT,Qatar,494.033,1541560.0
+Table grapes,080610,2025,KWT,Kuwait,377.189,1054330.0
+Table grapes,080610,2025,KHM,Cambodia,195.582,895420.0
+Table grapes,080610,2025,PYF,French Polynesia,219.637,860260.0
+Table grapes,080610,2025,FJI,Fiji,356.122,806040.0
+Table grapes,080610,2025,BGD,Bangladesh,374.238,697490.0
+Table grapes,080610,2025,NCL,New Caledonia,282.237,682530.0
+Table grapes,080610,2025,LBN,Lebanon,94.176,496720.0
+Table grapes,080610,2025,IND,India,178.99,411840.0
+Table grapes,080610,2025,TON,Tonga,167.352,365360.0
+Table grapes,080610,2025,PNG,Papua New Guinea,70.272,316300.0
+Table grapes,080610,2025,OMN,Oman,91.71,302110.0
+Table grapes,080610,2025,CAN,Canada,100.416,284950.0
+Table grapes,080610,2025,SAU,Saudi Arabia,94.538,230800.0
+Table grapes,080610,2025,MDV,Maldives,66.998,217580.0
+Table grapes,080610,2025,BHR,Bahrain,39.134,184860.0
+Table grapes,080610,2025,VUT,Vanuatu,25.379,147870.0
+Table grapes,080610,2025,BRN,Brunei,30.176,70860.0
+Table grapes,080610,2025,NRU,Nauru,9.276,57510.0
+Table grapes,080610,2025,SLB,Solomon Islands,10.556,41150.0
+Table grapes,080610,2025,TMP,Timor-Leste,2.592,6120.0
+Table grapes,080610,2025,KIR,Kiribati,1.215,4270.0
+Table grapes,080610,2025,CXR,Christmas Island,0.697,3360.0
+Table grapes,080610,2025,BUN,Bunkers,0.042,190.0
+Apples,080810,2025,PNG,Papua New Guinea,675.054,1271870.0
+Apples,080810,2025,HKG,Hong Kong,287.306,713810.0
+Apples,080810,2025,ARE,United Arab Emirates,155.445,447670.0
+Apples,080810,2025,SGP,Singapore,109.598,322310.0
+Apples,080810,2025,THA,Thailand,73.254,205120.0
+Apples,080810,2025,MYS,Malaysia,92.679,201790.0
+Apples,080810,2025,CHN,China,81.64,151930.0
+Apples,080810,2025,IND,India,49.824,89180.0
+Apples,080810,2025,USA,United States,32.448,86370.0
+Apples,080810,2025,KWT,Kuwait,10.99,72470.0
+Apples,080810,2025,VUT,Vanuatu,30.79,65620.0
+Apples,080810,2025,NCL,New Caledonia,27.414,40790.0
+Apples,080810,2025,PYF,French Polynesia,21.54,37880.0
+Apples,080810,2025,SLB,Solomon Islands,18.798,35180.0
+Apples,080810,2025,FJI,Fiji,20.561,30300.0
+Apples,080810,2025,KIR,Kiribati,11.052,17860.0
+Apples,080810,2025,NRU,Nauru,7.862,17160.0
+Apples,080810,2025,CXR,Christmas Island,5.157,12750.0
+Apples,080810,2025,LKA,Sri Lanka,5.46,10260.0
+Apples,080810,2025,SAU,Saudi Arabia,2.046,10230.0
+Apples,080810,2025,QAT,Qatar,1.215,7830.0
+Apples,080810,2025,OMN,Oman,0.912,4280.0
+Apples,080810,2025,CCK,Cocos (Keeling) Islands,1.016,3270.0
+Apples,080810,2025,BRN,Brunei,2.364,2750.0
+Apples,080810,2025,TUV,Tuvalu,3.36,1610.0
+Apples,080810,2025,TON,Tonga,1.008,1300.0
+Apples,080810,2025,CIV,Cote d'Ivoire,0.004,800.0
+Apples,080810,2025,BUN,Bunkers,0.013,60.0
+Oranges,080510,2025,CHN,China,45597.4,56720970.0
+Oranges,080510,2025,JPN,Japan,44451.2,51812330.0
+Oranges,080510,2025,HKG,Hong Kong,26916.5,29616230.0
+Oranges,080510,2025,KOR,South Korea,15441.9,20123560.0
+Oranges,080510,2025,USA,United States,10247.6,13964600.0
+Oranges,080510,2025,CAN,Canada,8861.11,11342520.0
+Oranges,080510,2025,SGP,Singapore,6031.49,8597400.0
+Oranges,080510,2025,VNM,Vietnam,5933.53,8416490.0
+Oranges,080510,2025,MYS,Malaysia,4835.01,6220950.0
+Oranges,080510,2025,PHL,Philippines,4669.08,5104620.0
+Oranges,080510,2025,IDN,Indonesia,5120.91,5018570.0
+Oranges,080510,2025,OAS,"Other Asia, nes",4132.38,4818780.0
+Oranges,080510,2025,NZL,New Zealand,4147.21,3935630.0
+Oranges,080510,2025,THA,Thailand,2584.35,3447840.0
+Oranges,080510,2025,IND,India,2728.08,2261170.0
+Oranges,080510,2025,FJI,Fiji,1408.18,1548380.0
+Oranges,080510,2025,ARE,United Arab Emirates,1533.34,1498630.0
+Oranges,080510,2025,PNG,Papua New Guinea,919.34,1259030.0
+Oranges,080510,2025,PYF,French Polynesia,680.477,640160.0
+Oranges,080510,2025,LKA,Sri Lanka,575.922,528240.0
+Oranges,080510,2025,QAT,Qatar,426.685,490160.0
+Oranges,080510,2025,KWT,Kuwait,349.834,466140.0
+Oranges,080510,2025,OMN,Oman,359.91,327260.0
+Oranges,080510,2025,VUT,Vanuatu,154.332,235850.0
+Oranges,080510,2025,NCL,New Caledonia,200.088,218500.0
+Oranges,080510,2025,BGD,Bangladesh,226.8,206970.0
+Oranges,080510,2025,SAU,Saudi Arabia,171.477,181470.0
+Oranges,080510,2025,TON,Tonga,157.728,166340.0
+Oranges,080510,2025,GUM,Guam,111.114,152140.0
+Oranges,080510,2025,DEU,Germany,117.156,137050.0
+Oranges,080510,2025,ASM,American Samoa,89.76,132120.0
+Oranges,080510,2025,KHM,Cambodia,78.975,100870.0
+Oranges,080510,2025,WSM,Samoa,36.567,50250.0
+Oranges,080510,2025,MDV,Maldives,68.04,47640.0
+Oranges,080510,2025,BRN,Brunei,44.087,47350.0
+Oranges,080510,2025,NLD,Netherlands,19.11,42970.0
+Oranges,080510,2025,SLB,Solomon Islands,28.583,42230.0
+Oranges,080510,2025,KIR,Kiribati,14.76,22470.0
+Oranges,080510,2025,NRU,Nauru,7.244,13400.0
+Oranges,080510,2025,BHR,Bahrain,11.34,12270.0
+Oranges,080510,2025,CXR,Christmas Island,0.3,2260.0
+Oranges,080510,2025,TUV,Tuvalu,2.25,970.0
+Oranges,080510,2025,CIV,Cote d'Ivoire,0.005,960.0
+Oranges,080510,2025,TMP,Timor-Leste,1.134,930.0
+Mandarins and related citrus,080520,2025,CHN,China,22564.8,44346920.0
+Mandarins and related citrus,080520,2025,THA,Thailand,15415.6,22720960.0
+Mandarins and related citrus,080520,2025,IDN,Indonesia,14172.9,21096890.0
+Mandarins and related citrus,080520,2025,VNM,Vietnam,8428.76,15838680.0
+Mandarins and related citrus,080520,2025,CAN,Canada,7322.72,11479830.0
+Mandarins and related citrus,080520,2025,NZL,New Zealand,9519.63,11389410.0
+Mandarins and related citrus,080520,2025,USA,United States,3951.33,9156460.0
+Mandarins and related citrus,080520,2025,JPN,Japan,5606.66,8661820.0
+Mandarins and related citrus,080520,2025,PHL,Philippines,6644.53,8378520.0
+Mandarins and related citrus,080520,2025,HKG,Hong Kong,4988.83,7853870.0
+Mandarins and related citrus,080520,2025,OAS,"Other Asia, nes",4793.53,7598780.0
+Mandarins and related citrus,080520,2025,KHM,Cambodia,4357.12,5712000.0
+Mandarins and related citrus,080520,2025,ARE,United Arab Emirates,4231.71,5555780.0
+Mandarins and related citrus,080520,2025,IND,India,2742.05,3246510.0
+Mandarins and related citrus,080520,2025,SGP,Singapore,1107.24,1786310.0
+Mandarins and related citrus,080520,2025,MYS,Malaysia,1138.73,1785140.0
+Mandarins and related citrus,080520,2025,LKA,Sri Lanka,729.391,655480.0
+Mandarins and related citrus,080520,2025,QAT,Qatar,466.866,634260.0
+Mandarins and related citrus,080520,2025,KWT,Kuwait,234.534,565270.0
+Mandarins and related citrus,080520,2025,NCL,New Caledonia,278.255,367360.0
+Mandarins and related citrus,080520,2025,OMN,Oman,319.006,364870.0
+Mandarins and related citrus,080520,2025,PNG,Papua New Guinea,127.102,313370.0
+Mandarins and related citrus,080520,2025,PYF,French Polynesia,193.124,301680.0
+Mandarins and related citrus,080520,2025,SAU,Saudi Arabia,177.44,247570.0
+Mandarins and related citrus,080520,2025,BGD,Bangladesh,184.8,128370.0
+Mandarins and related citrus,080520,2025,FJI,Fiji,63.253,107120.0
+Mandarins and related citrus,080520,2025,MDV,Maldives,49.4,83080.0
+Mandarins and related citrus,080520,2025,VUT,Vanuatu,25.704,69960.0
+Mandarins and related citrus,080520,2025,TON,Tonga,31.347,54780.0
+Mandarins and related citrus,080520,2025,GUM,Guam,29.54,54240.0
+Mandarins and related citrus,080520,2025,BRN,Brunei,29.97,46440.0
+Mandarins and related citrus,080520,2025,KOR,South Korea,45.36,33510.0
+Mandarins and related citrus,080520,2025,BHR,Bahrain,25.07,18970.0
+Mandarins and related citrus,080520,2025,NRU,Nauru,5.476,13510.0
+Mandarins and related citrus,080520,2025,CXR,Christmas Island,1.93,7550.0
+Mandarins and related citrus,080520,2025,SLB,Solomon Islands,3.324,4270.0
+Mandarins and related citrus,080520,2025,TMP,Timor-Leste,2.25,3270.0
+Mandarins and related citrus,080520,2025,KIR,Kiribati,0.81,1710.0
+Mandarins and related citrus,080520,2025,BUN,Bunkers,0.011,50.0
+Strawberries,081010,2025,THA,Thailand,1057.58,10352660.0
+Strawberries,081010,2025,NZL,New Zealand,579.975,4631270.0
+Strawberries,081010,2025,SGP,Singapore,667.679,4159890.0000000005
+Strawberries,081010,2025,MYS,Malaysia,428.823,3274650.0
+Strawberries,081010,2025,ARE,United Arab Emirates,128.288,1097750.0
+Strawberries,081010,2025,HKG,Hong Kong,63.733,636590.0
+Strawberries,081010,2025,IDN,Indonesia,39.294,414790.0
+Strawberries,081010,2025,QAT,Qatar,18.289,145230.0
+Strawberries,081010,2025,FJI,Fiji,13.506,104930.0
+Strawberries,081010,2025,BRN,Brunei,16.765,99890.0
+Strawberries,081010,2025,KWT,Kuwait,10.662,68360.0
+Strawberries,081010,2025,KHM,Cambodia,7.681,56790.0
+Strawberries,081010,2025,PNG,Papua New Guinea,3.047,39190.0
+Strawberries,081010,2025,OMN,Oman,2.4,19810.0
+Strawberries,081010,2025,NCL,New Caledonia,0.486,7310.0
+Strawberries,081010,2025,NRU,Nauru,0.273,2900.0
+Strawberries,081010,2025,SLB,Solomon Islands,0.173,2140.0
+Strawberries,081010,2025,BUN,Bunkers,0.064,290.0
+Strawberries,081010,2025,SAU,Saudi Arabia,0.023,280.0
+Strawberries,081010,2025,CXR,Christmas Island,0.258,100.0
