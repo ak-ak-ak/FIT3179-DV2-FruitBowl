@@ -36,6 +36,8 @@ for path in (ROOT / 'specs').glob('fruit_*.json'):
     update(spec)
     if path.name == 'fruit_sankey.vg.json':
         spec['autosize'] = {'type': 'none', 'resize': True}
+        spec['scales'][2]['range'] = [8, {'signal': 'height - 8'}]
+        spec['marks'][0]['encode']['update']['strokeWidth'] = {'signal': 'datum.width*(height-16)/600'}
         spec['marks'][0]['encode']['leave'] = {
             'strokeOpacity': {'signal': "stateChoice === 'All states' || datum.state === stateChoice ? 0.55 : 0.08"}
         }

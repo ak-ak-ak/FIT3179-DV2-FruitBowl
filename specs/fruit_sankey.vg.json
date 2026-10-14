@@ -98,9 +98,9 @@
         600
       ],
       "range": [
-        0,
+        8,
         {
-          "signal": "height"
+          "signal": "height - 8"
         }
       ]
     }
@@ -122,7 +122,7 @@
             "field": "fruit"
           },
           "strokeWidth": {
-            "signal": "datum.width*height/600"
+            "signal": "datum.width*(height-16)/600"
           },
           "strokeOpacity": {
             "signal": "stateChoice === 'All states' || datum.state === stateChoice ? 0.55 : 0.08"
