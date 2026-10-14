@@ -2,8 +2,8 @@
 :root {
   --ink: #2b2a26;
   --muted: #6b675e;
-  --paper: #fbf8f2;
-  --rule: #e4ddd0;
+  --paper: #ffffff;
+  --rule: #dde2dc;
   --accent: #c2502a;   /* swap once the palette is decided */
   --max: 1100px;       /* fits a small laptop with no horizontal scroll */
   --text: 68ch;        /* comfortable line length for body text */
@@ -52,6 +52,22 @@ section { padding-bottom: 32px; border-bottom: 1px solid var(--rule); }
 }
 
 .chart { width: 100%; margin: 16px 0; }
+figure { margin: 32px 0 40px; }
+.chart-subtitle { color: var(--muted); max-width: 80ch; }
+figcaption { color: var(--muted); font-size: 0.85rem; max-width: 100ch; }
+a { color: #315f50; text-underline-offset: 3px; }
+.neutral-key { display: inline-block; width: 12px; height: 12px; background: #e8eae7; border: 1px solid #b7bdb6; }
+.vega-embed { width: 100%; }
+.vega-embed summary { display: none; }
+.vega-bindings { font-size: 0.9rem; margin-top: 8px; }
+.vega-bindings select { font: inherit; padding: 5px 8px; background: white; border: 1px solid #b7bdb6; border-radius: 4px; }
+select:focus-visible { outline: 2px solid #315f50; outline-offset: 2px; }
+@media (max-width: 600px) {
+  .wrap { padding-left: 16px; padding-right: 16px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  .hero { padding: 40px 0 24px; }
+}
 
 /* ---------- Footer ---------- */
 footer { padding: 40px 24px 64px; color: var(--muted); font-size: 0.9rem; }

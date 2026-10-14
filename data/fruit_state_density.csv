@@ -1,0 +1,64 @@
+key,region,fruit,year,production_tonnes,land_area_km2,tonnes_per_km2,reported_categories
+Western Australia|All reported fruit,Western Australia,All reported fruit,2024-25,185117,2527013.0,0.0732552622404396,25
+Western Australia|Apples,Western Australia,Apples,2024-25,30269,2527013.0,0.011978173440342412,1
+Western Australia|Avocados,Western Australia,Avocados,2024-25,36889,2527013.0,0.014597867126128754,1
+Western Australia|Bananas,Western Australia,Bananas,2024-25,6452,2527013.0,0.002553212033337383,1
+Western Australia|Blueberries,Western Australia,Blueberries,2024-25,606,2527013.0,0.00023980881776231464,1
+Western Australia|Mandarins,Western Australia,Mandarins,2024-25,6433,2527013.0,0.002545693275024703,1
+Western Australia|Mangoes,Western Australia,Mangoes,2024-25,1860,2527013.0,0.0007360468663991836,1
+Western Australia|Oranges,Western Australia,Oranges,2024-25,13618,2527013.0,0.00538897108958284,1
+Western Australia|Pears,Western Australia,Pears,2024-25,5056,2527013.0,0.0020007811594162754,1
+Western Australia|Strawberries,Western Australia,Strawberries,2024-25,7572,2527013.0,0.002996423049663773,1
+Western Australia|Table grapes,Western Australia,Table grapes,2024-25,11444,2527013.0,0.004528666848963579,1
+Queensland|All reported fruit,Queensland,All reported fruit,2024-25,913010,1729742.0,0.5278301619547886,27
+Queensland|Apples,Queensland,Apples,2024-25,31184,1729742.0,0.01802812211300876,1
+Queensland|Avocados,Queensland,Avocados,2024-25,76501,1729742.0,0.044226826890946744,1
+Queensland|Bananas,Queensland,Bananas,2024-25,346579,1729742.0,0.20036456303888095,1
+Queensland|Blueberries,Queensland,Blueberries,2024-25,1057,1729742.0,0.0006110737901953007,1
+Queensland|Mandarins,Queensland,Mandarins,2024-25,120019,1729742.0,0.06938549217166491,1
+Queensland|Mangoes,Queensland,Mangoes,2024-25,33080,1729742.0,0.0191242393374272,1
+Queensland|Oranges,Queensland,Oranges,2024-25,5604,1729742.0,0.0032397895177431087,1
+Queensland|Pears,Queensland,Pears,2024-25,722,1729742.0,0.00041740328904541835,1
+Queensland|Strawberries,Queensland,Strawberries,2024-25,30287,1729742.0,0.01750954766664624,1
+Queensland|Table grapes,Queensland,Table grapes,2024-25,18311,1729742.0,0.01058597178076268,1
+Northern Territory|All reported fruit,Northern Territory,All reported fruit,2024-25,103176,1347791.0,0.0765519283034239,10
+Northern Territory|Bananas,Northern Territory,Bananas,2024-25,922,1347791.0,0.0006840823243366368,1
+Northern Territory|Mangoes,Northern Territory,Mangoes,2024-25,37168,1347791.0,0.02757697595547084,1
+Northern Territory|Table grapes,Northern Territory,Table grapes,2024-25,1144,1347791.0,0.000848796289632443,1
+South Australia|All reported fruit,South Australia,All reported fruit,2024-25,238583,984321.0,0.24238332820289316,24
+South Australia|Apples,South Australia,Apples,2024-25,28261,984321.0,0.02871116231391995,1
+South Australia|Avocados,South Australia,Avocados,2024-25,4261,984321.0,0.00432887239020604,1
+South Australia|Blueberries,South Australia,Blueberries,2024-25,141,984321.0,0.00014324595330181923,1
+South Australia|Mandarins,South Australia,Mandarins,2024-25,37034,984321.0,0.03762390520978421,1
+South Australia|Mangoes,South Australia,Mangoes,2024-25,38,984321.0,3.860529237921369e-05,1
+South Australia|Oranges,South Australia,Oranges,2024-25,116744,984321.0,0.11860358561891902,1
+South Australia|Pears,South Australia,Pears,2024-25,6500,984321.0,0.006603536854339184,1
+South Australia|Strawberries,South Australia,Strawberries,2024-25,5048,984321.0,0.005128408313954493,1
+South Australia|Table grapes,South Australia,Table grapes,2024-25,1144,984321.0,0.0011622224863636964,1
+New South Wales|All reported fruit,New South Wales,All reported fruit,2024-25,649603,801150.0,0.8108381701304375,27
+New South Wales|Apples,New South Wales,Apples,2024-25,40389,801150.0,0.05041378019097547,1
+New South Wales|Avocados,New South Wales,Avocados,2024-25,13151,801150.0,0.016415153217250202,1
+New South Wales|Bananas,New South Wales,Bananas,2024-25,14748,801150.0,0.018408537727017414,1
+New South Wales|Blueberries,New South Wales,Blueberries,2024-25,24116,801150.0,0.030101728764900457,1
+New South Wales|Mandarins,New South Wales,Mandarins,2024-25,37497,801150.0,0.04680396929413967,1
+New South Wales|Mangoes,New South Wales,Mangoes,2024-25,792,801150.0,0.0009885789178056543,1
+New South Wales|Oranges,New South Wales,Oranges,2024-25,352479,801150.0,0.4399662984459839,1
+New South Wales|Pears,New South Wales,Pears,2024-25,722,801150.0,0.0009012045185046495,1
+New South Wales|Strawberries,New South Wales,Strawberries,2024-25,721,801150.0,0.0008999563128003495,1
+New South Wales|Table grapes,New South Wales,Table grapes,2024-25,36621,801150.0,0.04571054109717281,1
+Victoria|All reported fruit,Victoria,All reported fruit,2024-25,691832,227444.0,3.0417685232408855,24
+Victoria|Apples,Victoria,Apples,2024-25,134976,227444.0,0.5934471782065036,1
+Victoria|Avocados,Victoria,Avocados,2024-25,566,227444.0,0.0024885246478253986,1
+Victoria|Blueberries,Victoria,Blueberries,2024-25,564,227444.0,0.0024797312745115283,1
+Victoria|Mandarins,Victoria,Mandarins,2024-25,39502,227444.0,0.17367791632225954,1
+Victoria|Mangoes,Victoria,Mangoes,2024-25,100,227444.0,0.00043966866569353333,1
+Victoria|Oranges,Victoria,Oranges,2024-25,84096,227444.0,0.3697437611016338,1
+Victoria|Pears,Victoria,Pears,2024-25,58501,227444.0,0.257210566117374,1
+Victoria|Strawberries,Victoria,Strawberries,2024-25,25599,227444.0,0.1125507817308876,1
+Victoria|Table grapes,Victoria,Table grapes,2024-25,160217,227444.0,0.7044239461142083,1
+Tasmania|All reported fruit,Tasmania,All reported fruit,2024-25,53672,68401.0,0.7846668908349294,11
+Tasmania|Apples,Tasmania,Apples,2024-25,30611,68401.0,0.44752269703659303,1
+Tasmania|Avocados,Tasmania,Avocados,2024-25,17,68401.0,0.0002485343781523662,1
+Tasmania|Blueberries,Tasmania,Blueberries,2024-25,1900,68401.0,0.027777371675852692,1
+Tasmania|Pears,Tasmania,Pears,2024-25,722,68401.0,0.010555401236824023,1
+Tasmania|Strawberries,Tasmania,Strawberries,2024-25,8645,68401.0,0.12638704112512975,1

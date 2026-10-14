@@ -23,7 +23,7 @@
   <header class="hero">
     <div class="wrap">
       <h1>Where Your Fruit Bowl Comes From</h1>
-      <p class="lede">A short story of how Australia grows, eats and exports its fruit.</p>
+      <p class="lede">Where Australia grows its fruit, how production is changing, and what reaches overseas markets.</p>
     </div>
   </header>
 
@@ -32,14 +32,25 @@
     <!-- Section 1: Hook -->
     <section id="s1-hook">
       <h2>What's in the bowl?</h2>
-      <p>Intro text goes here.</p>
+      <p>Australia grows a wide variety of fruit, but production is concentrated in particular regions. Follow where it grows, how production is changing, and where some of it goes overseas.</p>
     </section>
 
     <!-- Section 2: Where it grows -->
     <section id="s2-where">
       <h2>Where it grows</h2>
-      <p>Test map: confirms Vega-Lite and the TopoJSON load correctly. Replace once real maps are built.</p>
-      <div class="chart" id="map_test"></div>
+      <p>Different fruits come from different parts of Australia. Compare the states first, then look more closely at the growing regions of bananas and avocados.</p>
+      <figure>
+        <h3>Different fruits, different growing states</h3>
+        <p class="chart-subtitle">Reported production per square kilometre of state land, 2024–25.</p>
+        <div class="chart" id="fruit_choropleth" aria-label="Choropleth map comparing fruit production density by state"></div>
+        <figcaption><span class="neutral-key" aria-hidden="true"></span> Grey: production not reported for the selected fruit. Density uses each state's entire land area, not orchard area or yield. “All reported fruit” sums available categories in ABS Table 2; the colour scale adjusts for each fruit. Sources: <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">ABS</a> and <a href="https://www.ga.gov.au/scientific-topics/national-location-information/dimensions/area-of-australia-states-and-territories">Geoscience Australia</a>.</figcaption>
+      </figure>
+      <figure>
+        <h3>A closer look at two fruits</h3>
+        <p class="chart-subtitle">Bananas are concentrated in Far North Queensland; avocados also have major growing regions in south-west Western Australia.</p>
+        <div class="chart" id="fruit_symbols" aria-label="Proportional symbol map comparing banana and avocado producing regions"></div>
+        <figcaption>Regional production, 2024–25. Circle area represents tonnes, using the same size scale for both fruits. Points locate regions, not individual farms. Detailed regional estimates are available for bananas and avocados, but not every fruit. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS</a>, experimental estimates, SA2 2021 geography. Rounded regional sums differ slightly from national totals.</figcaption>
+      </figure>
     </section>
 
     <!-- Section 3: Change over time -->
@@ -57,11 +68,13 @@
   <footer class="wrap">
     <h3>Sources</h3>
     <ul class="sources">
-      <li>State boundaries: Natural Earth, Admin 1 States and Provinces (1:50m), public domain. naturalearthdata.com</li>
+      <li><a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">ABS Australian Agriculture: Horticulture, 2024–25</a>. State fruit tables and regional banana/avocado estimates; SA2 2021 boundaries via the ABS geographic service.</li>
+      <li><a href="https://www.ga.gov.au/scientific-topics/national-location-information/dimensions/area-of-australia-states-and-territories">Geoscience Australia land areas of states and territories</a>, used to normalise state production.</li>
+      <li>State boundaries: <a href="https://www.naturalearthdata.com/">Natural Earth</a>, Admin 1 States and Provinces (1:50m), public domain.</li>
     </ul>
     <p class="meta">
       Created by Akshara Balreddy, Monash University, FIT3179 Data Visualisation, October 2026.<br>
-      AI use: Claude (Anthropic) assisted with code scaffolding. [Update this before submitting.]
+      AI use: Claude (Anthropic) assisted with code scaffolding. Codex (OpenAI) assisted with data preparation, coding and verification. Data comes from the cited sources.
     </p>
   </footer>
 

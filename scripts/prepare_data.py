@@ -19,7 +19,7 @@ FOCUS = {"Apples", "Avocados", "Bananas", "Blueberries", "Mandarins", "Mangoes",
 def save(name, rows):
     assert rows, name
     with (DATA / name).open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     print(f"{name}: {len(rows)} rows")
@@ -58,6 +58,21 @@ for record in records.values():
     row["national_production_share_pct"] = row["production_tonnes"] / total * 100 if isinstance(row["production_tonnes"], (int, float)) else ""
     state.append(row)
 save("fruit_state.csv", state)
+
+areas = {r["region"]: float(r["land_area_km2"]) for r in csv.DictReader((RAW / "state_land_area.csv").open())}
+map_rows = []
+for region, area in areas.items():
+    available = [r for r in records.values() if r["region"] == region and r["year"] == "2024-25"
+                 and isinstance(r["production_tonnes"], (int, float))]
+    for fruit in ["All reported fruit", *sorted(FOCUS)]:
+        selected = available if fruit == "All reported fruit" else [r for r in available if r["fruit"] == fruit]
+        if not selected:
+            continue
+        tonnes = sum(r["production_tonnes"] for r in selected)
+        map_rows.append({"key": region + "|" + fruit, "region": region, "fruit": fruit,
+                         "year": "2024-25", "production_tonnes": tonnes, "land_area_km2": area,
+                         "tonnes_per_km2": tonnes / area, "reported_categories": len(selected)})
+save("fruit_state_density.csv", map_rows)
 
 regional = json.loads((RAW / "abs_avocado_producing_sa2_2024_25.json").read_text())
 assert not regional.get("exceededTransferLimit"), "Incomplete geographic download"
