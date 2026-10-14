@@ -1,0 +1,51 @@
+fruit,region_code,region,year,production_tonnes,production_tonnes_status,farmgate_value_aud_million,farmgate_value_aud_million_status
+Apples,0,Australia,2020-21,280273,published,619.8,published
+Apples,0,Australia,2021-22,307630,published,568.6,published
+Apples,0,Australia,2022-23,285176,published,647,published
+Apples,0,Australia,2023-24,293731,published,680.2,published
+Apples,0,Australia,2024-25,295691,published,672,published
+Avocados,0,Australia,2020-21,78085,published,488.7,published
+Avocados,0,Australia,2021-22,122197,published,363.8,published
+Avocados,0,Australia,2022-23,115385,published,560.7,published
+Avocados,0,Australia,2023-24,150913,published,589,published
+Avocados,0,Australia,2024-25,131385,published,718.7,published
+Bananas,0,Australia,2020-21,402982,published,596.8,published
+Bananas,0,Australia,2021-22,374033,published,501.6,published
+Bananas,0,Australia,2022-23,374251,published,583.3,published
+Bananas,0,Australia,2023-24,368735,published,697.8,published
+Bananas,0,Australia,2024-25,368701,published,719.4,published
+Blueberries,0,Australia,2020-21,23452,published,411.2,published
+Blueberries,0,Australia,2021-22,19608,published,407.1,published
+Blueberries,0,Australia,2022-23,20211,published,422.2,published
+Blueberries,0,Australia,2023-24,28877,published,529.6,published
+Blueberries,0,Australia,2024-25,28382,published,532.2,published
+Mandarins,0,Australia,2020-21,166040,published,323.6,published
+Mandarins,0,Australia,2021-22,183590,published,336.4,published
+Mandarins,0,Australia,2022-23,198415,published,368.3,published
+Mandarins,0,Australia,2023-24,227716,published,435.3,published
+Mandarins,0,Australia,2024-25,240486,published,456.2,published
+Mangoes,0,Australia,2020-21,62300,published,201,published
+Mangoes,0,Australia,2021-22,68600,published,217.9,published
+Mangoes,0,Australia,2022-23,74900,published,207.9,published
+Mangoes,0,Australia,2023-24,67200,published,232.3,published
+Mangoes,0,Australia,2024-25,73039,published,232.5,published
+Oranges,0,Australia,2020-21,473697,published,437.6,published
+Oranges,0,Australia,2021-22,506072,published,421.3,published
+Oranges,0,Australia,2022-23,535185,published,439.1,published
+Oranges,0,Australia,2023-24,560539,published,481.6,published
+Oranges,0,Australia,2024-25,572540,published,541.8,published
+Pears,0,Australia,2020-21,124338,published,140.4,published
+Pears,0,Australia,2021-22,121955,published,131.6,published
+Pears,0,Australia,2022-23,92450,published,126.1,published
+Pears,0,Australia,2023-24,84761,published,125.6,published
+Pears,0,Australia,2024-25,72223,published,112.3,published
+Strawberries,0,Australia,2020-21,77751,published,417.2,published
+Strawberries,0,Australia,2021-22,68312,published,416.9,published
+Strawberries,0,Australia,2022-23,65824,published,429.2,published
+Strawberries,0,Australia,2023-24,84490,published,530.6,published
+Strawberries,0,Australia,2024-25,77872,published,529.8,published
+Table grapes,0,Australia,2020-21,198389,published,631.8,published
+Table grapes,0,Australia,2021-22,195925,published,722.2,published
+Table grapes,0,Australia,2022-23,232962,published,918.6,published
+Table grapes,0,Australia,2023-24,186632,published,751.6,published
+Table grapes,0,Australia,2024-25,228882,published,874.9,published

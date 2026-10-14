@@ -1,0 +1,1600 @@
+{
+ "features": [
+  {
+   "attributes": {
+    "sa2_name_2021": "Anna Bay",
+    "area_albers_sqkm": 68.05,
+    "total_area_ha": 9,
+    "local_value_dollar": 310155,
+    "bearing_area_ha": 9,
+    "production_t": 56,
+    "sa2_code_2021": "106031119"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Wentworth-Balranald Region",
+    "area_albers_sqkm": 49722.5286,
+    "total_area_ha": 46.3,
+    "local_value_dollar": 1274265,
+    "bearing_area_ha": 41.9,
+    "production_t": 217,
+    "sa2_code_2021": "109021179"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Wentworth - Buronga",
+    "area_albers_sqkm": 322.4567,
+    "total_area_ha": 69.5,
+    "local_value_dollar": 2261155,
+    "bearing_area_ha": 69.5,
+    "production_t": 385,
+    "sa2_code_2021": "109021178"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Kingscliff - Fingal Head",
+    "area_albers_sqkm": 38.4359,
+    "total_area_ha": 12.9,
+    "local_value_dollar": 71767,
+    "bearing_area_ha": 12.9,
+    "production_t": 15,
+    "sa2_code_2021": "112031250"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Lismore Surrounds",
+    "area_albers_sqkm": 1233.2421,
+    "total_area_ha": 119.8,
+    "local_value_dollar": 569089,
+    "bearing_area_ha": 109.3,
+    "production_t": 115,
+    "sa2_code_2021": "112021249"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Pottsville",
+    "area_albers_sqkm": 189.4635,
+    "total_area_ha": 59.7,
+    "local_value_dollar": 350184,
+    "bearing_area_ha": 59.7,
+    "production_t": 71,
+    "sa2_code_2021": "112031253"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Myrtleford",
+    "area_albers_sqkm": 553.3639,
+    "total_area_ha": 1,
+    "local_value_dollar": 35525,
+    "bearing_area_ha": 1,
+    "production_t": 6,
+    "sa2_code_2021": "204031071"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Coramba - Nana Glen - Bucca",
+    "area_albers_sqkm": 363.909,
+    "total_area_ha": 8.8,
+    "local_value_dollar": 304412,
+    "bearing_area_ha": 8.8,
+    "production_t": 55,
+    "sa2_code_2021": "104021086"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Robinvale",
+    "area_albers_sqkm": 181.5961,
+    "total_area_ha": 318.3,
+    "local_value_dollar": 10349954,
+    "bearing_area_ha": 313.1,
+    "production_t": 1763,
+    "sa2_code_2021": "215031403"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Lockington - Gunbower",
+    "area_albers_sqkm": 1646.4376,
+    "total_area_ha": 10.5,
+    "local_value_dollar": 336093,
+    "bearing_area_ha": 10.5,
+    "production_t": 57,
+    "sa2_code_2021": "216011408"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Shepparton - South East",
+    "area_albers_sqkm": 65.8306,
+    "total_area_ha": 1,
+    "local_value_dollar": 32662,
+    "bearing_area_ha": 1,
+    "production_t": 6,
+    "sa2_code_2021": "216031594"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Tully",
+    "area_albers_sqkm": 3065.1355,
+    "total_area_ha": 45.7,
+    "local_value_dollar": 1644431,
+    "bearing_area_ha": 35.8,
+    "production_t": 311,
+    "sa2_code_2021": "306031161"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Johnstone",
+    "area_albers_sqkm": 1294.6919,
+    "total_area_ha": 0.3,
+    "local_value_dollar": 15157,
+    "bearing_area_ha": 0.3,
+    "production_t": 3,
+    "sa2_code_2021": "306031160"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Malanda - Yungaburra",
+    "area_albers_sqkm": 1254.9789,
+    "total_area_ha": 661.6,
+    "local_value_dollar": 31587002,
+    "bearing_area_ha": 640.8,
+    "production_t": 5967,
+    "sa2_code_2021": "306051169"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Boonah",
+    "area_albers_sqkm": 2099.4596,
+    "total_area_ha": 13.7,
+    "local_value_dollar": 147343,
+    "bearing_area_ha": 13.7,
+    "production_t": 32,
+    "sa2_code_2021": "310021277"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Sarina",
+    "area_albers_sqkm": 1439.6459,
+    "total_area_ha": 2.5,
+    "local_value_dollar": 126531,
+    "bearing_area_ha": 2.5,
+    "production_t": 24,
+    "sa2_code_2021": "312021352"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Bridgetown - Boyup Brook",
+    "area_albers_sqkm": 4163.8195,
+    "total_area_ha": 3,
+    "local_value_dollar": 154921,
+    "bearing_area_ha": 3,
+    "production_t": 24,
+    "sa2_code_2021": "501031017"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Pemberton",
+    "area_albers_sqkm": 9641.0807,
+    "total_area_ha": 2526.2,
+    "local_value_dollar": 116477323,
+    "bearing_area_ha": 2366.3,
+    "production_t": 18201,
+    "sa2_code_2021": "501031020"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Lesmurdie - Bickley - Carmel",
+    "area_albers_sqkm": 220.0819,
+    "total_area_ha": 34.5,
+    "local_value_dollar": 1693690,
+    "bearing_area_ha": 34,
+    "production_t": 265,
+    "sa2_code_2021": "506051141"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Tablelands",
+    "area_albers_sqkm": 52403.018,
+    "total_area_ha": 1828.6,
+    "local_value_dollar": 84437661,
+    "bearing_area_ha": 1752.9,
+    "production_t": 15951,
+    "sa2_code_2021": "315011400"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Kyogle",
+    "area_albers_sqkm": 1979.7778,
+    "total_area_ha": 62.4,
+    "local_value_dollar": 373350,
+    "bearing_area_ha": 62.4,
+    "production_t": 76,
+    "sa2_code_2021": "112021247"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Korora - Emerald Beach",
+    "area_albers_sqkm": 57.6882,
+    "total_area_ha": 5.7,
+    "local_value_dollar": 195690,
+    "bearing_area_ha": 5.7,
+    "production_t": 35,
+    "sa2_code_2021": "104021088"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Calga - Kulnura",
+    "area_albers_sqkm": 767.9512,
+    "total_area_ha": 179.5,
+    "local_value_dollar": 6122266,
+    "bearing_area_ha": 179.5,
+    "production_t": 1101,
+    "sa2_code_2021": "102011030"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Crows Nest - Rosalie",
+    "area_albers_sqkm": 3250.6881,
+    "total_area_ha": 572.4,
+    "local_value_dollar": 10842146,
+    "bearing_area_ha": 569.7,
+    "production_t": 2326,
+    "sa2_code_2021": "307021179"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Ballina Surrounds",
+    "area_albers_sqkm": 406.5486,
+    "total_area_ha": 138.6,
+    "local_value_dollar": 822581,
+    "bearing_area_ha": 138.6,
+    "production_t": 167,
+    "sa2_code_2021": "112011237"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Laurieton - Bonny Hills",
+    "area_albers_sqkm": 524.9062,
+    "total_area_ha": 18,
+    "local_value_dollar": 598435,
+    "bearing_area_ha": 18,
+    "production_t": 108,
+    "sa2_code_2021": "108041162"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Denmark",
+    "area_albers_sqkm": 1859.8487,
+    "total_area_ha": 17.3,
+    "local_value_dollar": 890412,
+    "bearing_area_ha": 17.3,
+    "production_t": 139,
+    "sa2_code_2021": "509011228"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Tenterfield",
+    "area_albers_sqkm": 7324.3072,
+    "total_area_ha": 84.4,
+    "local_value_dollar": 499013,
+    "bearing_area_ha": 84.4,
+    "production_t": 101,
+    "sa2_code_2021": "110021194"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Mildura Surrounds",
+    "area_albers_sqkm": 21568.7961,
+    "total_area_ha": 116.7,
+    "local_value_dollar": 3517027,
+    "bearing_area_ha": 114.9,
+    "production_t": 599,
+    "sa2_code_2021": "215021398"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Swan Hill Surrounds",
+    "area_albers_sqkm": 5759.5788,
+    "total_area_ha": 438.5,
+    "local_value_dollar": 10806248,
+    "bearing_area_ha": 362.7,
+    "production_t": 1841,
+    "sa2_code_2021": "215031405"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Taree Surrounds",
+    "area_albers_sqkm": 3344.9329,
+    "total_area_ha": 53.2,
+    "local_value_dollar": 1813927,
+    "bearing_area_ha": 53.2,
+    "production_t": 326,
+    "sa2_code_2021": "108051170"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Deniliquin Surrounds",
+    "area_albers_sqkm": 18337.9454,
+    "total_area_ha": 51.9,
+    "local_value_dollar": 1431105,
+    "bearing_area_ha": 51.9,
+    "production_t": 244,
+    "sa2_code_2021": "109031183"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Maroochy Hinterland",
+    "area_albers_sqkm": 526.3125,
+    "total_area_ha": 20.2,
+    "local_value_dollar": 75795,
+    "bearing_area_ha": 20.2,
+    "production_t": 16,
+    "sa2_code_2021": "316061443"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Nambucca Heads Surrounds",
+    "area_albers_sqkm": 1356.0988,
+    "total_area_ha": 34,
+    "local_value_dollar": 1153518,
+    "bearing_area_ha": 34,
+    "production_t": 208,
+    "sa2_code_2021": "108021159"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Lockyer Valley - East",
+    "area_albers_sqkm": 741.5888,
+    "total_area_ha": 61.8,
+    "local_value_dollar": 1151155,
+    "bearing_area_ha": 61.7,
+    "production_t": 247,
+    "sa2_code_2021": "310021280"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Taree",
+    "area_albers_sqkm": 125.1186,
+    "total_area_ha": 1,
+    "local_value_dollar": 35564,
+    "bearing_area_ha": 1,
+    "production_t": 6,
+    "sa2_code_2021": "108051169"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Rockhampton Surrounds - North",
+    "area_albers_sqkm": 7572.5912,
+    "total_area_ha": 22.6,
+    "local_value_dollar": 839893,
+    "bearing_area_ha": 22.6,
+    "production_t": 184,
+    "sa2_code_2021": "308031219"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Bellingen",
+    "area_albers_sqkm": 1001.0481,
+    "total_area_ha": 54.6,
+    "local_value_dollar": 1708267,
+    "bearing_area_ha": 50.1,
+    "production_t": 307,
+    "sa2_code_2021": "104021083"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Turners Beach - Forth",
+    "area_albers_sqkm": 84.3944,
+    "total_area_ha": 15.6,
+    "local_value_dollar": 486797,
+    "bearing_area_ha": 14.6,
+    "production_t": 83,
+    "sa2_code_2021": "604021092"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Murwillumbah Surrounds",
+    "area_albers_sqkm": 908.2415,
+    "total_area_ha": 18,
+    "local_value_dollar": 107760,
+    "bearing_area_ha": 18,
+    "production_t": 22,
+    "sa2_code_2021": "112031252"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Port Macquarie Surrounds",
+    "area_albers_sqkm": 2871.7473,
+    "total_area_ha": 892.2,
+    "local_value_dollar": 27168835,
+    "bearing_area_ha": 868.7,
+    "production_t": 4887,
+    "sa2_code_2021": "108041165"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Dorrigo",
+    "area_albers_sqkm": 1987.6714,
+    "total_area_ha": 15.8,
+    "local_value_dollar": 533028,
+    "bearing_area_ha": 15.8,
+    "production_t": 96,
+    "sa2_code_2021": "104021087"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Sawtell - Boambee",
+    "area_albers_sqkm": 118.2251,
+    "total_area_ha": 1.6,
+    "local_value_dollar": 54945,
+    "bearing_area_ha": 1.6,
+    "production_t": 10,
+    "sa2_code_2021": "104021089"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Woolgoolga - Arrawarra",
+    "area_albers_sqkm": 270.2411,
+    "total_area_ha": 6,
+    "local_value_dollar": 206586,
+    "bearing_area_ha": 6,
+    "production_t": 37,
+    "sa2_code_2021": "104021091"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Dungog",
+    "area_albers_sqkm": 2249.9983,
+    "total_area_ha": 10.7,
+    "local_value_dollar": 270689,
+    "bearing_area_ha": 10.7,
+    "production_t": 49,
+    "sa2_code_2021": "106011110"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Cessnock Surrounds",
+    "area_albers_sqkm": 1570.4345,
+    "total_area_ha": 1.4,
+    "local_value_dollar": 49746,
+    "bearing_area_ha": 1.4,
+    "production_t": 9,
+    "sa2_code_2021": "106011109"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Tamborine - Canungra",
+    "area_albers_sqkm": 524.3914,
+    "total_area_ha": 96.8,
+    "local_value_dollar": 574557,
+    "bearing_area_ha": 96.8,
+    "production_t": 117,
+    "sa2_code_2021": "309041242"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Bangalow",
+    "area_albers_sqkm": 186.5293,
+    "total_area_ha": 2.4,
+    "local_value_dollar": 14550,
+    "bearing_area_ha": 2.4,
+    "production_t": 3,
+    "sa2_code_2021": "112011238"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Mullumbimby",
+    "area_albers_sqkm": 268.075,
+    "total_area_ha": 7.7,
+    "local_value_dollar": 46308,
+    "bearing_area_ha": 7.7,
+    "production_t": 9,
+    "sa2_code_2021": "112011243"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Casino Surrounds",
+    "area_albers_sqkm": 3950.1024,
+    "total_area_ha": 52.6,
+    "local_value_dollar": 249227,
+    "bearing_area_ha": 44,
+    "production_t": 51,
+    "sa2_code_2021": "112021245"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Bouldercombe",
+    "area_albers_sqkm": 1348.7805,
+    "total_area_ha": 2.8,
+    "local_value_dollar": 111246,
+    "bearing_area_ha": 2.8,
+    "production_t": 24,
+    "sa2_code_2021": "308031206"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Manjimup",
+    "area_albers_sqkm": 323.8187,
+    "total_area_ha": 940.8,
+    "local_value_dollar": 46045851,
+    "bearing_area_ha": 924.5,
+    "production_t": 7195,
+    "sa2_code_2021": "501031019"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Agnes Water - Miriam Vale",
+    "area_albers_sqkm": 3772.801,
+    "total_area_ha": 1.6,
+    "local_value_dollar": 62458,
+    "bearing_area_ha": 1.6,
+    "production_t": 14,
+    "sa2_code_2021": "308051530"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Flinders",
+    "area_albers_sqkm": 287.3793,
+    "total_area_ha": 23.2,
+    "local_value_dollar": 569690,
+    "bearing_area_ha": 23.2,
+    "production_t": 97,
+    "sa2_code_2021": "214021378"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Numurkah",
+    "area_albers_sqkm": 2320.6721,
+    "total_area_ha": 8.4,
+    "local_value_dollar": 263154,
+    "bearing_area_ha": 8.4,
+    "production_t": 45,
+    "sa2_code_2021": "216021413"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Highfields",
+    "area_albers_sqkm": 149.2804,
+    "total_area_ha": 100.8,
+    "local_value_dollar": 1868378,
+    "bearing_area_ha": 100.8,
+    "production_t": 401,
+    "sa2_code_2021": "317011450"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Lockyer Valley - West",
+    "area_albers_sqkm": 1480.2184,
+    "total_area_ha": 40.2,
+    "local_value_dollar": 765470,
+    "bearing_area_ha": 40.2,
+    "production_t": 164,
+    "sa2_code_2021": "317011451"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Daintree",
+    "area_albers_sqkm": 2231.2024,
+    "total_area_ha": 2.7,
+    "local_value_dollar": 138497,
+    "bearing_area_ha": 2.7,
+    "production_t": 26,
+    "sa2_code_2021": "306041164"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Northern Beaches",
+    "area_albers_sqkm": 1008.6848,
+    "total_area_ha": 12.4,
+    "local_value_dollar": 634451,
+    "bearing_area_ha": 12.4,
+    "production_t": 120,
+    "sa2_code_2021": "318021486"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Bargara - Burnett Heads",
+    "area_albers_sqkm": 144.6156,
+    "total_area_ha": 37.6,
+    "local_value_dollar": 1359678,
+    "bearing_area_ha": 37.6,
+    "production_t": 298,
+    "sa2_code_2021": "319011493"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Bundaberg Surrounds - North",
+    "area_albers_sqkm": 1273.6851,
+    "total_area_ha": 416.3,
+    "local_value_dollar": 15730511,
+    "bearing_area_ha": 406.7,
+    "production_t": 3444,
+    "sa2_code_2021": "319011498"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Kingaroy Surrounds - South",
+    "area_albers_sqkm": 2370.7257,
+    "total_area_ha": 108,
+    "local_value_dollar": 1945939,
+    "bearing_area_ha": 104.9,
+    "production_t": 418,
+    "sa2_code_2021": "319021507"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Gayndah - Mundubbera",
+    "area_albers_sqkm": 8513.3532,
+    "total_area_ha": 177.4,
+    "local_value_dollar": 6628794,
+    "bearing_area_ha": 174.9,
+    "production_t": 1451,
+    "sa2_code_2021": "319021503"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Gin Gin",
+    "area_albers_sqkm": 2355.4671,
+    "total_area_ha": 192.6,
+    "local_value_dollar": 6177452,
+    "bearing_area_ha": 175.3,
+    "production_t": 1352,
+    "sa2_code_2021": "319021504"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Kingaroy Surrounds - North",
+    "area_albers_sqkm": 4332.3354,
+    "total_area_ha": 0.5,
+    "local_value_dollar": 9028,
+    "bearing_area_ha": 0.5,
+    "production_t": 2,
+    "sa2_code_2021": "319021506"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Herberton",
+    "area_albers_sqkm": 9566.224,
+    "total_area_ha": 283,
+    "local_value_dollar": 13663156,
+    "bearing_area_ha": 278.1,
+    "production_t": 2581,
+    "sa2_code_2021": "306051167"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Clifton - Greenmount",
+    "area_albers_sqkm": 1263.947,
+    "total_area_ha": 2.2,
+    "local_value_dollar": 35957,
+    "bearing_area_ha": 2.2,
+    "production_t": 8,
+    "sa2_code_2021": "307031184"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Central Highlands - West",
+    "area_albers_sqkm": 41551.251,
+    "total_area_ha": 2.8,
+    "local_value_dollar": 105753,
+    "bearing_area_ha": 2.8,
+    "production_t": 23,
+    "sa2_code_2021": "308011191"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Esk",
+    "area_albers_sqkm": 1889.6919,
+    "total_area_ha": 107,
+    "local_value_dollar": 2014377,
+    "bearing_area_ha": 107,
+    "production_t": 432,
+    "sa2_code_2021": "310021278"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Dalrymple",
+    "area_albers_sqkm": 68340.3051,
+    "total_area_ha": 3.6,
+    "local_value_dollar": 184036,
+    "bearing_area_ha": 3.6,
+    "production_t": 35,
+    "sa2_code_2021": "318011463"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Burdekin",
+    "area_albers_sqkm": 4878.6303,
+    "total_area_ha": 2.9,
+    "local_value_dollar": 149088,
+    "bearing_area_ha": 2.9,
+    "production_t": 28,
+    "sa2_code_2021": "318011461"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Nanango",
+    "area_albers_sqkm": 1648.736,
+    "total_area_ha": 234.4,
+    "local_value_dollar": 4135251,
+    "bearing_area_ha": 229.3,
+    "production_t": 887,
+    "sa2_code_2021": "319021509"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Kilkivan",
+    "area_albers_sqkm": 3219.4645,
+    "total_area_ha": 1.1,
+    "local_value_dollar": 4238,
+    "bearing_area_ha": 1.1,
+    "production_t": 1,
+    "sa2_code_2021": "319031515"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Kilcoy",
+    "area_albers_sqkm": 2863.2647,
+    "total_area_ha": 9.6,
+    "local_value_dollar": 173945,
+    "bearing_area_ha": 9.6,
+    "production_t": 37,
+    "sa2_code_2021": "313031370"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Gympie Surrounds",
+    "area_albers_sqkm": 2544.6626,
+    "total_area_ha": 127.5,
+    "local_value_dollar": 474494,
+    "bearing_area_ha": 126.6,
+    "production_t": 101,
+    "sa2_code_2021": "319031514"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Beechboro",
+    "area_albers_sqkm": 47.1105,
+    "total_area_ha": 2.2,
+    "local_value_dollar": 111307,
+    "bearing_area_ha": 2.2,
+    "production_t": 17,
+    "sa2_code_2021": "504031057"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Maryborough Surrounds - South",
+    "area_albers_sqkm": 3823.1905,
+    "total_area_ha": 11.9,
+    "local_value_dollar": 444771,
+    "bearing_area_ha": 11.4,
+    "production_t": 97,
+    "sa2_code_2021": "319051525"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Beerwah",
+    "area_albers_sqkm": 148.6221,
+    "total_area_ha": 36.1,
+    "local_value_dollar": 120869,
+    "bearing_area_ha": 36.1,
+    "production_t": 26,
+    "sa2_code_2021": "316061439"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Caloundra Hinterland",
+    "area_albers_sqkm": 459.3262,
+    "total_area_ha": 7,
+    "local_value_dollar": 26120,
+    "bearing_area_ha": 7,
+    "production_t": 6,
+    "sa2_code_2021": "316061440"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Glass House Mountains",
+    "area_albers_sqkm": 184.2288,
+    "total_area_ha": 53.4,
+    "local_value_dollar": 200018,
+    "bearing_area_ha": 53.4,
+    "production_t": 42,
+    "sa2_code_2021": "316061441"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Noosa Hinterland",
+    "area_albers_sqkm": 820.066,
+    "total_area_ha": 44.7,
+    "local_value_dollar": 167587,
+    "bearing_area_ha": 44.7,
+    "production_t": 36,
+    "sa2_code_2021": "316081549"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Guanaba - Springbrook",
+    "area_albers_sqkm": 303.6558,
+    "total_area_ha": 17.1,
+    "local_value_dollar": 101893,
+    "bearing_area_ha": 17.1,
+    "production_t": 21,
+    "sa2_code_2021": "309041241"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Strathalbyn Surrounds",
+    "area_albers_sqkm": 1517.7954,
+    "total_area_ha": 47.5,
+    "local_value_dollar": 1309685,
+    "bearing_area_ha": 47.5,
+    "production_t": 223,
+    "sa2_code_2021": "407011147"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Loxton",
+    "area_albers_sqkm": 146.0888,
+    "total_area_ha": 8.7,
+    "local_value_dollar": 286009,
+    "bearing_area_ha": 8.6,
+    "production_t": 49,
+    "sa2_code_2021": "407031162"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Mannum",
+    "area_albers_sqkm": 3287.9008,
+    "total_area_ha": 2.2,
+    "local_value_dollar": 72284,
+    "bearing_area_ha": 2.2,
+    "production_t": 12,
+    "sa2_code_2021": "407031164"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Murray Bridge Surrounds",
+    "area_albers_sqkm": 1924.5348,
+    "total_area_ha": 11.6,
+    "local_value_dollar": 386775,
+    "bearing_area_ha": 11.6,
+    "production_t": 66,
+    "sa2_code_2021": "407031166"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Busselton Surrounds",
+    "area_albers_sqkm": 1227.064,
+    "total_area_ha": 546.8,
+    "local_value_dollar": 27019648,
+    "bearing_area_ha": 538.7,
+    "production_t": 4222,
+    "sa2_code_2021": "501011003"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Augusta",
+    "area_albers_sqkm": 2106.5915,
+    "total_area_ha": 80.4,
+    "local_value_dollar": 3446814,
+    "bearing_area_ha": 79.3,
+    "production_t": 539,
+    "sa2_code_2021": "501011001"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Harvey",
+    "area_albers_sqkm": 1660.6331,
+    "total_area_ha": 51.9,
+    "local_value_dollar": 2285900,
+    "bearing_area_ha": 50.5,
+    "production_t": 357,
+    "sa2_code_2021": "501021014"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Baldivis - South",
+    "area_albers_sqkm": 30.0095,
+    "total_area_ha": 5.6,
+    "local_value_dollar": 286038,
+    "bearing_area_ha": 5.6,
+    "production_t": 45,
+    "sa2_code_2021": "507051313"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Albany Surrounds",
+    "area_albers_sqkm": 4009.0591,
+    "total_area_ha": 11.8,
+    "local_value_dollar": 602509,
+    "bearing_area_ha": 11.8,
+    "production_t": 94,
+    "sa2_code_2021": "509011226"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Plantagenet",
+    "area_albers_sqkm": 4383.8752,
+    "total_area_ha": 9.2,
+    "local_value_dollar": 454082,
+    "bearing_area_ha": 9.2,
+    "production_t": 71,
+    "sa2_code_2021": "509011234"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Gingin - Dandaragan",
+    "area_albers_sqkm": 9919.9306,
+    "total_area_ha": 548.7,
+    "local_value_dollar": 9678225,
+    "bearing_area_ha": 273.1,
+    "production_t": 1512,
+    "sa2_code_2021": "509021239"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Burnie - Ulverstone Surrounds",
+    "area_albers_sqkm": 1364.2465,
+    "total_area_ha": 14.2,
+    "local_value_dollar": 448683,
+    "bearing_area_ha": 14.1,
+    "production_t": 76,
+    "sa2_code_2021": "604011076"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Mundaring",
+    "area_albers_sqkm": 118.6696,
+    "total_area_ha": 1.7,
+    "local_value_dollar": 87611,
+    "bearing_area_ha": 1.7,
+    "production_t": 14,
+    "sa2_code_2021": "504021053"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Wamuran",
+    "area_albers_sqkm": 89.386,
+    "total_area_ha": 2.2,
+    "local_value_dollar": 8346,
+    "bearing_area_ha": 2.2,
+    "production_t": 2,
+    "sa2_code_2021": "313021369"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Drouin",
+    "area_albers_sqkm": 326.806,
+    "total_area_ha": 2,
+    "local_value_dollar": 68491,
+    "bearing_area_ha": 2,
+    "production_t": 12,
+    "sa2_code_2021": "205011076"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Ayr",
+    "area_albers_sqkm": 69.8291,
+    "total_area_ha": 24.8,
+    "local_value_dollar": 983043,
+    "bearing_area_ha": 23.1,
+    "production_t": 186,
+    "sa2_code_2021": "318011460"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Nambour",
+    "area_albers_sqkm": 54.0249,
+    "total_area_ha": 27.6,
+    "local_value_dollar": 103629,
+    "bearing_area_ha": 27.6,
+    "production_t": 22,
+    "sa2_code_2021": "316071548"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Atherton",
+    "area_albers_sqkm": 235.1883,
+    "total_area_ha": 1411.4,
+    "local_value_dollar": 67613055,
+    "bearing_area_ha": 1350.6,
+    "production_t": 12772,
+    "sa2_code_2021": "306051166"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Bundaberg Surrounds - South",
+    "area_albers_sqkm": 2207.1816,
+    "total_area_ha": 2852.5,
+    "local_value_dollar": 98476716,
+    "bearing_area_ha": 2554.6,
+    "production_t": 21560,
+    "sa2_code_2021": "319011499"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Waikerie",
+    "area_albers_sqkm": 5557.8467,
+    "total_area_ha": 120.2,
+    "local_value_dollar": 3914511,
+    "bearing_area_ha": 118.2,
+    "production_t": 667,
+    "sa2_code_2021": "407031170"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Diddillibah - Rosemount",
+    "area_albers_sqkm": 31.3023,
+    "total_area_ha": 8.3,
+    "local_value_dollar": 31044,
+    "bearing_area_ha": 8.3,
+    "production_t": 7,
+    "sa2_code_2021": "316071546"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Ourimbah - Fountaindale",
+    "area_albers_sqkm": 114.1172,
+    "total_area_ha": 0.1,
+    "local_value_dollar": 3953,
+    "bearing_area_ha": 0.1,
+    "production_t": 1,
+    "sa2_code_2021": "102021051"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Merbein",
+    "area_albers_sqkm": 101.7138,
+    "total_area_ha": 8.1,
+    "local_value_dollar": 276930,
+    "bearing_area_ha": 8.1,
+    "production_t": 47,
+    "sa2_code_2021": "215021396"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Palmwoods",
+    "area_albers_sqkm": 115.2092,
+    "total_area_ha": 8.9,
+    "local_value_dollar": 33539,
+    "bearing_area_ha": 8.9,
+    "production_t": 7,
+    "sa2_code_2021": "316061444"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Red Cliffs",
+    "area_albers_sqkm": 246.7231,
+    "total_area_ha": 40.1,
+    "local_value_dollar": 1076702,
+    "bearing_area_ha": 37.8,
+    "production_t": 183,
+    "sa2_code_2021": "215021399"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Gracemere",
+    "area_albers_sqkm": 153.886,
+    "total_area_ha": 4.3,
+    "local_value_dollar": 161195,
+    "bearing_area_ha": 4.3,
+    "production_t": 35,
+    "sa2_code_2021": "308031210"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Carabooda - Pinjar",
+    "area_albers_sqkm": 371.0902,
+    "total_area_ha": 57.2,
+    "local_value_dollar": 2856204,
+    "bearing_area_ha": 57.2,
+    "production_t": 446,
+    "sa2_code_2021": "505031256"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Leeton",
+    "area_albers_sqkm": 373.8747,
+    "total_area_ha": 18.6,
+    "local_value_dollar": 380021,
+    "bearing_area_ha": 18.6,
+    "production_t": 65,
+    "sa2_code_2021": "113011258"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Cape York",
+    "area_albers_sqkm": 112961.0033,
+    "total_area_ha": 89.3,
+    "local_value_dollar": 2244653,
+    "bearing_area_ha": 48.2,
+    "production_t": 424,
+    "sa2_code_2021": "315011396"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Woodford - D'Aguilar",
+    "area_albers_sqkm": 525.0206,
+    "total_area_ha": 75.3,
+    "local_value_dollar": 282636,
+    "bearing_area_ha": 75.3,
+    "production_t": 60,
+    "sa2_code_2021": "313031371"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Kyabram",
+    "area_albers_sqkm": 738.862,
+    "total_area_ha": 2.8,
+    "local_value_dollar": 96066,
+    "bearing_area_ha": 2.8,
+    "production_t": 16,
+    "sa2_code_2021": "216011407"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Capel",
+    "area_albers_sqkm": 507.0606,
+    "total_area_ha": 307.2,
+    "local_value_dollar": 11956453,
+    "bearing_area_ha": 282.8,
+    "production_t": 1868,
+    "sa2_code_2021": "501021007"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Loxton Surrounds",
+    "area_albers_sqkm": 4790.3357,
+    "total_area_ha": 70.5,
+    "local_value_dollar": 1804431,
+    "bearing_area_ha": 69.6,
+    "production_t": 307,
+    "sa2_code_2021": "407031163"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Donnybrook - Balingup",
+    "area_albers_sqkm": 1559.856,
+    "total_area_ha": 139,
+    "local_value_dollar": 6854186,
+    "bearing_area_ha": 139,
+    "production_t": 1071,
+    "sa2_code_2021": "501031018"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Bundaberg North - Gooburrum",
+    "area_albers_sqkm": 53.8539,
+    "total_area_ha": 9.3,
+    "local_value_dollar": 365787,
+    "bearing_area_ha": 9.3,
+    "production_t": 80,
+    "sa2_code_2021": "319011497"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Eumundi - Yandina",
+    "area_albers_sqkm": 215.7895,
+    "total_area_ha": 4.9,
+    "local_value_dollar": 18348,
+    "bearing_area_ha": 4.9,
+    "production_t": 4,
+    "sa2_code_2021": "316071547"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "McKail - Willyung",
+    "area_albers_sqkm": 101.1998,
+    "total_area_ha": 15.9,
+    "local_value_dollar": 797654,
+    "bearing_area_ha": 15.9,
+    "production_t": 125,
+    "sa2_code_2021": "509011233"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Irymple",
+    "area_albers_sqkm": 88.5725,
+    "total_area_ha": 8,
+    "local_value_dollar": 276924,
+    "bearing_area_ha": 8,
+    "production_t": 47,
+    "sa2_code_2021": "215021395"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Kelso",
+    "area_albers_sqkm": 170.3565,
+    "total_area_ha": 6.4,
+    "local_value_dollar": 326673,
+    "bearing_area_ha": 6.4,
+    "production_t": 62,
+    "sa2_code_2021": "318021480"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Busselton - East",
+    "area_albers_sqkm": 81.9607,
+    "total_area_ha": 26.4,
+    "local_value_dollar": 1210756,
+    "bearing_area_ha": 26.4,
+    "production_t": 189,
+    "sa2_code_2021": "501011293"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Renmark Surrounds",
+    "area_albers_sqkm": 901.7859,
+    "total_area_ha": 153.1,
+    "local_value_dollar": 4572957,
+    "bearing_area_ha": 146.6,
+    "production_t": 779,
+    "sa2_code_2021": "407031168"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Rockhampton Surrounds - East",
+    "area_albers_sqkm": 680.8739,
+    "total_area_ha": 7.4,
+    "local_value_dollar": 290081,
+    "bearing_area_ha": 7.4,
+    "production_t": 64,
+    "sa2_code_2021": "308031218"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Gosnells",
+    "area_albers_sqkm": 15.5131,
+    "total_area_ha": 0.9,
+    "local_value_dollar": 47201,
+    "bearing_area_ha": 0.9,
+    "production_t": 7,
+    "sa2_code_2021": "506041134"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Gelorup - Stratham",
+    "area_albers_sqkm": 65.254,
+    "total_area_ha": 13.3,
+    "local_value_dollar": 682418,
+    "bearing_area_ha": 13.3,
+    "production_t": 107,
+    "sa2_code_2021": "501021252"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Mildura - South",
+    "area_albers_sqkm": 50.9981,
+    "total_area_ha": 6.7,
+    "local_value_dollar": 227735,
+    "bearing_area_ha": 6.7,
+    "production_t": 39,
+    "sa2_code_2021": "215021470"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Coffs Harbour - North",
+    "area_albers_sqkm": 25.6688,
+    "total_area_ha": 6.1,
+    "local_value_dollar": 204246,
+    "bearing_area_ha": 6.1,
+    "production_t": 37,
+    "sa2_code_2021": "104021084"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Maddington - Orange Grove - Martin",
+    "area_albers_sqkm": 53.2923,
+    "total_area_ha": 1.6,
+    "local_value_dollar": 83077,
+    "bearing_area_ha": 1.6,
+    "production_t": 13,
+    "sa2_code_2021": "506041136"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Tocumwal - Finley - Jerilderie",
+    "area_albers_sqkm": 5011.159,
+    "total_area_ha": 64,
+    "local_value_dollar": 834647,
+    "bearing_area_ha": 38.2,
+    "production_t": 142,
+    "sa2_code_2021": "109031185"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Busselton - West",
+    "area_albers_sqkm": 114.2793,
+    "total_area_ha": 15.5,
+    "local_value_dollar": 135401,
+    "bearing_area_ha": 3.9,
+    "production_t": 21,
+    "sa2_code_2021": "501011294"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Currumbin Valley - Tallebudgera",
+    "area_albers_sqkm": 114.3088,
+    "total_area_ha": 1.7,
+    "local_value_dollar": 10109,
+    "bearing_area_ha": 1.7,
+    "production_t": 2,
+    "sa2_code_2021": "309051243"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Mareeba",
+    "area_albers_sqkm": 480.2032,
+    "total_area_ha": 472,
+    "local_value_dollar": 21694584,
+    "bearing_area_ha": 444.9,
+    "production_t": 4098,
+    "sa2_code_2021": "306051170"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Chittering",
+    "area_albers_sqkm": 1219.9032,
+    "total_area_ha": 16.2,
+    "local_value_dollar": 824089,
+    "bearing_area_ha": 16.2,
+    "production_t": 129,
+    "sa2_code_2021": "509021236"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Darling Heights",
+    "area_albers_sqkm": 12.536,
+    "total_area_ha": 1.1,
+    "local_value_dollar": 22017,
+    "bearing_area_ha": 1.1,
+    "production_t": 5,
+    "sa2_code_2021": "317011446"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Carnarvon",
+    "area_albers_sqkm": 78.2669,
+    "total_area_ha": 8.8,
+    "local_value_dollar": 386551,
+    "bearing_area_ha": 7.7,
+    "production_t": 60,
+    "sa2_code_2021": "511021276"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Tweed Heads",
+    "area_albers_sqkm": 100.4343,
+    "total_area_ha": 2,
+    "local_value_dollar": 11907,
+    "bearing_area_ha": 2,
+    "production_t": 2,
+    "sa2_code_2021": "112031254"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Roleystone",
+    "area_albers_sqkm": 74.8096,
+    "total_area_ha": 19.6,
+    "local_value_dollar": 1003557,
+    "bearing_area_ha": 19.6,
+    "production_t": 157,
+    "sa2_code_2021": "506011116"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Kempsey Surrounds",
+    "area_albers_sqkm": 3627.2591,
+    "total_area_ha": 295.4,
+    "local_value_dollar": 10069244,
+    "bearing_area_ha": 293.4,
+    "production_t": 1811,
+    "sa2_code_2021": "108021156"
+   }
+  },
+  {
+   "attributes": {
+    "sa2_name_2021": "Barmera",
+    "area_albers_sqkm": 856.1907,
+    "total_area_ha": 2.6,
+    "local_value_dollar": 71774,
+    "bearing_area_ha": 2.4,
+    "production_t": 12,
+    "sa2_code_2021": "407031159"
+   }
+  }
+ ],
+ "exceededTransferLimit": false,
+ "globalIdFieldName": "globalid",
+ "objectIdFieldName": "objectid",
+ "fields": [
+  {
+   "modelName": "sa2_code_2021",
+   "defaultValue": null,
+   "name": "sa2_code_2021",
+   "length": 9,
+   "alias": "Statistical Areas Level 2 2021 code",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "modelName": "sa2_name_2021",
+   "defaultValue": null,
+   "name": "sa2_name_2021",
+   "length": 50,
+   "alias": "Statistical Areas Level 2 2021 name",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "modelName": "area_albers_sqkm",
+   "defaultValue": null,
+   "name": "area_albers_sqkm",
+   "alias": "Area in square kilometres",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "modelName": "total_area_ha",
+   "defaultValue": null,
+   "name": "total_area_ha",
+   "alias": "Total Area (hectares)",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "modelName": "bearing_area_ha",
+   "defaultValue": null,
+   "name": "bearing_area_ha",
+   "alias": "Bearing Area (hectares)",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "modelName": "production_t",
+   "defaultValue": null,
+   "name": "production_t",
+   "alias": "Production (tonnes)",
+   "type": "esriFieldTypeInteger"
+  },
+  {
+   "modelName": "local_value_dollar",
+   "defaultValue": null,
+   "name": "local_value_dollar",
+   "alias": "Local Value of Crop Sold (dollars)",
+   "type": "esriFieldTypeInteger"
+  }
+ ]
+}
