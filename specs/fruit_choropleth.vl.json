@@ -11,60 +11,172 @@
       "bind": {
         "input": "select",
         "name": "Fruit: ",
-        "options": ["All reported fruit", "Apples", "Avocados", "Bananas", "Blueberries", "Mandarins", "Mangoes", "Oranges", "Pears", "Strawberries", "Table grapes"]
+        "options": [
+          "All reported fruit",
+          "Apples",
+          "Avocados",
+          "Bananas",
+          "Blueberries",
+          "Mandarins",
+          "Mangoes",
+          "Oranges",
+          "Pears",
+          "Strawberries",
+          "Table grapes"
+        ]
       }
     }
   ],
-  "projection": {"type": "conicEqualArea", "parallels": [-18, -36], "rotate": [-133, 0]},
-  "data": {"url": "data/au_states.topojson", "format": {"type": "topojson", "feature": "states"}},
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -133,
+      0
+    ]
+  },
+  "data": {
+    "url": "data/au_states.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "states"
+    }
+  },
   "transform": [
-    {"calculate": "datum.properties.name + '|' + fruitChoice", "as": "joinKey"},
+    {
+      "calculate": "datum.properties.name + '|' + fruitChoice",
+      "as": "joinKey"
+    },
     {
       "lookup": "joinKey",
       "from": {
         "data": {
           "url": "data/fruit_state_density.csv",
-          "format": {"type": "csv", "parse": {"production_tonnes": "number", "land_area_km2": "number", "tonnes_per_km2": "number", "reported_categories": "number"}}
+          "format": {
+            "type": "csv",
+            "parse": {
+              "production_tonnes": "number",
+              "land_area_km2": "number",
+              "tonnes_per_km2": "number",
+              "reported_categories": "number"
+            }
+          }
         },
         "key": "key",
-        "fields": ["production_tonnes", "land_area_km2", "tonnes_per_km2", "reported_categories"]
-      }
-    },
-    {"calculate": "isValid(datum.production_tonnes) ? 'Reported' : 'Not reported for this fruit'", "as": "status"}
-  ],
-  "layer": [
-    {
-      "mark": {"type": "geoshape", "fill": "#e8eae7", "stroke": "#ffffff", "strokeWidth": 1.3},
-      "encoding": {
-        "tooltip": [
-          {"field": "properties.name", "type": "nominal", "title": "State / territory"},
-          {"field": "status", "type": "nominal", "title": "Data availability"}
+        "fields": [
+          "production_tonnes",
+          "land_area_km2",
+          "tonnes_per_km2",
+          "reported_categories"
         ]
       }
     },
     {
-      "transform": [{"filter": "isValid(datum.tonnes_per_km2)"}],
-      "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1.3},
+      "calculate": "isValid(datum.production_tonnes) ? 'Reported' : 'Not reported for this fruit'",
+      "as": "status"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e8eae7",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.3
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.name",
+            "type": "nominal",
+            "title": "State / territory"
+          },
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Data availability"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum.tonnes_per_km2)"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.3
+      },
       "encoding": {
         "color": {
           "field": "tonnes_per_km2",
           "type": "quantitative",
-          "scale": {"type": "linear", "zero": true, "range": ["#e0efeb", "#153f3b"]},
-          "legend": {"title": "Tonnes per km² of state land", "orient": "bottom", "direction": "horizontal", "format": ".2f", "gradientLength": 200, "tickCount": 4}
+          "scale": {
+            "type": "linear",
+            "zero": true,
+            "range": [
+              "#e0efeb",
+              "#153f3b"
+            ]
+          },
+          "legend": {
+            "title": "Tonnes per km\u00b2 of state land",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "format": ".2f",
+            "gradientLength": 200,
+            "tickCount": 4
+          }
         },
         "tooltip": [
-          {"field": "properties.name", "type": "nominal", "title": "State / territory"},
-          {"field": "production_tonnes", "type": "quantitative", "title": "Reported production (tonnes)", "format": ",.0f"},
-          {"field": "tonnes_per_km2", "type": "quantitative", "title": "Tonnes per km²", "format": ".3f"},
-          {"field": "land_area_km2", "type": "quantitative", "title": "State land area (km²)", "format": ",.0f"},
-          {"field": "reported_categories", "type": "quantitative", "title": "Reported fruit categories", "format": ".0f"}
+          {
+            "field": "properties.name",
+            "type": "nominal",
+            "title": "State / territory"
+          },
+          {
+            "field": "production_tonnes",
+            "type": "quantitative",
+            "title": "Reported production (tonnes)",
+            "format": ",.0f"
+          },
+          {
+            "field": "tonnes_per_km2",
+            "type": "quantitative",
+            "title": "Tonnes per km\u00b2",
+            "format": ".3f"
+          },
+          {
+            "field": "land_area_km2",
+            "type": "quantitative",
+            "title": "State land area (km\u00b2)",
+            "format": ",.0f"
+          },
+          {
+            "field": "reported_categories",
+            "type": "quantitative",
+            "title": "Reported fruit categories",
+            "format": ".0f"
+          }
         ]
       }
     }
   ],
   "config": {
-    "view": {"stroke": null},
-    "font": "Source Sans 3",
-    "legend": {"labelFontSize": 12, "titleFontSize": 13, "titleFontWeight": "normal"}
+    "view": {
+      "stroke": null
+    },
+    "font": "Nunito Sans",
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleFontWeight": "normal"
+    }
   }
 }

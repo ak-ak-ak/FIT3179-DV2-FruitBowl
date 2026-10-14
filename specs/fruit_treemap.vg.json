@@ -1,77 +1,237 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "Area encodes nominal farmgate value across the 29 fruit categories reported in ABS Table 2, 2024-25. Colours group related fruits; value is not supermarket price.",
+  "description": "Area encodes nominal farmgate value of 29 reported fruits. Colours identify ten comparison fruits; other categories are grey.",
   "width": 1000,
   "height": 430,
   "padding": 0,
-  "autosize": {"type": "pad", "resize": true},
+  "autosize": {
+    "type": "pad",
+    "resize": true
+  },
   "background": "transparent",
   "data": [
     {
       "name": "tree",
       "url": "data/fruit_value_tree.json",
       "transform": [
-        {"type": "stratify", "key": "id", "parentKey": "parent"},
-        {"type": "treemap", "field": "value", "method": "squarify", "sort": {"field": "value", "order": "descending"}, "size": [{"signal": "width"}, {"signal": "height"}], "paddingInner": 2, "round": false}
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "treemap",
+          "field": "value",
+          "method": "squarify",
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "size": [
+            {
+              "signal": "width"
+            },
+            {
+              "signal": "height"
+            }
+          ],
+          "paddingInner": 2,
+          "round": false
+        }
       ]
     },
-    {"name": "leaves", "source": "tree", "transform": [{"type": "filter", "expr": "datum.depth === 1"}]},
-    {"name": "nameLabels", "source": "leaves", "transform": [{"type": "filter", "expr": "datum.x1 - datum.x0 >= 72 && datum.y1 - datum.y0 >= 30"}]},
-    {"name": "valueLabels", "source": "leaves", "transform": [{"type": "filter", "expr": "datum.x1 - datum.x0 >= 72 && datum.y1 - datum.y0 >= 52"}]}
+    {
+      "name": "leaves",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1"
+        }
+      ]
+    },
+    {
+      "name": "nameLabels",
+      "source": "leaves",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.x1 - datum.x0 >= 72 && datum.y1 - datum.y0 >= 30"
+        }
+      ]
+    },
+    {
+      "name": "valueLabels",
+      "source": "leaves",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.x1 - datum.x0 >= 72 && datum.y1 - datum.y0 >= 52"
+        }
+      ]
+    }
   ],
   "scales": [
     {
       "name": "fruitGroup",
       "type": "ordinal",
-      "domain": ["Berries", "Citrus", "Apples and pears", "Stone fruit", "Tropical fruit", "Melons", "Other fruit"],
-      "range": ["#8b456c", "#f0c562", "#73a8bf", "#d58081", "#81b79a", "#b6c76d", "#c8ced5"]
+      "domain": [
+        "Apples",
+        "Pears",
+        "Table grapes",
+        "Oranges",
+        "Mandarins",
+        "Bananas",
+        "Mangoes",
+        "Avocados",
+        "Strawberries",
+        "Blueberries"
+      ],
+      "range": [
+        "#ce6777",
+        "#799e55",
+        "#716096",
+        "#dd952f",
+        "#d37339",
+        "#b89d32",
+        "#cb624f",
+        "#398965",
+        "#bc466d",
+        "#506794"
+      ]
     }
   ],
-  "legends": [
-    {"fill": "fruitGroup", "orient": "bottom", "direction": "horizontal", "columns": {"signal": "width < 500 ? 2 : 4"}, "labelFont": "Source Sans 3", "labelFontSize": 12, "symbolType": "square", "symbolSize": 90, "rowPadding": 7, "columnPadding": 18, "offset": 16}
-  ],
+  "legends": [],
   "marks": [
     {
       "type": "rect",
       "name": "fruitTiles",
-      "from": {"data": "leaves"},
+      "from": {
+        "data": "leaves"
+      },
       "encode": {
-        "enter": {"stroke": {"value": "#ffffff"}, "strokeWidth": {"value": 1}},
-        "update": {
-          "x": {"field": "x0"}, "y": {"field": "y0"}, "x2": {"field": "x1"}, "y2": {"field": "y1"},
-          "fill": {"scale": "fruitGroup", "field": "group"},
-          "tooltip": {"signal": "{'Fruit': datum.fruit, 'Farmgate value': '$' + format(datum.value, ',.1f') + ' million', 'Share of reported value': format(datum.share_pct, '.1f') + '%', 'Year': '2024–25'}"}
+        "enter": {
+          "stroke": {
+            "value": "#ffffff"
+          },
+          "strokeWidth": {
+            "value": 1
+          }
         },
-        "hover": {"stroke": {"value": "#263a32"}, "strokeWidth": {"value": 2}},
-        "leave": {"stroke": {"value": "#ffffff"}, "strokeWidth": {"value": 1}}
-      }
-    },
-    {
-      "type": "text",
-      "interactive": false,
-      "from": {"data": "nameLabels"},
-      "encode": {
         "update": {
-          "x": {"signal": "datum.x0 + 8"}, "y": {"signal": "datum.y0 + 10"},
-          "text": {"field": "fruit"}, "align": {"value": "left"}, "baseline": {"value": "top"},
-          "font": {"value": "Source Sans 3"}, "fontSize": {"value": 13}, "fontWeight": {"value": 600},
-          "fill": {"signal": "datum.group === 'Berries' ? '#ffffff' : '#21352b'"},
-          "limit": {"signal": "datum.x1 - datum.x0 - 16"}
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "signal": "indexof([\"Apples\", \"Pears\", \"Table grapes\", \"Oranges\", \"Mandarins\", \"Bananas\", \"Mangoes\", \"Avocados\", \"Strawberries\", \"Blueberries\"], datum.fruit) >= 0 ? scale('fruitGroup', datum.fruit) : '#c5cbd2'"
+          },
+          "tooltip": {
+            "signal": "{'Fruit': datum.fruit, 'Farmgate value': '$' + format(datum.value, ',.1f') + ' million', 'Share of reported value': format(datum.share_pct, '.1f') + '%', 'Year': '2024\u201325'}"
+          }
+        },
+        "hover": {
+          "stroke": {
+            "value": "#263a32"
+          },
+          "strokeWidth": {
+            "value": 2
+          }
+        },
+        "leave": {
+          "stroke": {
+            "value": "#ffffff"
+          },
+          "strokeWidth": {
+            "value": 1
+          }
         }
       }
     },
     {
       "type": "text",
       "interactive": false,
-      "from": {"data": "valueLabels"},
+      "from": {
+        "data": "nameLabels"
+      },
       "encode": {
         "update": {
-          "x": {"signal": "datum.x0 + 8"}, "y": {"signal": "datum.y0 + 30"},
-          "text": {"signal": "'$' + format(datum.value, ',.1f') + 'm'"},
-          "align": {"value": "left"}, "baseline": {"value": "top"},
-          "font": {"value": "Source Sans 3"}, "fontSize": {"value": 12},
-          "fill": {"signal": "datum.group === 'Berries' ? '#ffffff' : '#21352b'"},
-          "limit": {"signal": "datum.x1 - datum.x0 - 16"}
+          "x": {
+            "signal": "datum.x0 + 8"
+          },
+          "y": {
+            "signal": "datum.y0 + 10"
+          },
+          "text": {
+            "field": "fruit"
+          },
+          "align": {
+            "value": "left"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "font": {
+            "value": "Nunito Sans"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fontWeight": {
+            "value": 600
+          },
+          "fill": {
+            "signal": "indexof(['Table grapes','Avocados','Strawberries','Blueberries'],datum.fruit) >= 0 ? '#ffffff' : '#172c23'"
+          },
+          "limit": {
+            "signal": "datum.x1 - datum.x0 - 16"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "from": {
+        "data": "valueLabels"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 8"
+          },
+          "y": {
+            "signal": "datum.y0 + 30"
+          },
+          "text": {
+            "signal": "'$' + format(datum.value, ',.1f') + 'm'"
+          },
+          "align": {
+            "value": "left"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "font": {
+            "value": "Nunito Sans"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fill": {
+            "signal": "indexof(['Table grapes','Avocados','Strawberries','Blueberries'],datum.fruit) >= 0 ? '#ffffff' : '#172c23'"
+          },
+          "limit": {
+            "signal": "datum.x1 - datum.x0 - 16"
+          }
         }
       }
     }

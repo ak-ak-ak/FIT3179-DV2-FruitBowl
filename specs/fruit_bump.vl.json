@@ -18,7 +18,7 @@
     "view": {
       "stroke": null
     },
-    "font": "Source Sans 3",
+    "font": "Nunito Sans",
     "axis": {
       "labelFontSize": 12,
       "titleFontSize": 13,
@@ -93,7 +93,7 @@
         "title": null,
         "labelAngle": 0,
         "ticks": false,
-        "labelFontSize": 11
+        "labelFontSize": 12
       }
     },
     "y": {
@@ -140,16 +140,16 @@
           "Blueberries"
         ],
         "range": [
-          "#3f7892",
-          "#8b672d",
-          "#72518b",
-          "#d28b26",
-          "#9a5c2e",
-          "#b79826",
-          "#b14a43",
-          "#438764",
-          "#ba4266",
-          "#4d59a1"
+          "#ce6777",
+          "#799e55",
+          "#716096",
+          "#dd952f",
+          "#d37339",
+          "#b89d32",
+          "#cb624f",
+          "#398965",
+          "#bc466d",
+          "#506794"
         ]
       },
       "legend": {

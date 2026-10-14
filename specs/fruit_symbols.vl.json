@@ -8,76 +8,256 @@
     {
       "name": "fruitChoice",
       "value": "Bananas",
-      "bind": {"input": "select", "name": "Fruit: ", "options": ["Bananas", "Avocados"]}
-    },
-    {
-      "name": "regionFocus",
-      "value": "Australia",
-      "bind": {"input": "select", "name": "Region: ", "options": ["Australia", "North Queensland", "South-west WA"]}
-    }
-  ],
-  "projection": {
-    "type": "conicEqualArea",
-    "parallels": [-18, -36],
-    "rotate": [-133, 0],
-    "center": {"expr": "regionFocus === 'North Queensland' ? [12, -18] : regionFocus === 'South-west WA' ? [-17, -33] : [0, -28]"},
-    "scale": {"expr": "regionFocus === 'North Queensland' ? min(width * 4, height * 4) : regionFocus === 'South-west WA' ? min(width * 6, height * 8) : width * 0.72"},
-    "translate": {"expr": "[width / 2, height / 2]"}
-  },
-  "layer": [
-    {
-      "data": {"url": "data/au_states.topojson", "format": {"type": "topojson", "feature": "states"}},
-      "mark": {"type": "geoshape", "fill": "#e8eae7", "stroke": "#ffffff", "strokeWidth": 1, "clip": true}
-    },
-    {
-      "data": {"url": "data/fruit_regions_vega.geojson", "format": {"type": "json", "property": "features"}},
-      "transform": [
-        {"filter": "datum.properties.fruit === fruitChoice"},
-        {"calculate": "geoCentroid(null, datum)", "as": "centroid"},
-        {"calculate": "datum.centroid[0]", "as": "longitude"},
-        {"calculate": "datum.centroid[1]", "as": "latitude"}
-      ],
-      "mark": {"type": "circle", "opacity": 0.64, "stroke": "#444943", "strokeWidth": 0.6, "clip": true},
-      "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
-        "color": {"condition": {"test": "fruitChoice === 'Bananas'", "value": "#daac30"}, "value": "#b94d65"},
-        "size": {
-          "field": "properties.production_t",
-          "type": "quantitative",
-          "scale": {"type": "linear", "domain": [0, 125000], "range": [0, 2500]},
-          "legend": {"title": "Fruit produced (tonnes)", "orient": "bottom", "direction": "horizontal", "values": [1000, 20000, 100000], "format": ",.0f", "symbolFillColor": {"expr": "fruitChoice === 'Bananas' ? '#daac30' : '#b94d65'"}}
-        },
-        "order": {"field": "properties.production_t", "type": "quantitative", "sort": "descending"},
-        "tooltip": [
-          {"field": "properties.fruit", "type": "nominal", "title": "Fruit"},
-          {"field": "properties.sa2_name_2021", "type": "nominal", "title": "Region"},
-          {"field": "properties.production_t", "type": "quantitative", "title": "Production (tonnes)", "format": ",.0f"}
+      "bind": {
+        "input": "select",
+        "name": "Fruit: ",
+        "options": [
+          "Bananas",
+          "Avocados"
         ]
       }
     },
     {
-      "data": {"url": "data/fruit_regions_vega.geojson", "format": {"type": "json", "property": "features"}},
+      "name": "regionFocus",
+      "value": "Australia",
+      "bind": {
+        "input": "select",
+        "name": "Region: ",
+        "options": [
+          "Australia",
+          "North Queensland",
+          "South-west WA"
+        ]
+      }
+    }
+  ],
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -133,
+      0
+    ],
+    "center": {
+      "expr": "regionFocus === 'North Queensland' ? [12, -18] : regionFocus === 'South-west WA' ? [-17, -33] : [0, -28]"
+    },
+    "scale": {
+      "expr": "regionFocus === 'North Queensland' ? min(width * 4, height * 4) : regionFocus === 'South-west WA' ? min(width * 6, height * 8) : width * 0.72"
+    },
+    "translate": {
+      "expr": "[width / 2, height / 2]"
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/au_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e8eae7",
+        "stroke": "#ffffff",
+        "strokeWidth": 1,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "url": "data/fruit_regions_vega.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
       "transform": [
-        {"filter": "datum.properties.fruit === fruitChoice"},
-        {"window": [{"op": "rank", "as": "production_rank"}], "sort": [{"field": "properties.production_t", "order": "descending"}]},
-        {"filter": "datum.production_rank <= 2"},
-        {"calculate": "geoCentroid(null, datum)", "as": "centroid"},
-        {"calculate": "datum.centroid[0]", "as": "longitude"},
-        {"calculate": "datum.centroid[1]", "as": "latitude"},
-        {"calculate": "datum.properties.sa2_code_2021 === '319011499' ? 'Bundaberg South' : datum.properties.sa2_name_2021", "as": "label"}
+        {
+          "filter": "datum.properties.fruit === fruitChoice"
+        },
+        {
+          "calculate": "geoCentroid(null, datum)",
+          "as": "centroid"
+        },
+        {
+          "calculate": "datum.centroid[0]",
+          "as": "longitude"
+        },
+        {
+          "calculate": "datum.centroid[1]",
+          "as": "latitude"
+        }
       ],
-      "mark": {"type": "text", "align": {"expr": "datum.longitude > 130 ? 'right' : 'left'"}, "dx": {"expr": "datum.longitude > 130 ? -18 : 18"}, "dy": {"expr": "datum.properties.fruit === 'Bananas' && datum.production_rank === 1 ? -35 : -12"}, "fontSize": 12, "fontWeight": 600, "color": "#333b33", "clip": true},
+      "mark": {
+        "type": "circle",
+        "opacity": 0.64,
+        "stroke": "#444943",
+        "strokeWidth": 0.6,
+        "clip": true
+      },
       "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
-        "text": {"field": "label", "type": "nominal"}
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "color": {
+          "condition": {
+            "test": "fruitChoice === 'Bananas'",
+            "value": "#daac30"
+          },
+          "value": "#b94d65"
+        },
+        "size": {
+          "field": "properties.production_t",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear",
+            "domain": [
+              0,
+              125000
+            ],
+            "range": [
+              0,
+              2500
+            ]
+          },
+          "legend": {
+            "title": "Fruit produced (tonnes)",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "values": [
+              1000,
+              20000,
+              100000
+            ],
+            "format": ",.0f",
+            "symbolFillColor": {
+              "expr": "fruitChoice === 'Bananas' ? '#daac30' : '#b94d65'"
+            }
+          }
+        },
+        "order": {
+          "field": "properties.production_t",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "tooltip": [
+          {
+            "field": "properties.fruit",
+            "type": "nominal",
+            "title": "Fruit"
+          },
+          {
+            "field": "properties.sa2_name_2021",
+            "type": "nominal",
+            "title": "Region"
+          },
+          {
+            "field": "properties.production_t",
+            "type": "quantitative",
+            "title": "Production (tonnes)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/fruit_regions_vega.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.fruit === fruitChoice"
+        },
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "production_rank"
+            }
+          ],
+          "sort": [
+            {
+              "field": "properties.production_t",
+              "order": "descending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.production_rank <= 2"
+        },
+        {
+          "calculate": "geoCentroid(null, datum)",
+          "as": "centroid"
+        },
+        {
+          "calculate": "datum.centroid[0]",
+          "as": "longitude"
+        },
+        {
+          "calculate": "datum.centroid[1]",
+          "as": "latitude"
+        },
+        {
+          "calculate": "datum.properties.sa2_code_2021 === '319011499' ? 'Bundaberg South' : datum.properties.sa2_name_2021",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": {
+          "expr": "datum.longitude > 130 ? 'right' : 'left'"
+        },
+        "dx": {
+          "expr": "datum.longitude > 130 ? -18 : 18"
+        },
+        "dy": {
+          "expr": "datum.properties.fruit === 'Bananas' && datum.production_rank === 1 ? -35 : -12"
+        },
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#333b33",
+        "clip": true
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
       }
     }
   ],
   "config": {
-    "view": {"stroke": null},
-    "font": "Source Sans 3",
-    "legend": {"labelFontSize": 12, "titleFontSize": 13, "titleFontWeight": "normal", "labelLimit": 160}
+    "view": {
+      "stroke": null
+    },
+    "font": "Nunito Sans",
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "titleFontWeight": "normal",
+      "labelLimit": 160
+    }
   }
 }

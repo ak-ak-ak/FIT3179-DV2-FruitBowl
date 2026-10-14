@@ -5,10 +5,9 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FRUITS = ["Apples", "Pears", "Table grapes", "Oranges", "Mandarins", "Bananas",
-          "Mangoes", "Avocados", "Strawberries", "Blueberries"]
-PALETTE = ["#3f7892", "#8b672d", "#72518b", "#d28b26", "#9a5c2e", "#b79826",
-           "#b14a43", "#438764", "#ba4266", "#4d59a1"]
+THEME = json.loads((ROOT / "data/chart_theme.json").read_text())
+FRUITS = THEME["fruits"]
+PALETTE = THEME["colors"]
 YEARS = ["2020-21", "2021-22", "2022-23", "2023-24", "2024-25"]
 DATA = {"url": "data/fruit_history.csv", "format": {"type": "csv", "parse": {
     "production_tonnes": "number", "farmgate_value_aud_million": "number"}}}
@@ -16,7 +15,7 @@ COLOR = {"field": "fruit", "type": "nominal", "scale": {"domain": FRUITS, "range
          "legend": {"title": None, "orient": "bottom", "direction": "horizontal",
                     "columns": {"expr": "width < 500 ? 2 : 5"}, "labelLimit": 120,
                     "columnPadding": 14, "rowPadding": 7}}
-CONFIG = {"view": {"stroke": None}, "font": "Source Sans 3",
+CONFIG = {"view": {"stroke": None}, "font": "Nunito Sans",
           "axis": {"labelFontSize": 12, "titleFontSize": 13, "titleFontWeight": "normal",
                    "titlePadding": 12, "gridColor": "#e7ece8", "domain": False, "tickColor": "#c4cec6"},
           "legend": {"labelFontSize": 12, "symbolStrokeWidth": 3}}
@@ -72,7 +71,7 @@ bump["transform"] = [{"window": [{"op": "rank", "as": "value_rank"}],
                       "sort": [{"field": "farmgate_value_aud_million", "order": "descending"}], "groupby": ["year"]}]
 bump["encoding"] = {
     "x": {"field": "year", "type": "ordinal", "sort": YEARS, "scale": {"padding": 0.5},
-          "axis": {"title": None, "labelAngle": 0, "ticks": False, "labelFontSize": 11}},
+          "axis": {"title": None, "labelAngle": 0, "ticks": False, "labelFontSize": 12}},
     "y": {"field": "value_rank", "type": "quantitative", "scale": {"domain": [1, 10], "reverse": True},
           "axis": {"title": "Rank by farmgate value", "values": list(range(1, 11)), "format": ".0f"}},
     "color": deepcopy(COLOR), "opacity": opacity("bumpFruit"),
@@ -102,7 +101,7 @@ trajectory["layer"] = [
     {"mark": {"type": "line", "strokeWidth": 2.5}, "encoding": {"order": {"field": "year", "type": "ordinal", "sort": "ascending"}}},
     {"mark": {"type": "point", "filled": True, "size": 90}},
     {"mark": {"type": "text", "align": "left", "dx": 7,
-              "dy": {"expr": "width < 500 && datum.fruit === 'Blueberries' && datum.year === '2023-24' ? 16 : -12"}, "fontSize": 11},
+              "dy": {"expr": "width < 500 && datum.fruit === 'Blueberries' && datum.year === '2023-24' ? 16 : -12"}, "fontSize": 12},
      "encoding": {"text": {"field": "year", "type": "ordinal"}}}
 ]
 save("fruit_trajectory.vl.json", trajectory)
