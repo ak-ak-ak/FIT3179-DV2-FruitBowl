@@ -1,0 +1,92 @@
+[
+  {
+    "category": "Table grapes",
+    "change": 243.1,
+    "low": 0.0,
+    "high": 243.1,
+    "after": 243.1,
+    "kind": "Increase",
+    "members": "Table grapes",
+    "next": "Avocados"
+  },
+  {
+    "category": "Avocados",
+    "change": 230.0,
+    "low": 243.1,
+    "high": 473.1,
+    "after": 473.1,
+    "kind": "Increase",
+    "members": "Avocados",
+    "next": "Mandarins"
+  },
+  {
+    "category": "Mandarins",
+    "change": 132.6,
+    "low": 473.1,
+    "high": 605.7,
+    "after": 605.7,
+    "kind": "Increase",
+    "members": "Mandarins",
+    "next": "Bananas"
+  },
+  {
+    "category": "Bananas",
+    "change": 122.6,
+    "low": 605.7,
+    "high": 728.3,
+    "after": 728.3,
+    "kind": "Increase",
+    "members": "Bananas",
+    "next": "Blueberries"
+  },
+  {
+    "category": "Blueberries",
+    "change": 121.0,
+    "low": 728.3,
+    "high": 849.3,
+    "after": 849.3,
+    "kind": "Increase",
+    "members": "Blueberries",
+    "next": "Other changes"
+  },
+  {
+    "category": "Other changes",
+    "change": 684.9,
+    "low": 849.3,
+    "high": 1534.2,
+    "after": 1534.2,
+    "kind": "Increase",
+    "members": "Apples, Apricots, Cherries, Custard Apples, Dried grapes, Grapefruit, Kiwifruit, Lemons and limes, Lychees, Mangoes, Muskmelons, Nashi, Nectarines and peaches, Oranges, Papaya/Pawpaw, Passionfruit, Persimmons, Pineapples, Plums, Rubus berries, Strawberries, Watermelons",
+    "next": "Olives"
+  },
+  {
+    "category": "Olives",
+    "change": -20.1,
+    "low": 1514.1,
+    "high": 1534.2,
+    "after": 1514.1,
+    "kind": "Decrease",
+    "members": "Olives",
+    "next": "Pears"
+  },
+  {
+    "category": "Pears",
+    "change": -28.1,
+    "low": 1486.0,
+    "high": 1514.1,
+    "after": 1486.0,
+    "kind": "Decrease",
+    "members": "Pears",
+    "next": "Net change"
+  },
+  {
+    "category": "Net change",
+    "change": 1486.0,
+    "low": 0,
+    "high": 1486.0,
+    "after": 1486.0,
+    "kind": "Net change",
+    "members": "All 29 reported categories",
+    "next": null
+  }
+]

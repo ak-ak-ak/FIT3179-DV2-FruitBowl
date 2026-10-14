@@ -1,0 +1,7 @@
+{
+  "font": "Nunito Sans",
+  "fruits": ["Apples", "Pears", "Table grapes", "Oranges", "Mandarins", "Bananas", "Mangoes", "Avocados", "Strawberries", "Blueberries"],
+  "colors": ["#ce6777", "#799e55", "#716096", "#dd952f", "#d37339", "#b89d32", "#cb624f", "#398965", "#bc466d", "#506794"],
+  "other": "#c5cbd2",
+  "ink": "#263b32"
+}

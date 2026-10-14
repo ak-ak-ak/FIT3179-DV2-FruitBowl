@@ -1,0 +1,405 @@
+{
+  "nodes": [
+    {
+      "id": "state:Queensland",
+      "name": "Queensland",
+      "label": "QLD",
+      "kind": "state",
+      "order": 0
+    },
+    {
+      "id": "state:New South Wales",
+      "name": "New South Wales",
+      "label": "NSW",
+      "kind": "state",
+      "order": 1
+    },
+    {
+      "id": "state:Victoria",
+      "name": "Victoria",
+      "label": "VIC",
+      "kind": "state",
+      "order": 2
+    },
+    {
+      "id": "state:South Australia",
+      "name": "South Australia",
+      "label": "SA",
+      "kind": "state",
+      "order": 3
+    },
+    {
+      "id": "state:Western Australia",
+      "name": "Western Australia",
+      "label": "WA",
+      "kind": "state",
+      "order": 4
+    },
+    {
+      "id": "state:Tasmania",
+      "name": "Tasmania",
+      "label": "TAS",
+      "kind": "state",
+      "order": 5
+    },
+    {
+      "id": "state:Northern Territory",
+      "name": "Northern Territory",
+      "label": "NT",
+      "kind": "state",
+      "order": 6
+    },
+    {
+      "id": "fruit:Oranges",
+      "name": "Oranges",
+      "label": "Oranges",
+      "kind": "fruit",
+      "order": 0
+    },
+    {
+      "id": "fruit:Bananas",
+      "name": "Bananas",
+      "label": "Bananas",
+      "kind": "fruit",
+      "order": 1
+    },
+    {
+      "id": "fruit:Apples",
+      "name": "Apples",
+      "label": "Apples",
+      "kind": "fruit",
+      "order": 2
+    },
+    {
+      "id": "fruit:Mandarins",
+      "name": "Mandarins",
+      "label": "Mandarins",
+      "kind": "fruit",
+      "order": 3
+    },
+    {
+      "id": "fruit:Table grapes",
+      "name": "Table grapes",
+      "label": "Table grapes",
+      "kind": "fruit",
+      "order": 4
+    },
+    {
+      "id": "fruit:Avocados",
+      "name": "Avocados",
+      "label": "Avocados",
+      "kind": "fruit",
+      "order": 5
+    },
+    {
+      "id": "fruit:Strawberries",
+      "name": "Strawberries",
+      "label": "Strawberries",
+      "kind": "fruit",
+      "order": 6
+    },
+    {
+      "id": "fruit:Mangoes",
+      "name": "Mangoes",
+      "label": "Mangoes",
+      "kind": "fruit",
+      "order": 7
+    },
+    {
+      "id": "fruit:Pears",
+      "name": "Pears",
+      "label": "Pears",
+      "kind": "fruit",
+      "order": 8
+    },
+    {
+      "id": "fruit:Blueberries",
+      "name": "Blueberries",
+      "label": "Blueberries",
+      "kind": "fruit",
+      "order": 9
+    }
+  ],
+  "links": [
+    {
+      "source": "state:New South Wales",
+      "target": "fruit:Apples",
+      "value": 40389.0
+    },
+    {
+      "source": "state:Victoria",
+      "target": "fruit:Apples",
+      "value": 134976.0
+    },
+    {
+      "source": "state:Queensland",
+      "target": "fruit:Apples",
+      "value": 31184.0
+    },
+    {
+      "source": "state:South Australia",
+      "target": "fruit:Apples",
+      "value": 28261.0
+    },
+    {
+      "source": "state:Western Australia",
+      "target": "fruit:Apples",
+      "value": 30269.0
+    },
+    {
+      "source": "state:Tasmania",
+      "target": "fruit:Apples",
+      "value": 30611.0
+    },
+    {
+      "source": "state:New South Wales",
+      "target": "fruit:Avocados",
+      "value": 13151.0
+    },
+    {
+      "source": "state:Victoria",
+      "target": "fruit:Avocados",
+      "value": 566.0
+    },
+    {
+      "source": "state:Queensland",
+      "target": "fruit:Avocados",
+      "value": 76501.0
+    },
+    {
+      "source": "state:South Australia",
+      "target": "fruit:Avocados",
+      "value": 4261.0
+    },
+    {
+      "source": "state:Western Australia",
+      "target": "fruit:Avocados",
+      "value": 36889.0
+    },
+    {
+      "source": "state:Tasmania",
+      "target": "fruit:Avocados",
+      "value": 17.0
+    },
+    {
+      "source": "state:New South Wales",
+      "target": "fruit:Bananas",
+      "value": 14748.0
+    },
+    {
+      "source": "state:Queensland",
+      "target": "fruit:Bananas",
+      "value": 346579.0
+    },
+    {
+      "source": "state:Western Australia",
+      "target": "fruit:Bananas",
+      "value": 6452.0
+    },
+    {
+      "source": "state:Northern Territory",
+      "target": "fruit:Bananas",
+      "value": 922.0
+    },
+    {
+      "source": "state:New South Wales",
+      "target": "fruit:Blueberries",
+      "value": 24116.0
+    },
+    {
+      "source": "state:Victoria",
+      "target": "fruit:Blueberries",
+      "value": 564.0
+    },
+    {
+      "source": "state:Queensland",
+      "target": "fruit:Blueberries",
+      "value": 1057.0
+    },
+    {
+      "source": "state:South Australia",
+      "target": "fruit:Blueberries",
+      "value": 141.0
+    },
+    {
+      "source": "state:Western Australia",
+      "target": "fruit:Blueberries",
+      "value": 606.0
+    },
+    {
+      "source": "state:Tasmania",
+      "target": "fruit:Blueberries",
+      "value": 1900.0
+    },
+    {
+      "source": "state:New South Wales",
+      "target": "fruit:Mandarins",
+      "value": 37497.0
+    },
+    {
+      "source": "state:Victoria",
+      "target": "fruit:Mandarins",
+      "value": 39502.0
+    },
+    {
+      "source": "state:Queensland",
+      "target": "fruit:Mandarins",
+      "value": 120019.0
+    },
+    {
+      "source": "state:South Australia",
+      "target": "fruit:Mandarins",
+      "value": 37034.0
+    },
+    {
+      "source": "state:Western Australia",
+      "target": "fruit:Mandarins",
+      "value": 6433.0
+    },
+    {
+      "source": "state:New South Wales",
+      "target": "fruit:Mangoes",
+      "value": 792.0
+    },
+    {
+      "source": "state:Victoria",
+      "target": "fruit:Mangoes",
+      "value": 100.0
+    },
+    {
+      "source": "state:Queensland",
+      "target": "fruit:Mangoes",
+      "value": 33080.0
+    },
+    {
+      "source": "state:South Australia",
+      "target": "fruit:Mangoes",
+      "value": 38.0
+    },
+    {
+      "source": "state:Western Australia",
+      "target": "fruit:Mangoes",
+      "value": 1860.0
+    },
+    {
+      "source": "state:Northern Territory",
+      "target": "fruit:Mangoes",
+      "value": 37168.0
+    },
+    {
+      "source": "state:New South Wales",
+      "target": "fruit:Oranges",
+      "value": 352479.0
+    },
+    {
+      "source": "state:Victoria",
+      "target": "fruit:Oranges",
+      "value": 84096.0
+    },
+    {
+      "source": "state:Queensland",
+      "target": "fruit:Oranges",
+      "value": 5604.0
+    },
+    {
+      "source": "state:South Australia",
+      "target": "fruit:Oranges",
+      "value": 116744.0
+    },
+    {
+      "source": "state:Western Australia",
+      "target": "fruit:Oranges",
+      "value": 13618.0
+    },
+    {
+      "source": "state:New South Wales",
+      "target": "fruit:Pears",
+      "value": 722.0
+    },
+    {
+      "source": "state:Victoria",
+      "target": "fruit:Pears",
+      "value": 58501.0
+    },
+    {
+      "source": "state:Queensland",
+      "target": "fruit:Pears",
+      "value": 722.0
+    },
+    {
+      "source": "state:South Australia",
+      "target": "fruit:Pears",
+      "value": 6500.0
+    },
+    {
+      "source": "state:Western Australia",
+      "target": "fruit:Pears",
+      "value": 5056.0
+    },
+    {
+      "source": "state:Tasmania",
+      "target": "fruit:Pears",
+      "value": 722.0
+    },
+    {
+      "source": "state:New South Wales",
+      "target": "fruit:Strawberries",
+      "value": 721.0
+    },
+    {
+      "source": "state:Victoria",
+      "target": "fruit:Strawberries",
+      "value": 25599.0
+    },
+    {
+      "source": "state:Queensland",
+      "target": "fruit:Strawberries",
+      "value": 30287.0
+    },
+    {
+      "source": "state:South Australia",
+      "target": "fruit:Strawberries",
+      "value": 5048.0
+    },
+    {
+      "source": "state:Western Australia",
+      "target": "fruit:Strawberries",
+      "value": 7572.0
+    },
+    {
+      "source": "state:Tasmania",
+      "target": "fruit:Strawberries",
+      "value": 8645.0
+    },
+    {
+      "source": "state:New South Wales",
+      "target": "fruit:Table grapes",
+      "value": 36621.0
+    },
+    {
+      "source": "state:Victoria",
+      "target": "fruit:Table grapes",
+      "value": 160217.0
+    },
+    {
+      "source": "state:Queensland",
+      "target": "fruit:Table grapes",
+      "value": 18311.0
+    },
+    {
+      "source": "state:South Australia",
+      "target": "fruit:Table grapes",
+      "value": 1144.0
+    },
+    {
+      "source": "state:Western Australia",
+      "target": "fruit:Table grapes",
+      "value": 11444.0
+    },
+    {
+      "source": "state:Northern Territory",
+      "target": "fruit:Table grapes",
+      "value": 1144.0
+    }
+  ]
+}

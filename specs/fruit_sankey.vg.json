@@ -1,0 +1,218 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Reported state production across ten selected fruits. d3-sankey calculates layout before deployment; Vega renders the diagram. Links are production relationships, not shipments. Unreported observations are not zero.",
+  "width": 1000,
+  "height": 600,
+  "padding": 0,
+  "autosize": {
+    "type": "none",
+    "resize": true
+  },
+  "background": "transparent",
+  "signals": [
+    {
+      "name": "stateChoice",
+      "value": "All states",
+      "bind": {
+        "input": "select",
+        "name": "Highlight state: ",
+        "options": [
+          "All states",
+          "Queensland",
+          "New South Wales",
+          "Victoria",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory"
+        ]
+      }
+    }
+  ],
+  "data": [
+    {
+      "name": "nodes",
+      "url": "data/fruit_sankey.json",
+      "format": {
+        "property": "nodes"
+      }
+    },
+    {
+      "name": "links",
+      "url": "data/fruit_sankey.json",
+      "format": {
+        "property": "links"
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "fruitColor",
+      "type": "ordinal",
+      "domain": [
+        "Apples",
+        "Pears",
+        "Table grapes",
+        "Oranges",
+        "Mandarins",
+        "Bananas",
+        "Mangoes",
+        "Avocados",
+        "Strawberries",
+        "Blueberries"
+      ],
+      "range": [
+        "#ce6777",
+        "#799e55",
+        "#716096",
+        "#dd952f",
+        "#d37339",
+        "#b89d32",
+        "#cb624f",
+        "#398965",
+        "#bc466d",
+        "#506794"
+      ]
+    },
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": [
+        0,
+        1000
+      ],
+      "range": [
+        {
+          "signal": "width < 500 ? 40 : 65"
+        },
+        {
+          "signal": "width - 100"
+        }
+      ]
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": [
+        0,
+        600
+      ],
+      "range": [
+        0,
+        {
+          "signal": "height"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "path",
+      "name": "productionLinks",
+      "from": {
+        "data": "links"
+      },
+      "encode": {
+        "update": {
+          "path": {
+            "signal": "'M'+scale('x',datum.sx)+','+scale('y',datum.sy)+'C'+((scale('x',datum.sx)+scale('x',datum.tx))/2)+','+scale('y',datum.sy)+' '+((scale('x',datum.sx)+scale('x',datum.tx))/2)+','+scale('y',datum.ty)+' '+scale('x',datum.tx)+','+scale('y',datum.ty)"
+          },
+          "stroke": {
+            "scale": "fruitColor",
+            "field": "fruit"
+          },
+          "strokeWidth": {
+            "signal": "datum.width*height/600"
+          },
+          "strokeOpacity": {
+            "signal": "stateChoice === 'All states' || datum.state === stateChoice ? 0.55 : 0.08"
+          },
+          "fill": {
+            "value": null
+          },
+          "tooltip": {
+            "signal": "{'State':datum.state,'Fruit':datum.fruit,'Production':format(datum.tonnes,',.0f')+' tonnes'}"
+          }
+        },
+        "hover": {
+          "strokeOpacity": {
+            "value": 0.9
+          }
+        },
+        "leave": {
+          "strokeOpacity": {
+            "signal": "stateChoice === 'All states' || datum.state === stateChoice ? 0.55 : 0.08"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "name": "productionNodes",
+      "from": {
+        "data": "nodes"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "scale": "x",
+            "field": "x0"
+          },
+          "x2": {
+            "scale": "x",
+            "field": "x1"
+          },
+          "y": {
+            "scale": "y",
+            "field": "y0"
+          },
+          "y2": {
+            "scale": "y",
+            "field": "y1"
+          },
+          "fill": {
+            "signal": "datum.kind === 'fruit' ? scale('fruitColor',datum.name) : '#587265'"
+          },
+          "tooltip": {
+            "signal": "{'Category':datum.name,'Reported production':format(datum.value,',.0f')+' tonnes'}"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "from": {
+        "data": "nodes"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.kind === 'state' ? scale('x',datum.x0)-8 : scale('x',datum.x1)+8"
+          },
+          "y": {
+            "signal": "scale('y',(datum.y0+datum.y1)/2)"
+          },
+          "text": {
+            "field": "label"
+          },
+          "align": {
+            "signal": "datum.kind === 'state' ? 'right' : 'left'"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "Nunito Sans"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fill": {
+            "value": "#263b32"
+          }
+        }
+      }
+    }
+  ]
+}

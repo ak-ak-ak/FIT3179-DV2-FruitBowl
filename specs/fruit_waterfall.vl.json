@@ -1,0 +1,161 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Horizontal cumulative waterfall of the change in nominal farmgate value across 29 reported fruit categories from 2020-21 to 2024-25. Five largest gains, two largest declines and the net of the other 22 categories reconcile to AUD 1486 million.",
+  "width": "container",
+  "height": 420,
+  "background": "transparent",
+  "data": {
+    "url": "data/fruit_waterfall.json"
+  },
+  "encoding": {
+    "y": {
+      "field": "category",
+      "type": "ordinal",
+      "sort": [
+        "Table grapes",
+        "Avocados",
+        "Mandarins",
+        "Bananas",
+        "Blueberries",
+        "Other changes",
+        "Olives",
+        "Pears",
+        "Net change"
+      ],
+      "axis": {
+        "title": null,
+        "labelLimit": 110,
+        "ticks": false
+      }
+    },
+    "tooltip": [
+      {
+        "field": "category",
+        "title": "Contribution"
+      },
+      {
+        "field": "change",
+        "type": "quantitative",
+        "title": "Change (A$ million)",
+        "format": "+,.1f"
+      },
+      {
+        "field": "members",
+        "title": "Included categories"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.next != null"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#a7b6ae",
+        "strokeDash": [
+          3,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "after",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "next"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "size": 25
+      },
+      "encoding": {
+        "x": {
+          "field": "low",
+          "type": "quantitative",
+          "scale": {
+            "zero": true,
+            "domain": [
+              0,
+              1800
+            ]
+          },
+          "axis": {
+            "title": [
+              "Change in farmgate value",
+              "(A$ million)"
+            ],
+            "tickCount": 4
+          }
+        },
+        "x2": {
+          "field": "high"
+        },
+        "color": {
+          "field": "kind",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Increase",
+              "Decrease",
+              "Net change"
+            ],
+            "range": [
+              "#398965",
+              "#bc466d",
+              "#7d354c"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom",
+            "direction": "horizontal"
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 12,
+        "color": "#263b32"
+      },
+      "encoding": {
+        "x": {
+          "field": "high",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "change",
+          "type": "quantitative",
+          "format": "+,.0f"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Nunito Sans",
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal",
+      "domain": false,
+      "gridColor": "#e8ece8"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    }
+  }
+}

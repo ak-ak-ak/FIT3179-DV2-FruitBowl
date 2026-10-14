@@ -1,0 +1,97 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "100 equal-area units for the five largest fruit production categories and the remaining reported categories. Largest-remainder rounding totals exactly 100; tooltip shares are unrounded.",
+  "width": "container",
+  "height": 320,
+  "background": "transparent",
+  "data": {
+    "url": "data/fruit_units.json"
+  },
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 4,
+    "cornerRadius": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "column",
+      "type": "ordinal",
+      "axis": null
+    },
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "axis": null
+    },
+    "color": {
+      "field": "fruit",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Oranges",
+          "Bananas",
+          "Apples",
+          "Mandarins",
+          "Table grapes",
+          "Other reported fruit"
+        ],
+        "range": [
+          "#dd952f",
+          "#b89d32",
+          "#ce6777",
+          "#d37339",
+          "#716096",
+          "#c5cbd2"
+        ]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom",
+        "columns": 2,
+        "labelLimit": 160
+      }
+    },
+    "tooltip": [
+      {
+        "field": "fruit",
+        "title": "Fruit category"
+      },
+      {
+        "field": "tonnes",
+        "type": "quantitative",
+        "title": "Reported tonnes",
+        "format": ",.0f"
+      },
+      {
+        "field": "share_pct",
+        "type": "quantitative",
+        "title": "Exact share (%)",
+        "format": ".2f"
+      },
+      {
+        "field": "units",
+        "type": "quantitative",
+        "title": "Rounded units",
+        "format": ".0f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "font": "Nunito Sans",
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal",
+      "domain": false,
+      "gridColor": "#e8ece8"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    }
+  }
+}

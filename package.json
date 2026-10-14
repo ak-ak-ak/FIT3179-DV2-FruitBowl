@@ -1,0 +1,6 @@
+{
+  "name": "fit3179-dv2-fruit-bowl",
+  "private": true,
+  "description": "Preparation-only dependencies. The published site renders charts with Vega and Vega-Lite.",
+  "devDependencies": { "d3-sankey": "0.12.3" }
+}

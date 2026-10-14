@@ -101,3 +101,12 @@ The treemap uses `fruit_value_tree.json`, derived from 2024-25 national Table 2 
 The heatmap uses `fruit_state_matrix.csv`, a complete display grid of ten selected fruits by eight states/territories. Its 80 cells include 56 reported observations and 24 explicit not-reported cells. The latter have blank numeric fields and never become numeric zero. Each share divides the published state tonnes by that fruit's national tonnes; rounded cells need not sum to exactly 100%. Values below 1% but above zero are displayed as <1%, while tooltips retain two decimal places. Colour uses the same 0-100% domain for every fruit. No independent state survey or new measurement is implied.
 
 Run `scripts/prepare_data.py` using Python with openpyxl and pypdf installed. It extracts source tables, validates key totals and writes small CSVs. Raw reports/workbooks are development sources, not browser chart requests. Charts must load only the prepared CSVs and simplified geometry. Downloaded source files do not need to be publicly redistributed; check permission before committing the report itself. The source links above provide provenance.
+# Final Three Derived Charts
+
+All three derive from the existing ABS Table 2 extracts, not additional invented observations.
+
+- Unit chart: sums 29 national fruit categories in 2024-25 (2,834,995 tonnes). Five largest categories plus the remainder; floor exact percentage shares, then distribute remaining cells to the largest fractional remainders. Exactly 100 equal-area cells. Tooltips retain the source tonnes and percentage shares.
+- State-fruit Sankey: 56 positive, reported state-fruit observations from the fixed ten-fruit matrix, totalling 2,089,200 tonnes. Missing values remain missing, zero-width links are omitted. ACT has no positive reported observations in this comparison and is not drawn. Node totals reconcile to their links. d3-sankey 0.12.3 prepares coordinates only; Vega renders every mark.
+- Value waterfall: nominal farmgate value changes for all 29 categories, 2020-21 to 2024-25. Five largest gains, two largest declines and the net of the other 22 categories reconcile exactly to AUD 1,486.0 million. Positive contributions add to the running position; negative contributions subtract. The final bar is the total, not another contribution.
+
+Preparation: `npm ci`, then `python3 scripts/build_final_charts.py`. After rebuilding any specs, run `python3 scripts/apply_chart_theme.py`. Shared categorical colours and typography are defined in `data/chart_theme.json`.

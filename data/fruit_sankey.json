@@ -1,0 +1,754 @@
+{
+  "nodes": [
+    {
+      "id": "state:Queensland",
+      "name": "Queensland",
+      "label": "QLD",
+      "kind": "state",
+      "value": 663344,
+      "x0": 0,
+      "x1": 10,
+      "y0": 0,
+      "y1": 139.06982194141307
+    },
+    {
+      "id": "state:New South Wales",
+      "name": "New South Wales",
+      "label": "NSW",
+      "kind": "state",
+      "value": 521236,
+      "x0": 0,
+      "x1": 10,
+      "y0": 157.06982194141307,
+      "y1": 266.346754738656
+    },
+    {
+      "id": "state:Victoria",
+      "name": "Victoria",
+      "label": "VIC",
+      "kind": "state",
+      "value": 504121,
+      "x0": 0,
+      "x1": 10,
+      "y0": 284.346754738656,
+      "y1": 390.0355341757611
+    },
+    {
+      "id": "state:South Australia",
+      "name": "South Australia",
+      "label": "SA",
+      "kind": "state",
+      "value": 199171,
+      "x0": 0,
+      "x1": 10,
+      "y0": 408.0355341757611,
+      "y1": 449.791659965537
+    },
+    {
+      "id": "state:Western Australia",
+      "name": "Western Australia",
+      "label": "WA",
+      "kind": "state",
+      "value": 120199,
+      "x0": 0,
+      "x1": 10,
+      "y0": 467.791659965537,
+      "y1": 492.99133543940263
+    },
+    {
+      "id": "state:Tasmania",
+      "name": "Tasmania",
+      "label": "TAS",
+      "kind": "state",
+      "value": 41895,
+      "x0": 0,
+      "x1": 10,
+      "y0": 510.99133543940263,
+      "y1": 519.774606547961
+    },
+    {
+      "id": "state:Northern Territory",
+      "name": "Northern Territory",
+      "label": "NT",
+      "kind": "state",
+      "value": 39234,
+      "x0": 0,
+      "x1": 10,
+      "y0": 537.774606547961,
+      "y1": 546
+    },
+    {
+      "id": "fruit:Oranges",
+      "name": "Oranges",
+      "label": "Oranges",
+      "kind": "fruit",
+      "value": 572541,
+      "x0": 990,
+      "x1": 1000,
+      "y0": 0,
+      "y1": 120.03300689259038
+    },
+    {
+      "id": "fruit:Bananas",
+      "name": "Bananas",
+      "label": "Bananas",
+      "kind": "fruit",
+      "value": 368701,
+      "x0": 990,
+      "x1": 1000,
+      "y0": 138.03300689259038,
+      "y1": 215.3310338885697
+    },
+    {
+      "id": "fruit:Apples",
+      "name": "Apples",
+      "label": "Apples",
+      "kind": "fruit",
+      "value": 295690,
+      "x0": 990,
+      "x1": 1000,
+      "y0": 233.3310338885697,
+      "y1": 295.32233199310735
+    },
+    {
+      "id": "fruit:Mandarins",
+      "name": "Mandarins",
+      "label": "Mandarins",
+      "kind": "fruit",
+      "value": 240485,
+      "x0": 990,
+      "x1": 1000,
+      "y0": 313.32233199310735,
+      "y1": 363.7399224583572
+    },
+    {
+      "id": "fruit:Table grapes",
+      "name": "Table grapes",
+      "label": "Table grapes",
+      "kind": "fruit",
+      "value": 228881,
+      "x0": 990,
+      "x1": 1000,
+      "y0": 381.7399224583572,
+      "y1": 429.7247386559448
+    },
+    {
+      "id": "fruit:Avocados",
+      "name": "Avocados",
+      "label": "Avocados",
+      "kind": "fruit",
+      "value": 131385,
+      "x0": 990,
+      "x1": 1000,
+      "y0": 447.7247386559448,
+      "y1": 475.26955485353244
+    },
+    {
+      "id": "fruit:Strawberries",
+      "name": "Strawberries",
+      "label": "Strawberries",
+      "kind": "fruit",
+      "value": 77872,
+      "x0": 990,
+      "x1": 1000,
+      "y0": 493.26955485353244,
+      "y1": 509.5953905801264
+    },
+    {
+      "id": "fruit:Mangoes",
+      "name": "Mangoes",
+      "label": "Mangoes",
+      "kind": "fruit",
+      "value": 73038,
+      "x0": 990,
+      "x1": 1000,
+      "y0": 527.5953905801264,
+      "y1": 542.9077800114877
+    },
+    {
+      "id": "fruit:Pears",
+      "name": "Pears",
+      "label": "Pears",
+      "kind": "fruit",
+      "value": 72223,
+      "x0": 990,
+      "x1": 1000,
+      "y0": 560.9077800114877,
+      "y1": 576.049304997128
+    },
+    {
+      "id": "fruit:Blueberries",
+      "name": "Blueberries",
+      "label": "Blueberries",
+      "kind": "fruit",
+      "value": 28384,
+      "x0": 990,
+      "x1": 1000,
+      "y0": 594.049304997128,
+      "y1": 600
+    }
+  ],
+  "links": [
+    {
+      "state": "New South Wales",
+      "fruit": "Apples",
+      "tonnes": 40389,
+      "sx": 10,
+      "sy": 246.15382682366464,
+      "tx": 990,
+      "ty": 237.56480327398037,
+      "width": 8.467538770821367
+    },
+    {
+      "state": "Victoria",
+      "fruit": "Apples",
+      "tonnes": 134976,
+      "sx": 10,
+      "sy": 324.4078632969558,
+      "tx": 990,
+      "ty": 268.41002871912684,
+      "width": 28.29766800689259
+    },
+    {
+      "state": "Queensland",
+      "fruit": "Apples",
+      "tonnes": 31184,
+      "sx": 10,
+      "sy": 102.26582998276852,
+      "tx": 990,
+      "ty": 245.0674296381389,
+      "width": 6.537713957495693
+    },
+    {
+      "state": "South Australia",
+      "fruit": "Apples",
+      "tonnes": 28261,
+      "sx": 10,
+      "sy": 443.2374885123493,
+      "tx": 990,
+      "ty": 251.29874066628366,
+      "width": 5.9249080987937965
+    },
+    {
+      "state": "Western Australia",
+      "fruit": "Apples",
+      "tonnes": 30269,
+      "sx": 10,
+      "sy": 476.5209462952326,
+      "tx": 990,
+      "ty": 285.73180499712794,
+      "width": 6.345884549109707
+    },
+    {
+      "state": "Tasmania",
+      "fruit": "Apples",
+      "tonnes": 30611,
+      "sx": 10,
+      "sy": 514.2001278001148,
+      "tx": 990,
+      "ty": 292.11353963239503,
+      "width": 6.417584721424468
+    },
+    {
+      "state": "New South Wales",
+      "fruit": "Avocados",
+      "tonnes": 13151,
+      "sx": 10,
+      "sy": 251.76614732912128,
+      "tx": 990,
+      "ty": 449.10328977599073,
+      "width": 2.757102240091901
+    },
+    {
+      "state": "Victoria",
+      "fruit": "Avocados",
+      "tonnes": 566,
+      "sx": 10,
+      "sy": 338.61602814474446,
+      "tx": 990,
+      "ty": 467.4728948879954,
+      "width": 0.118661688684664
+    },
+    {
+      "state": "Queensland",
+      "fruit": "Avocados",
+      "tonnes": 76501,
+      "sx": 10,
+      "sy": 113.55389000574382,
+      "tx": 990,
+      "ty": 458.5010439402642,
+      "width": 16.03840608845491
+    },
+    {
+      "state": "South Australia",
+      "fruit": "Avocados",
+      "tonnes": 4261,
+      "sx": 10,
+      "sy": 446.6466010913269,
+      "tx": 990,
+      "ty": 466.9669055140723,
+      "width": 0.8933170591614015
+    },
+    {
+      "state": "Western Australia",
+      "fruit": "Avocados",
+      "tonnes": 36889,
+      "sx": 10,
+      "sy": 483.5607711085583,
+      "tx": 990,
+      "ty": 471.3991082711085,
+      "width": 7.733765077541642
+    },
+    {
+      "state": "Tasmania",
+      "fruit": "Avocados",
+      "tonnes": 17,
+      "sx": 10,
+      "sy": 517.4107021826536,
+      "tx": 990,
+      "ty": 475.2677728317059,
+      "width": 0.0035640436530729467
+    },
+    {
+      "state": "New South Wales",
+      "fruit": "Bananas",
+      "tonnes": 14748,
+      "sx": 10,
+      "sy": 158.61577828834012,
+      "tx": 990,
+      "ty": 139.57896323951744,
+      "width": 3.091912693854107
+    },
+    {
+      "state": "Queensland",
+      "fruit": "Bananas",
+      "tonnes": 346579,
+      "sx": 10,
+      "sy": 36.33007897759908,
+      "tx": 990,
+      "ty": 177.45499856404356,
+      "width": 72.66015795519816
+    },
+    {
+      "state": "Western Australia",
+      "fruit": "Bananas",
+      "tonnes": 6452,
+      "sx": 10,
+      "sy": 468.46798966111425,
+      "tx": 990,
+      "ty": 214.4614072372199,
+      "width": 1.3526593911545088
+    },
+    {
+      "state": "Northern Territory",
+      "fruit": "Bananas",
+      "tonnes": 922,
+      "sx": 10,
+      "sy": 537.8712550258472,
+      "tx": 990,
+      "ty": 215.23438541068342,
+      "width": 0.19329695577254452
+    },
+    {
+      "state": "New South Wales",
+      "fruit": "Blueberries",
+      "tonnes": 24116,
+      "sx": 10,
+      "sy": 263.50139000574393,
+      "tx": 990,
+      "ty": 596.57726019529,
+      "width": 5.055910396323952
+    },
+    {
+      "state": "Victoria",
+      "fruit": "Blueberries",
+      "tonnes": 564,
+      "sx": 10,
+      "sy": 377.69073520964963,
+      "tx": 990,
+      "ty": 599.415496840896,
+      "width": 0.11824238943136128
+    },
+    {
+      "state": "Queensland",
+      "fruit": "Blueberries",
+      "tonnes": 1057,
+      "sx": 10,
+      "sy": 131.8724454336588,
+      "tx": 990,
+      "ty": 599.2160152211372,
+      "width": 0.22159965537047674
+    },
+    {
+      "state": "South Australia",
+      "fruit": "Blueberries",
+      "tonnes": 141,
+      "sx": 10,
+      "sy": 448.4061904078117,
+      "tx": 990,
+      "ty": 599.3415953475014,
+      "width": 0.02956059735784032
+    },
+    {
+      "state": "Western Australia",
+      "fruit": "Blueberries",
+      "tonnes": 606,
+      "sx": 10,
+      "sy": 491.47787478460657,
+      "tx": 990,
+      "ty": 599.538141872487,
+      "width": 0.127047673750718
+    },
+    {
+      "state": "Tasmania",
+      "fruit": "Blueberries",
+      "tonnes": 1900,
+      "sx": 10,
+      "sy": 519.4240723721999,
+      "tx": 990,
+      "ty": 599.8008328546812,
+      "width": 0.39833429063756465
+    },
+    {
+      "state": "New South Wales",
+      "fruit": "Mandarins",
+      "tonnes": 37497,
+      "sx": 10,
+      "sy": 237.98944141298114,
+      "tx": 990,
+      "ty": 317.2529480183802,
+      "width": 7.861232050545664
+    },
+    {
+      "state": "Victoria",
+      "fruit": "Mandarins",
+      "tonnes": 39502,
+      "sx": 10,
+      "sy": 306.1182395175187,
+      "tx": 990,
+      "ty": 358.2504566341183,
+      "width": 8.28157955198162
+    },
+    {
+      "state": "Queensland",
+      "fruit": "Mandarins",
+      "tonnes": 120019,
+      "sx": 10,
+      "sy": 86.41600373348649,
+      "tx": 990,
+      "ty": 333.7645333141872,
+      "width": 25.161938541068352
+    },
+    {
+      "state": "South Australia",
+      "fruit": "Mandarins",
+      "tonnes": 37034,
+      "sx": 10,
+      "sy": 436.3929523262493,
+      "tx": 990,
+      "ty": 350.2275847214244,
+      "width": 7.764164273406089
+    },
+    {
+      "state": "Western Australia",
+      "fruit": "Mandarins",
+      "tonnes": 6433,
+      "sx": 10,
+      "sy": 472.67366599655367,
+      "tx": 990,
+      "ty": 363.06558443423313,
+      "width": 1.3486760482481333
+    },
+    {
+      "state": "New South Wales",
+      "fruit": "Mangoes",
+      "tonnes": 792,
+      "sx": 10,
+      "sy": 266.1123664560598,
+      "tx": 990,
+      "ty": 527.6784118322803,
+      "width": 0.16604250430786904
+    },
+    {
+      "state": "Victoria",
+      "fruit": "Mangoes",
+      "tonnes": 100,
+      "sx": 10,
+      "sy": 377.76033888569793,
+      "tx": 990,
+      "ty": 534.7150919012063,
+      "width": 0.02096496266513498
+    },
+    {
+      "state": "Queensland",
+      "fruit": "Mangoes",
+      "tonnes": 33080,
+      "sx": 10,
+      "sy": 135.45085008615737,
+      "tx": 990,
+      "ty": 531.2290379092475,
+      "width": 6.9352096496266515
+    },
+    {
+      "state": "South Australia",
+      "fruit": "Mangoes",
+      "tonnes": 38,
+      "sx": 10,
+      "sy": 448.424954049397,
+      "tx": 990,
+      "ty": 534.7006260769673,
+      "width": 0.007966685812751293
+    },
+    {
+      "state": "Western Australia",
+      "fruit": "Mangoes",
+      "tonnes": 1860,
+      "sx": 10,
+      "sy": 491.7363727742677,
+      "tx": 990,
+      "ty": 534.9205485353247,
+      "width": 0.3899483055715106
+    },
+    {
+      "state": "Northern Territory",
+      "fruit": "Mangoes",
+      "tonnes": 37168,
+      "sx": 10,
+      "sy": 542.1038713383113,
+      "tx": 990,
+      "ty": 539.011651349799,
+      "width": 7.7922573233773695
+    },
+    {
+      "state": "New South Wales",
+      "fruit": "Oranges",
+      "tonnes": 352479,
+      "sx": 10,
+      "sy": 197.11028001148776,
+      "tx": 990,
+      "ty": 36.948545376220565,
+      "width": 73.89709075244113
+    },
+    {
+      "state": "Victoria",
+      "fruit": "Oranges",
+      "tonnes": 84096,
+      "sx": 10,
+      "sy": 293.16210224009194,
+      "tx": 990,
+      "ty": 108.36265077541643,
+      "width": 17.630695002871914
+    },
+    {
+      "state": "Queensland",
+      "fruit": "Oranges",
+      "tonnes": 5604,
+      "sx": 10,
+      "sy": 73.24759620907524,
+      "tx": 990,
+      "ty": 74.48452900631821,
+      "width": 1.1748765077541643
+    },
+    {
+      "state": "South Australia",
+      "fruit": "Oranges",
+      "tonnes": 116744,
+      "sx": 10,
+      "sy": 420.2732021826537,
+      "tx": 990,
+      "ty": 87.30963526708788,
+      "width": 24.47533601378518
+    },
+    {
+      "state": "Western Australia",
+      "fruit": "Oranges",
+      "tonnes": 13618,
+      "sx": 10,
+      "sy": 470.57182366456055,
+      "tx": 990,
+      "ty": 118.60550258472144,
+      "width": 2.8550086157380816
+    },
+    {
+      "state": "New South Wales",
+      "fruit": "Pears",
+      "tonnes": 722,
+      "sx": 10,
+      "sy": 266.27107122343494,
+      "tx": 990,
+      "ty": 560.9834635267089,
+      "width": 0.15136703044227456
+    },
+    {
+      "state": "Victoria",
+      "fruit": "Pears",
+      "tonnes": 58501,
+      "sx": 10,
+      "sy": 383.90317777139575,
+      "tx": 990,
+      "ty": 568.7055930499714,
+      "width": 12.264712808730614
+    },
+    {
+      "state": "Queensland",
+      "fruit": "Pears",
+      "tonnes": 722,
+      "sx": 10,
+      "sy": 138.99413842619182,
+      "tx": 990,
+      "ty": 561.1348305571512,
+      "width": 0.15136703044227456
+    },
+    {
+      "state": "South Australia",
+      "fruit": "Pears",
+      "tonnes": 6500,
+      "sx": 10,
+      "sy": 449.11029867892023,
+      "tx": 990,
+      "ty": 561.8918753589892,
+      "width": 1.3627225732337738
+    },
+    {
+      "state": "Western Australia",
+      "fruit": "Pears",
+      "tonnes": 5056,
+      "sx": 10,
+      "sy": 492.4613411832281,
+      "tx": 990,
+      "ty": 575.3679437105113,
+      "width": 1.0599885123492245
+    },
+    {
+      "state": "Tasmania",
+      "fruit": "Pears",
+      "tonnes": 722,
+      "sx": 10,
+      "sy": 519.6989230327398,
+      "tx": 990,
+      "ty": 575.9736214819071,
+      "width": 0.15136703044227456
+    },
+    {
+      "state": "New South Wales",
+      "fruit": "Strawberries",
+      "tonnes": 721,
+      "sx": 10,
+      "sy": 260.8978561171742,
+      "tx": 990,
+      "ty": 493.3451335439403,
+      "width": 0.15115738081562322
+    },
+    {
+      "state": "Victoria",
+      "fruit": "Strawberries",
+      "tonnes": 25599,
+      "sx": 10,
+      "sy": 374.94820361861,
+      "tx": 990,
+      "ty": 503.51209218839745,
+      "width": 5.3668207926479035
+    },
+    {
+      "state": "Queensland",
+      "fruit": "Strawberries",
+      "tonnes": 30287,
+      "sx": 10,
+      "sy": 128.58681648477886,
+      "tx": 990,
+      "ty": 496.59554135554276,
+      "width": 6.349658242389431
+    },
+    {
+      "state": "South Australia",
+      "fruit": "Strawberries",
+      "tonnes": 5048,
+      "sx": 10,
+      "sy": 447.86225445146476,
+      "tx": 990,
+      "ty": 500.2995261344055,
+      "width": 1.0583113153360137
+    },
+    {
+      "state": "Western Australia",
+      "fruit": "Strawberries",
+      "tonnes": 7572,
+      "sx": 10,
+      "sy": 490.6206174612292,
+      "tx": 990,
+      "ty": 506.9892360712234,
+      "width": 1.5874669730040207
+    },
+    {
+      "state": "Tasmania",
+      "fruit": "Strawberries",
+      "tonnes": 8645,
+      "sx": 10,
+      "sy": 518.3186947156806,
+      "tx": 990,
+      "ty": 508.6891800689259,
+      "width": 1.812421022400919
+    },
+    {
+      "state": "New South Wales",
+      "fruit": "Table grapes",
+      "tonnes": 36621,
+      "sx": 10,
+      "sy": 256.9834879379668,
+      "tx": 990,
+      "ty": 385.57871194715676,
+      "width": 7.677578977599081
+    },
+    {
+      "state": "Victoria",
+      "fruit": "Table grapes",
+      "tonnes": 160217,
+      "sx": 10,
+      "sy": 355.4700761056864,
+      "tx": 990,
+      "ty": 410.29095203905797,
+      "width": 33.58943423319931
+    },
+    {
+      "state": "Queensland",
+      "fruit": "Table grapes",
+      "tonnes": 18311,
+      "sx": 10,
+      "sy": 123.4925402067777,
+      "tx": 990,
+      "ty": 391.3369485927627,
+      "width": 3.838894313612866
+    },
+    {
+      "state": "South Australia",
+      "fruit": "Table grapes",
+      "tonnes": 1144,
+      "sx": 10,
+      "sy": 447.21317920735214,
+      "tx": 990,
+      "ty": 393.3763153360137,
+      "width": 0.23983917288914416
+    },
+    {
+      "state": "Western Australia",
+      "fruit": "Table grapes",
+      "tonnes": 11444,
+      "sx": 10,
+      "sy": 488.62726881102816,
+      "tx": 990,
+      "ty": 428.28528431935666,
+      "width": 2.399230327398047
+    },
+    {
+      "state": "Northern Territory",
+      "fruit": "Table grapes",
+      "tonnes": 1144,
+      "sx": 10,
+      "sy": 538.0878230901781,
+      "tx": 990,
+      "ty": 429.60481906950025,
+      "width": 0.23983917288914416
+    }
+  ],
+  "total": 2089200
+}
