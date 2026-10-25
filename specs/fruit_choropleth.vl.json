@@ -60,6 +60,10 @@
     {
       "calculate": "isValid(datum.production_tonnes) ? 'Reported' : 'Not reported for this fruit'",
       "as": "status"
+    },
+    {
+      "calculate": "isValid(datum.tonnes_per_km2) ? toNumber(datum.tonnes_per_km2) : null",
+      "as": "density_number"
     }
   ],
   "layer": [
@@ -152,6 +156,62 @@
             "format": ".0f"
           }
         ]
+      }
+    },
+    {
+      "name": "density_finding",
+      "transform": [
+        {
+          "filter": "isValid(datum.tonnes_per_km2)"
+        },
+        {
+          "window": [
+            {
+              "op": "row_number",
+              "as": "leader_order"
+            }
+          ],
+          "sort": [
+            {
+              "field": "density_number",
+              "order": "descending"
+            },
+            {
+              "field": "properties.name",
+              "order": "ascending"
+            }
+          ]
+        },
+        {
+          "filter": "datum.leader_order === 1"
+        },
+        {
+          "calculate": "['Highest reported density', datum.properties.name, format(datum.tonnes_per_km2, '.3f') + ' tonnes per km\u00b2 of state land']",
+          "as": "finding"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "fontSize": 12,
+        "fontWeight": 700,
+        "lineHeight": 17,
+        "color": "#263B32"
+      },
+      "encoding": {
+        "x": {
+          "value": 8
+        },
+        "y": {
+          "value": -58
+        },
+        "text": {
+          "field": "finding"
+        },
+        "color": {
+          "value": "#263B32"
+        }
       }
     }
   ],

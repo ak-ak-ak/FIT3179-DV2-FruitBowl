@@ -114,6 +114,16 @@
           ]
         }
       ]
+    },
+    {
+      "name": "leadingDestination",
+      "source": "routes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.rank === 1"
+        }
+      ]
     }
   ],
   "projections": [
@@ -454,6 +464,51 @@
           },
           "dx": {
             "value": -12
+          }
+        }
+      }
+    },
+    {
+      "name": "export_finding",
+      "type": "text",
+      "interactive": false,
+      "from": {
+        "data": "leadingDestination"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "value": 8
+          },
+          "y": {
+            "value": 6
+          },
+          "align": {
+            "value": "left"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "font": {
+            "value": "Nunito Sans"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fontWeight": {
+            "value": 700
+          },
+          "lineHeight": {
+            "value": 17
+          },
+          "fill": {
+            "value": "#263B32"
+          },
+          "limit": {
+            "signal": "width - 16"
+          },
+          "text": {
+            "signal": "['Leading destination: ' + datum.destination, format(datum.share_pct, '.1f') + '% of selected exports']"
           }
         }
       }

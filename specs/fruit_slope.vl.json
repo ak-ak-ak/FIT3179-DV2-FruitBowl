@@ -197,15 +197,23 @@
       ],
       "mark": {
         "type": "text",
-        "align": "left",
-        "dx": 9,
+        "align": "right",
+        "dx": -8,
         "fontSize": 12,
-        "fontWeight": 700
+        "fontWeight": 700,
+        "dy": {
+          "expr": "datum.fruit === 'Pears' ? 16 : -12"
+        },
+        "stroke": "#FFE6EE",
+        "strokeWidth": 3
       },
       "encoding": {
         "text": {
           "field": "change_label",
           "type": "nominal"
+        },
+        "color": {
+          "value": "#263B32"
         }
       }
     }

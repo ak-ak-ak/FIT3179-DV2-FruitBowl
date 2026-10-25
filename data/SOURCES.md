@@ -105,7 +105,11 @@ Run `scripts/prepare_data.py` using Python with openpyxl and pypdf installed. It
 
 ## Critique Revisions
 
-The live lineup now replaces the flat treemap with `fruit_value.vl.json`, a ranked lollipop comparison of the ten highest farmgate values from the existing 29-category extract. The headline total still uses all 29 categories. This is a basic comparison idiom, not an additional advanced-idiom claim. The old treemap spec is retained but no longer embedded.
+The live lineup replaces the flat treemap with `fruit_value.vl.json`, a ranked lollipop comparison of the ten highest farmgate values from the existing 29-category extract. The headline total still uses all 29 categories. The unit's official idiom clarification explicitly classifies lollipop charts as advanced. The old treemap spec is retained but no longer embedded and is not counted.
+
+The eleven embedded charts include ten advanced idioms under the supplied unit clarification: waffle, lollipop, heatmap, choropleth, proportional symbol map, Sankey, slope, bump, waterfall and export flow map. Waterfall is not in the basic list; all map idioms are advanced for DV2. The connected scatterplot is not needed to meet the eight-advanced threshold. Classification alone does not demonstrate appropriate or effective use.
+
+Persistent density and export annotations are computed inside the chart specifications from the same filtered data as their marks. Companion text includes full denominators and updates with selections. Bump ranks use competition ranking within the fixed ten-fruit set; its endpoint labels and selected-fruit summary do not imply dollar differences. Annotation text uses dark ink rather than low-contrast fruit colours.
 
 `scripts/refine_charts.py` applies the final presentation revisions after the original builders and theme script: brighter categorical colours, a label-free heatmap with source-based emphasis, initial regional close-ups, axis spacing and destination-specific route colours. No source production or trade measurements are changed. Rebuild order ends with `python3 scripts/refine_charts.py`.
 

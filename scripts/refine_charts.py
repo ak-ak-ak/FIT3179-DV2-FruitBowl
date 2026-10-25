@@ -185,4 +185,46 @@ for mark in export['marks']:
         enc.update(align={'value':'right'},dx={'value':-12},dy={'value':14})
 export['legends'][0]['symbolStrokeColor']={'value':'#516A78'}
 save('fruit_exports.vg.json',export)
-print('Refined 11-chart lineup, heatmap, regional focus, axes and destination colours.')
+# Persistent findings use the same transformed observations as the marks.
+choro=json.loads((SPECS/'fruit_choropleth.vl.json').read_text())
+choro['layer']=[layer for layer in choro['layer'] if layer.get('name')!='density_finding']
+choro['transform']=[t for t in choro['transform'] if t.get('as')!='density_number']
+# Lookup CSV values may remain strings; numeric coercion prevents lexical ranking.
+choro['transform'].append({'calculate':'isValid(datum.tonnes_per_km2) ? toNumber(datum.tonnes_per_km2) : null','as':'density_number'})
+choro['layer'].append({
+ 'name':'density_finding',
+ 'transform':[{'filter':'isValid(datum.tonnes_per_km2)'},
+              {'window':[{'op':'row_number','as':'leader_order'}],'sort':[{'field':'density_number','order':'descending'},{'field':'properties.name','order':'ascending'}]},
+              {'filter':'datum.leader_order === 1'},
+              {'calculate':"['Highest reported density', datum.properties.name, format(datum.tonnes_per_km2, '.3f') + ' tonnes per km² of state land']",'as':'finding'}],
+ 'mark':{'type':'text','align':'left','baseline':'top','fontSize':12,'fontWeight':700,'lineHeight':17,'color':'#263B32'},
+ 'encoding':{'x':{'value':8},'y':{'value':-58},'text':{'field':'finding'},'color':{'value':'#263B32'}}})
+save('fruit_choropleth.vl.json',choro)
+
+for filename in ['fruit_slope.vl.json','fruit_bump.vl.json','fruit_trajectory.vl.json']:
+    spec=json.loads((SPECS/filename).read_text())
+    if filename in ['fruit_slope.vl.json','fruit_trajectory.vl.json']:
+        spec['layer'][2]['encoding']['color']={'value':'#263B32'}
+        if filename=='fruit_slope.vl.json':
+            spec['layer'][2]['mark'].update(align='right',dx=-8,dy={'expr':"datum.fruit === 'Pears' ? 16 : -12"},stroke='#FFE6EE',strokeWidth=3)
+    else:
+        spec['layer']=[layer for layer in spec['layer'] if layer.get('name')!='rank_end_labels']
+        spec['layer'].append({
+          'name':'rank_end_labels',
+          'transform':[{'filter':"datum.year === '2024-25' && (bumpFruit === 'All fruits' ? datum.value_rank <= 3 : datum.fruit === bumpFruit)"},
+                       {'calculate':"format(datum.value_rank, '.0f') + ' ' + (datum.fruit === 'Table grapes' ? 'Grapes' : datum.fruit)",'as':'rank_label'}],
+          'mark':{'type':'text','align':'right','dx':-9,'dy':-9,'fontSize':12,'fontWeight':700,'stroke':'#FFE6EE','strokeWidth':3},
+          'encoding':{'text':{'field':'rank_label'},'color':{'value':'#263B32'},'opacity':{'value':1}}})
+    save(filename,spec)
+
+export=json.loads((SPECS/'fruit_exports.vg.json').read_text())
+export['data']=[d for d in export['data'] if d['name']!='leadingDestination']
+export['data'].append({'name':'leadingDestination','source':'routes','transform':[{'type':'filter','expr':'datum.rank === 1'}]})
+export['marks']=[m for m in export['marks'] if m.get('name')!='export_finding']
+export['marks'].append({'name':'export_finding','type':'text','interactive':False,'from':{'data':'leadingDestination'},
+ 'encode':{'update':{'x':{'value':8},'y':{'value':6},'align':{'value':'left'},'baseline':{'value':'top'},
+  'font':{'value':'Nunito Sans'},'fontSize':{'value':12},'fontWeight':{'value':700},'lineHeight':{'value':17},
+  'fill':{'value':'#263B32'},'limit':{'signal':'width - 16'},
+  'text':{'signal':"['Leading destination: ' + datum.destination, format(datum.share_pct, '.1f') + '% of selected exports']"}}}})
+save('fruit_exports.vg.json',export)
+print('Refined 11-chart lineup, accessible annotations, maps and destination colours.')

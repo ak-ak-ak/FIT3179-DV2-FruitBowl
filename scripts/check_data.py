@@ -50,7 +50,34 @@ for row in waterfall[:-1]:
     position += change
 assert position == sum(end.values()) - sum(start.values()) == Decimal('1486.0')
 assert waterfall[-1]['change'] == float(position)
+
+# The historical subset must retain the national source values, not rounded display labels.
+history = list(csv.DictReader((DATA / 'fruit_history.csv').open()))
+source = {(r['fruit'], r['year']): r for r in national}
+for row in history:
+    original = source[row['fruit'], row['year']]
+    for field in ['production_tonnes', 'farmgate_value_aud_million']:
+        assert Decimal(row[field]) == Decimal(original[field])
+
+# Normalisation uses total state land and preserves absent observations.
+for row in csv.DictReader((DATA / 'fruit_state_density.csv').open()):
+    if row['production_tonnes']:
+        expected_density = float(row['production_tonnes']) / float(row['land_area_km2'])
+        assert abs(float(row['tonnes_per_km2']) - expected_density) < 1e-12
+    else:
+        assert not row['tonnes_per_km2']
+
+# Destination shares and eight-link coverage use the full selected world total.
+exports = json.loads((DATA / 'fruit_exports.json').read_text())
+for summary in exports['summaries']:
+    rows = sorted((r for r in exports['flows'] if r['fruit'] == summary['fruit']), key=lambda r:r['rank'])
+    assert len(rows) == summary['shown_count'] == 8
+    assert [r['rank'] for r in rows] == list(range(1, 9))
+    assert all(a['tonnes'] >= b['tonnes'] for a,b in zip(rows, rows[1:]))
+    for row in rows:
+        assert abs(row['share_pct'] - row['tonnes'] / summary['total_tonnes'] * 100) < 1e-9
+    assert abs(sum(r['share_pct'] for r in rows) - summary['coverage_pct']) < 1e-9
 # Parsing every spec catches invalid JSON, including accidental // or /* */ comments.
 for spec in (DATA.parent / 'specs').glob('*.json'):
     json.loads(spec.read_text())
-print('PASS: 100 units, 56 source-matched links, node totals, missing values, waterfall and JSON specs')
+print('PASS: units, source-matched Sankey totals, missing values, waterfall, history, density, export shares and JSON specs')

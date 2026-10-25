@@ -217,6 +217,39 @@
         "size": 75
       },
       "name": "bump_points"
+    },
+    {
+      "name": "rank_end_labels",
+      "transform": [
+        {
+          "filter": "datum.year === '2024-25' && (bumpFruit === 'All fruits' ? datum.value_rank <= 3 : datum.fruit === bumpFruit)"
+        },
+        {
+          "calculate": "format(datum.value_rank, '.0f') + ' ' + (datum.fruit === 'Table grapes' ? 'Grapes' : datum.fruit)",
+          "as": "rank_label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -9,
+        "dy": -9,
+        "fontSize": 12,
+        "fontWeight": 700,
+        "stroke": "#FFE6EE",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "text": {
+          "field": "rank_label"
+        },
+        "color": {
+          "value": "#263B32"
+        },
+        "opacity": {
+          "value": 1
+        }
+      }
     }
   ]
 }

@@ -39,6 +39,8 @@ function chartHeight(id, width) {
 charts.forEach(async ([el, specPath]) => {
   // Charts load independently. async/await waits for requests without blocking the page.
   const container = document.querySelector(el);
+  container.setAttribute("aria-busy", "true");
+  container.textContent = "Loading chart…";
   try {
     // fetch requests the spec; .json() parses its text into a JavaScript object.
     const response = await fetch(specPath);
@@ -52,6 +54,12 @@ charts.forEach(async ([el, specPath]) => {
     await document.fonts.ready;
     // Insert the chart into its container; view is the handle used to update it later.
     const { view } = await vegaEmbed(el, spec, embedOptions);
+    container.setAttribute("aria-busy", "false");
+    const caption = container.closest("figure").querySelector("figcaption");
+    if (caption) {
+      caption.id = `${container.id}_description`;
+      container.setAttribute("aria-describedby", caption.id);
+    }
     // Retain native select keyboard behaviour while positioning the decorative chevron.
     container.querySelectorAll("select").forEach(select => {
       const shell = document.createElement("span");
@@ -60,6 +68,18 @@ charts.forEach(async ([el, specPath]) => {
       shell.append(select);
     });
     if (el === "#fruit_choropleth") {
+      const densityResponse = await fetch("data/fruit_state_density.csv");
+      if (!densityResponse.ok) throw new Error("Production density summary could not load");
+      const densities = vega.read(await densityResponse.text(), {type:"csv", parse:"auto"});
+      const updateDensity = fruit => {
+        const rows = densities.filter(r => r.fruit === fruit && Number.isFinite(r.tonnes_per_km2));
+        const maximum = Math.max(...rows.map(r => r.tonnes_per_km2));
+        const leaders = rows.filter(r => r.tonnes_per_km2 === maximum);
+        document.querySelector("#density_insight").textContent = leaders.length
+          ? `${fruit}: ${leaders.map(r => r.region).join(" and ")} ${leaders.length === 1 ? "has" : "have"} the highest reported density, ${maximum.toFixed(3)} tonnes per km² of total state land. This is not orchard yield.`
+          : `${fruit}: no production density is reported.`;
+      };
+      updateDensity(view.signal("fruitChoice"));
       // Native radios expose every choice without a long dropdown or custom keyboard logic.
       const choices = document.querySelector("#choropleth_options");
       const inputs = spec.usermeta.fruitOptions.map(fruit => {
@@ -80,7 +100,26 @@ charts.forEach(async ([el, specPath]) => {
       });
       view.addSignalListener("fruitChoice", (_, fruit) => {
         inputs.forEach(input => { input.checked = input.value === fruit; });
+        updateDensity(fruit);
       });
+    }
+    if (el === "#fruit_bump") {
+      const historyResponse = await fetch("data/fruit_history.csv");
+      if (!historyResponse.ok) throw new Error("Ranking summary could not load");
+      const history = vega.read(await historyResponse.text(), {type:"csv", parse:"auto"});
+      // Competition rank matches Vega's rank transform, including tied values.
+      const rank = (fruit, year) => {
+        const rows = history.filter(r => r.year === year);
+        const row = rows.find(r => r.fruit === fruit);
+        return 1 + rows.filter(r => r.farmgate_value_aud_million > row.farmgate_value_aud_million).length;
+      };
+      const updateBump = choice => {
+        const fruit = choice === "All fruits" ? "Avocados" : choice;
+        const start = rank(fruit, "2020-21"), end = rank(fruit, "2024-25");
+        document.querySelector("#bump_insight").textContent = `${fruit}: rank ${start} in 2020–21 and rank ${end} in 2024–25 among these ten fruits. ${end < start ? "A rise" : end > start ? "A fall" : "No endpoint change"} in rank describes order, not the size of the value gap.`;
+      };
+      updateBump(view.signal("bumpFruit"));
+      view.addSignalListener("bumpFruit", (_, choice) => updateBump(choice));
     }
     if (el === "#fruit_symbols") {
       // A readable shortlist complements overlapping regional points without moving their locations.
@@ -142,6 +181,8 @@ charts.forEach(async ([el, specPath]) => {
         document.querySelector("#export_coverage").textContent = `The eight destinations shown account for ${number.format(summary.coverage_pct)}% of ${number.format(summary.total_tonnes)} tonnes exported in this selection.`;
         // Filter to the selection and order destinations by their prepared export-volume rank.
         const rows = exportData.flows.filter(row => row.fruit === choice).sort((a, b) => a.rank - b.rank);
+        const leader = rows[0];
+        document.querySelector("#export_insight").textContent = `${choice}: ${leader.destination} is the leading destination, receiving ${number.format(leader.tonnes)} tonnes, or ${number.format(leader.share_pct)}% of the full selected export total in calendar 2025.`;
         const body = document.querySelector("#export_destinations");
         // Replace the previous rows, rather than appending duplicate destinations each time.
         body.replaceChildren(...rows.map(row => {
@@ -181,6 +222,8 @@ charts.forEach(async ([el, specPath]) => {
   } catch (err) {
     // Show a readable fallback without stopping the other independently loaded charts.
     console.error(specPath, err);
+    container.setAttribute("aria-busy", "false");
+    container.setAttribute("role", "alert");
     container.textContent = "This chart could not load. Please refresh the page.";
   }
 });

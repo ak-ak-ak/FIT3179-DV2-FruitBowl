@@ -45,7 +45,7 @@
       </figure>
       <figure>
         <h3>Table grapes lead by value</h3>
-        <p class="chart-subtitle">The <strong>ten highest-value fruits</strong>, ranked by farmgate value in 2024–25.</p>
+        <p class="chart-subtitle">The <strong>ten highest-value fruits</strong> in 2024–25. Farmgate value is the value of fruit when it leaves the farm, before retail costs.</p>
         <div class="chart" id="fruit_value" aria-label="Ranked lollipop chart of the ten highest fruit farmgate values"></div>
         <figcaption>Across <strong>all 29 reported categories</strong>, farmgate value totals <mark>$7.33 billion</mark>, not supermarket prices. Wine grapes are excluded. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS, Table 2</a>.</figcaption>
         <!-- Native disclosure: the summary toggles the extra notes without a JavaScript handler. -->
@@ -72,6 +72,7 @@
         <fieldset class="fruit-panel"><legend>Fruit</legend><div id="choropleth_options"></div></fieldset>
         <div class="chart" id="fruit_choropleth" aria-label="Choropleth map comparing fruit production density by state"></div>
         </div>
+        <p id="density_insight" class="insight" aria-live="polite"></p>
         <figcaption><span class="neutral-key" aria-hidden="true"></span> Grey means not reported. Density uses total state land, not orchard area or yield. Sources: <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">ABS</a> and <a href="https://www.ga.gov.au/scientific-topics/national-location-information/dimensions/area-of-australia-states-and-territories">Geoscience Australia</a>.</figcaption>
         <details><summary>Data notes</summary><p>“All reported fruit” sums available categories in ABS Table 2. The sequential colour scale adjusts for each fruit; colours should not be compared across different selections.</p></details>
       </figure>
@@ -107,6 +108,7 @@
         <h3>The value rankings have shifted</h3>
         <p class="chart-subtitle"><mark>Table grapes stayed first</mark> among these ten fruits; bananas and avocados both finished above apples.</p>
         <div class="chart" id="fruit_bump" aria-label="Bump chart of farmgate-value rankings for ten fruits over five years"></div>
+        <p id="bump_insight" class="insight" aria-live="polite"></p>
         <figcaption>Rank 1 is the highest farmgate value within this fixed group of ten fruits. The chart shows changes in order, not the size of the dollar gaps. Values are in current dollars. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS, Table 2</a>, 2020–21 to 2024–25.</figcaption>
       </figure>
       <figure>
@@ -137,6 +139,7 @@
         <!-- main.js fills this sentence and the table from the same selected export category. -->
         <!-- aria-live politely announces a changed coverage sentence to screen-reader users. -->
         <p id="export_coverage" class="chart-subtitle" aria-live="polite"></p>
+        <p id="export_insight" class="insight" aria-live="polite"></p>
         </div>
         <table class="export-table">
           <caption>Destinations shown on the map</caption>

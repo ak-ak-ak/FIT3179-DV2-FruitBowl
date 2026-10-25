@@ -185,6 +185,9 @@
         "text": {
           "field": "year",
           "type": "ordinal"
+        },
+        "color": {
+          "value": "#263B32"
         }
       }
     }
