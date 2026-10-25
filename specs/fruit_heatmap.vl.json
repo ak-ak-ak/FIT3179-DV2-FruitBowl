@@ -100,9 +100,9 @@
     {
       "mark": {
         "type": "rect",
-        "color": "#e8eae7",
-        "stroke": "#ffffff",
-        "strokeWidth": 2
+        "color": "#CBD8CC",
+        "stroke": "#E6F8E7",
+        "strokeWidth": 1
       }
     },
     {
@@ -113,8 +113,8 @@
       ],
       "mark": {
         "type": "rect",
-        "stroke": "#ffffff",
-        "strokeWidth": 2
+        "stroke": "#E6F8E7",
+        "strokeWidth": 1
       },
       "encoding": {
         "color": {
@@ -123,45 +123,51 @@
           "scale": {
             "domain": [
               0,
+              30,
+              65,
               100
             ],
             "range": [
-              "#edf5f7",
-              "#12516a"
+              "#FFF5DD",
+              "#FFB99C",
+              "#F16A72",
+              "#A72051"
             ]
           },
           "legend": {
             "title": "Share of national production (%)",
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 200,
+            "gradientLength": {
+              "expr": "max(160, width - 20)"
+            },
+            "gradientThickness": 12,
             "values": [
               0,
               25,
               50,
               75,
               100
-            ]
+            ],
+            "titleLimit": 350,
+            "labelFontSize": 12,
+            "titleFontSize": 12
           }
         }
       }
     },
     {
-      "mark": {
-        "type": "text",
-        "fontSize": 12
-      },
-      "encoding": {
-        "text": {
-          "field": "cell_label"
-        },
-        "color": {
-          "condition": {
-            "test": "datum.status === 'Reported' && datum.national_share_pct >= 60",
-            "value": "#ffffff"
-          },
-          "value": "#233b45"
+      "name": "insight_cells",
+      "transform": [
+        {
+          "filter": "(datum.fruit === 'Bananas' && datum.state === 'QLD') || (datum.fruit === 'Blueberries' && datum.state === 'NSW') || (datum.fruit === 'Pears' && datum.state === 'VIC')"
         }
+      ],
+      "mark": {
+        "type": "rect",
+        "fillOpacity": 0,
+        "stroke": "#7D354C",
+        "strokeWidth": 2
       }
     }
   ],

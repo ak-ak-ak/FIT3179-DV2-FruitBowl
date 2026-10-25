@@ -9,33 +9,40 @@ import subprocess
 import os
 
 ROOT = Path(__file__).resolve().parents[1]
+# PREPARATION ONLY: derive data and specs for the unit, waterfall and Sankey charts.
 DATA = ROOT / "data"
 THEME = json.loads((DATA / "chart_theme.json").read_text())
 COLORS = dict(zip(THEME["fruits"], THEME["colors"]))
 national = list(csv.DictReader((DATA / "fruit_national.csv").open()))
 latest = [r for r in national if r["year"] == "2024-25"]
 total = sum(int(r["production_tonnes"]) for r in latest)
+# UNIT CHART: five largest categories plus the remainder, with total production as denominator.
 leaders = sorted(latest, key=lambda r: int(r["production_tonnes"]), reverse=True)[:5]
 shares = [{"fruit": r["fruit"], "tonnes": int(r["production_tonnes"])} for r in leaders]
 shares.append({"fruit": "Other reported fruit", "tonnes": total - sum(r["tonnes"] for r in shares)})
 for row in shares:
     row["share_pct"] = row["tonnes"] / total * 100
     row["units"] = math.floor(row["share_pct"])
+# Largest-remainder rounding: floor every share, then allocate spare cells by fractional part.
+# This totals exactly 100 cells rather than independently rounding shares to a wrong total.
 for row in sorted(shares, key=lambda r: r["share_pct"] - r["units"], reverse=True)[:100 - sum(r["units"] for r in shares)]:
     row["units"] += 1
 assert sum(r["units"] for r in shares) == 100
 units = []
 for row in shares:
     for _ in range(row["units"]):
+        # Modulo gives the column; integer division starts a new row after every ten cells.
         index = len(units)
         units.append({**row, "column": index % 10, "row": index // 10})
 (DATA / "fruit_units.json").write_text(json.dumps(units, indent=2) + "\n")
 
+# WATERFALL: Decimal keeps published decimal values exact while reconciling contributions.
 start = {r["fruit"]: Decimal(r["farmgate_value_aud_million"]) for r in national if r["year"] == "2020-21"}
 end = {r["fruit"]: Decimal(r["farmgate_value_aud_million"]) for r in latest}
 changes = {f: end[f] - start[f] for f in start}
 positive = sorted([f for f in changes if changes[f] > 0], key=changes.get, reverse=True)[:5]
 negative = sorted([f for f in changes if changes[f] < 0], key=changes.get)[:2]
+# The other 22 categories are a NET contribution, not a claim that all of them increased.
 other = [f for f in changes if f not in positive + negative]
 net = sum(changes.values())
 assert len(other) == 22 and net == Decimal("1486.0")
@@ -45,18 +52,21 @@ contributions += [(f, changes[f], f) for f in reversed(negative)]
 waterfall = []
 cumulative = Decimal(0)
 for name, value, members in contributions:
+    # Bar endpoints straddle the running position; negative changes move it backwards.
     after = cumulative + value
     waterfall.append({"category": name, "change": float(value), "low": float(min(cumulative, after)),
                       "high": float(max(cumulative, after)), "after": float(after),
                       "kind": "Increase" if value >= 0 else "Decrease", "members": members})
     cumulative = after
 assert cumulative == net
+# The final bar starts at zero and represents the total, not an extra contribution.
 waterfall.append({"category": "Net change", "change": float(net), "low": 0, "high": float(net),
                   "after": float(net), "kind": "Net change", "members": "All 29 reported categories"})
 for index, row in enumerate(waterfall):
     row["next"] = waterfall[index + 1]["category"] if index < len(waterfall) - 1 else None
 (DATA / "fruit_waterfall.json").write_text(json.dumps(waterfall, indent=2) + "\n")
 
+# SANKEY: use only positive, reported observations; missing values do not become zero.
 matrix = list(csv.DictReader((DATA / "fruit_state_matrix.csv").open()))
 observed = [r for r in matrix if r["status"] == "Reported" and float(r["production_tonnes"]) > 0]
 states = list(dict.fromkeys(r["region"] for r in observed))
@@ -65,15 +75,19 @@ state_totals = {s: sum(float(r["production_tonnes"]) for r in observed if r["reg
 states.sort(key=state_totals.get, reverse=True)
 fruit_totals = {f: sum(float(r["production_tonnes"]) for r in observed if r["fruit"] == f) for f in THEME["fruits"]}
 fruits = sorted(THEME["fruits"], key=fruit_totals.get, reverse=True)
+# Prefix IDs to keep state and fruit nodes distinct; a link's value is production tonnes.
 nodes = [{"id": "state:" + s, "name": s, "label": abbreviations[s], "kind": "state", "order": i} for i, s in enumerate(states)]
 nodes += [{"id": "fruit:" + f, "name": f, "label": f, "kind": "fruit", "order": i} for i, f in enumerate(fruits)]
 links = [{"source": "state:" + r["region"], "target": "fruit:" + r["fruit"], "value": float(r["production_tonnes"])} for r in observed]
 (DATA / "sankey_input.json").write_text(json.dumps({"nodes": nodes, "links": links}, indent=2) + "\n")
+# Node runs d3-sankey to prepare coordinates. It does not render a D3 chart in the browser.
 subprocess.run([os.environ.get("NODE", "node"), str(ROOT / "scripts" / "prepare_sankey.cjs")], check=True)
 
 def save(name, spec):
     (ROOT / "specs" / name).write_text(json.dumps(spec, indent=2) + "\n")
 
+# CHART SPECS: build JSON-compatible dictionaries, then save readable, indented files.
+# Run apply_chart_theme.py after rebuilding specs to restore final styling and label fixes.
 config = {"view": {"stroke": None}, "font": THEME["font"], "axis": {"labelFontSize": 12, "titleFontSize": 12, "titleFontWeight": "normal", "domain": False, "gridColor": "#e8ece8"}, "legend": {"labelFontSize": 12, "titleFontSize": 12}}
 unit_colors = [COLORS.get(r["fruit"], THEME["other"]) for r in shares]
 unit = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "description": "100 equal-area units for the five largest fruit production categories and the remaining reported categories. Largest-remainder rounding totals exactly 100; tooltip shares are unrounded.",
@@ -83,6 +97,7 @@ unit = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "descripti
                      "color": {"field": "fruit", "type": "nominal", "scale": {"domain": [r["fruit"] for r in shares], "range": unit_colors}, "legend": {"title": None, "orient": "bottom", "columns": 2, "labelLimit": 160}},
                      "tooltip": [{"field": "fruit", "title": "Fruit category"}, {"field": "tonnes", "type": "quantitative", "title": "Reported tonnes", "format": ",.0f"}, {"field": "share_pct", "type": "quantitative", "title": "Exact share (%)", "format": ".2f"}, {"field": "units", "type": "quantitative", "title": "Rounded units", "format": ".0f"}]}, "config": config}
 save("fruit_units.vl.json", unit)
+# Waterfall layers: dashed connectors, low-to-high bars, then signed value labels.
 water = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "description": "Horizontal cumulative waterfall of the change in nominal farmgate value across 29 reported fruit categories from 2020-21 to 2024-25. Five largest gains, two largest declines and the net of the other 22 categories reconcile to AUD 1486 million.",
          "width": "container", "height": 420, "background": "transparent", "data": {"url": "data/fruit_waterfall.json"},
          "encoding": {"y": {"field": "category", "type": "ordinal", "sort": [r["category"] for r in waterfall], "axis": {"title": None, "labelLimit": 110, "ticks": False}},
@@ -92,6 +107,8 @@ water = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "descript
                    {"mark": {"type": "text", "align": "left", "dx": 6, "fontSize": 12, "color": "#263b32"}, "encoding": {"x": {"field": "high", "type": "quantitative"}, "text": {"field": "change", "type": "quantitative", "format": "+,.0f"}}}], "config": config}
 save("fruit_waterfall.vl.json", water)
 palette = {"name": "fruitColor", "type": "ordinal", "domain": THEME["fruits"], "range": THEME["colors"]}
+# Plain Vega draws curved paths from prepared endpoints, rectangular nodes and text labels.
+# x/y scales adapt the reference layout to the displayed size; opacity highlights a state.
 sankey = {"$schema": "https://vega.github.io/schema/vega/v5.json", "description": "Reported state production across ten selected fruits. d3-sankey calculates layout before deployment; Vega renders the diagram. Links are production relationships, not shipments. Unreported observations are not zero.",
           "width": 1000, "height": 600, "padding": 0, "autosize": {"type": "pad", "resize": True}, "background": "transparent",
           "signals": [{"name": "stateChoice", "value": "All states", "bind": {"input": "select", "name": "Highlight state: ", "options": ["All states", *states]}}],

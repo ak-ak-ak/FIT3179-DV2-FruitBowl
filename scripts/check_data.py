@@ -5,9 +5,12 @@ import json
 from pathlib import Path
 
 DATA = Path(__file__).resolve().parents[1] / 'data'
+# READ-ONLY CHECKS: assertions stop the test if prepared values disagree with source extracts.
+# This script does not regenerate chart data or specs.
 national = list(csv.DictReader((DATA / 'fruit_national.csv').open()))
 latest = [r for r in national if r['year'] == '2024-25']
 total = sum(int(r['production_tonnes']) for r in latest)
+# Check the 100-cell total, group cell counts, exact shares and production denominator.
 units = json.loads((DATA / 'fruit_units.json').read_text())
 assert len(units) == 100
 categories = {r['fruit']: r for r in units}
@@ -16,6 +19,7 @@ for name, row in categories.items():
     assert sum(r['fruit'] == name for r in units) == row['units']
     assert abs(row['share_pct'] - row['tonnes'] / total * 100) < 1e-9
 
+# Unreported matrix values must remain blank; only positive reported values make Sankey links.
 matrix = list(csv.DictReader((DATA / 'fruit_state_matrix.csv').open()))
 for row in matrix:
     if row['status'] != 'Reported':
@@ -26,6 +30,7 @@ sankey = json.loads((DATA / 'fruit_sankey.json').read_text())
 actual = {(r['state'], r['fruit']): r['tonnes'] for r in sankey['links']}
 assert actual == expected and len(actual) == 56
 assert sum(actual.values()) == sankey['total'] == 2089200
+# Check both sides of the network: each state/fruit node must equal its attached link totals.
 for node in sankey['nodes']:
     value = sum(r['tonnes'] for r in sankey['links']
                 if (r['state'] if node['kind'] == 'state' else r['fruit']) == node['name'])
@@ -34,6 +39,7 @@ for node in sankey['nodes']:
 start = {r['fruit']: Decimal(r['farmgate_value_aud_million']) for r in national if r['year'] == '2020-21'}
 end = {r['fruit']: Decimal(r['farmgate_value_aud_million']) for r in latest}
 waterfall = json.loads((DATA / 'fruit_waterfall.json').read_text())
+# Recalculate waterfall changes from the original endpoints, not from chart coordinates.
 position = Decimal(0)
 for row in waterfall[:-1]:
     members = row['members'].split(', ')
@@ -44,6 +50,7 @@ for row in waterfall[:-1]:
     position += change
 assert position == sum(end.values()) - sum(start.values()) == Decimal('1486.0')
 assert waterfall[-1]['change'] == float(position)
+# Parsing every spec catches invalid JSON, including accidental // or /* */ comments.
 for spec in (DATA.parent / 'specs').glob('*.json'):
     json.loads(spec.read_text())
 print('PASS: 100 units, 56 source-matched links, node totals, missing values, waterfall and JSON specs')

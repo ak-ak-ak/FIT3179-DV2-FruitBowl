@@ -158,12 +158,54 @@
         "Strawberries"
       ],
       "range": [
-        "#398965",
-        "#716096",
-        "#ce6777",
-        "#dd952f",
-        "#d37339",
-        "#bc466d"
+        "#25A977",
+        "#8A58BB",
+        "#E75C83",
+        "#F39A24",
+        "#ED6D38",
+        "#D93C72"
+      ]
+    },
+    {
+      "name": "destinationColor",
+      "type": "ordinal",
+      "domain": [
+        "CHN",
+        "JPN",
+        "IDN",
+        "HKG",
+        "THA",
+        "KOR",
+        "VNM",
+        "PHL",
+        "NZL",
+        "PNG",
+        "ARE",
+        "SGP",
+        "MYS",
+        "IND",
+        "USA",
+        "CAN",
+        "QAT"
+      ],
+      "range": [
+        "#C43B72",
+        "#197E77",
+        "#7251B5",
+        "#C16D13",
+        "#3F6CC1",
+        "#A54435",
+        "#618C21",
+        "#A33399",
+        "#087F9C",
+        "#197E77",
+        "#A54435",
+        "#A33399",
+        "#618C21",
+        "#7251B5",
+        "#7251B5",
+        "#A36B36",
+        "#C43B72"
       ]
     }
   ],
@@ -183,7 +225,7 @@
       "titleFontWeight": "normal",
       "symbolType": "stroke",
       "symbolStrokeColor": {
-        "signal": "scale('fruitColor', fruitChoice)"
+        "value": "#516A78"
       },
       "symbolSize": 400,
       "columnPadding": 16
@@ -198,7 +240,7 @@
       "encode": {
         "update": {
           "fill": {
-            "value": "#f3f7f8"
+            "value": "#D9F0FF"
           },
           "stroke": {
             "value": "#d9e3e5"
@@ -220,7 +262,7 @@
       "encode": {
         "update": {
           "fill": {
-            "value": "#e1e6df"
+            "value": "#CBE8D9"
           },
           "stroke": {
             "value": "#ffffff"
@@ -252,15 +294,15 @@
             "value": null
           },
           "stroke": {
-            "scale": "fruitColor",
-            "signal": "fruitChoice"
+            "scale": "destinationColor",
+            "field": "destination_code"
           },
           "strokeWidth": {
             "scale": "flowWidth",
             "field": "tonnes"
           },
           "strokeOpacity": {
-            "value": 0.6
+            "value": 0.85
           },
           "tooltip": {
             "signal": "{'Destination': datum.destination, 'Fruit category': datum.fruit, 'Export volume': format(datum.tonnes, ',.1f') + ' tonnes', 'Share of selected exports': format(datum.share_pct, '.1f') + '%', 'Period': 'Calendar year 2025'}"
@@ -273,7 +315,7 @@
         },
         "leave": {
           "strokeOpacity": {
-            "value": 0.6
+            "value": 0.85
           }
         }
       }
@@ -296,8 +338,8 @@
             "value": 45
           },
           "fill": {
-            "scale": "fruitColor",
-            "signal": "fruitChoice"
+            "scale": "destinationColor",
+            "field": "destination_code"
           },
           "stroke": {
             "value": "#ffffff"
@@ -390,13 +432,13 @@
             "field": "y"
           },
           "dy": {
-            "value": 20
+            "value": 14
           },
           "text": {
             "value": "Australia"
           },
           "align": {
-            "value": "center"
+            "value": "right"
           },
           "font": {
             "value": "Nunito Sans"
@@ -409,6 +451,9 @@
           },
           "fill": {
             "value": "#263d33"
+          },
+          "dx": {
+            "value": -12
           }
         }
       }

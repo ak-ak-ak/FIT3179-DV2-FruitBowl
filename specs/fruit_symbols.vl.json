@@ -19,7 +19,7 @@
     },
     {
       "name": "regionFocus",
-      "value": "Australia",
+      "value": "North Queensland",
       "bind": {
         "input": "select",
         "name": "Region: ",
@@ -42,10 +42,10 @@
       0
     ],
     "center": {
-      "expr": "regionFocus === 'North Queensland' ? [12, -18] : regionFocus === 'South-west WA' ? [-17, -33] : [0, -28]"
+      "expr": "regionFocus === 'North Queensland' ? [12.5, -17.7] : regionFocus === 'South-west WA' ? [-17, -33] : [0, -28]"
     },
     "scale": {
-      "expr": "regionFocus === 'North Queensland' ? min(width * 4, height * 4) : regionFocus === 'South-west WA' ? min(width * 6, height * 8) : width * 0.72"
+      "expr": "regionFocus === 'North Queensland' ? min(width * 9, height * 12) : regionFocus === 'South-west WA' ? min(width * 7, height * 9) : min(width * 0.72, height * 1.1)"
     },
     "translate": {
       "expr": "[width / 2, height / 2]"
@@ -62,8 +62,8 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#e8eae7",
-        "stroke": "#ffffff",
+        "fill": "#D5EED8",
+        "stroke": "#91BC9B",
         "strokeWidth": 1,
         "clip": true
       }
@@ -95,9 +95,9 @@
       ],
       "mark": {
         "type": "circle",
-        "opacity": 0.64,
-        "stroke": "#444943",
-        "strokeWidth": 0.6,
+        "opacity": 0.68,
+        "stroke": "#3F573F",
+        "strokeWidth": 1,
         "clip": true
       },
       "encoding": {
@@ -112,9 +112,9 @@
         "color": {
           "condition": {
             "test": "fruitChoice === 'Bananas'",
-            "value": "#b89d32"
+            "value": "#D4AD19"
           },
-          "value": "#398965"
+          "value": "#25A977"
         },
         "size": {
           "field": "properties.production_t",
@@ -127,11 +127,11 @@
             ],
             "range": [
               0,
-              2500
+              700
             ]
           },
           "legend": {
-            "title": "Fruit produced (tonnes)",
+            "title": "Production (tonnes)",
             "orient": "bottom",
             "direction": "horizontal",
             "values": [
@@ -140,9 +140,7 @@
               100000
             ],
             "format": ",.0f",
-            "symbolFillColor": {
-              "expr": "fruitChoice === 'Bananas' ? '#b89d32' : '#398965'"
-            }
+            "symbolFillColor": "#71877B"
           }
         },
         "order": {
@@ -228,7 +226,7 @@
           "expr": "datum.properties.fruit === 'Bananas' && datum.production_rank === 1 ? -35 : -12"
         },
         "fontSize": 12,
-        "fontWeight": 600,
+        "fontWeight": 700,
         "color": "#333b33",
         "clip": true
       },

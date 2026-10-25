@@ -83,7 +83,7 @@
     {
       "mark": {
         "type": "geoshape",
-        "fill": "#e8eae7",
+        "fill": "#CBD8CC",
         "stroke": "#ffffff",
         "strokeWidth": 1.3
       },
@@ -121,8 +121,8 @@
             "type": "linear",
             "zero": true,
             "range": [
-              "#e0efeb",
-              "#153f3b"
+              "#D6F2D6",
+              "#087E54"
             ]
           },
           "legend": {

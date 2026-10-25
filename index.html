@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The viewport setting lets CSS breakpoints use the device width on mobile. -->
   <title>Where Your Fruit Bowl Comes From</title>
   <meta name="author" content="Akshara Balreddygari">
 
 
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Vega libraries -->
+  <!-- Vega is the rendering/dataflow engine; Vega-Lite compiles higher-level chart specs. -->
+  <!-- Vega Embed inserts either kind of spec into the matching chart container. -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -21,10 +23,12 @@
       <p class="eyebrow">Australian fruit production · 2024–25</p>
       <h1>Where Your Fruit Bowl Comes From</h1>
       <p class="lede">Where Australia grows its fruit, how production is changing, and what reaches overseas markets.</p>
+      <!-- Empty alt text marks this as decoration, not additional information or data. -->
       <img class="hero-art" src="assets/fruit-bowl.webp" alt="" width="440" height="360">
     </div>
   </header>
 
+  <!-- Four narrative sections, not four independently routed pages. -->
   <main class="wrap">
 
     <!-- Section 1: Hook -->
@@ -34,16 +38,18 @@
       <div class="overview">
       <figure>
         <h3>Oranges take the biggest share by weight</h3>
-        <p class="chart-subtitle">100 equal units represent the 2.835 million tonnes reported in 2024–25.</p>
+        <p class="chart-subtitle"><strong>Oranges make up 20%</strong> of the 2.835 million tonnes reported in 2024–25.</p>
+        <!-- main.js matches this ID to a JSON spec; aria-label names the chart for assistive technology. -->
         <div class="chart" id="fruit_units" aria-label="Unit chart of fruit production shares"></div>
         <figcaption>One unit is one percentage point of reported production weight, not one fruit or serving. Rounded units total 100; tooltips show exact shares. Source: ABS, Table 2.</figcaption>
       </figure>
       <figure>
-        <h3><img class="fruit-icon" src="assets/icons/banana.webp" alt="" width="28" height="28">Table grapes, bananas and avocados lead by value</h3>
-        <p class="chart-subtitle">Farmgate value of 29 reported fruit categories, 2024–25. Larger rectangles represent greater value.</p>
-        <div class="chart" id="fruit_treemap" aria-label="Treemap of Australian fruit production value"></div>
-        <figcaption>These 29 categories total <mark>$7.33 billion</mark> at the farm gate, not supermarket prices. Wine grapes are excluded. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS, Table 2</a>.</figcaption>
-        <details><summary>Data notes</summary><p>Colours identify the ten comparison fruits used throughout the story; remaining categories are grey. Small categories remain available in tooltips. Estimates supplied by Hort Innovation.</p></details>
+        <h3>Table grapes lead by value</h3>
+        <p class="chart-subtitle">The <strong>ten highest-value fruits</strong>, ranked by farmgate value in 2024–25.</p>
+        <div class="chart" id="fruit_value" aria-label="Ranked lollipop chart of the ten highest fruit farmgate values"></div>
+        <figcaption>Across <strong>all 29 reported categories</strong>, farmgate value totals <mark>$7.33 billion</mark>, not supermarket prices. Wine grapes are excluded. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS, Table 2</a>.</figcaption>
+        <!-- Native disclosure: the summary toggles the extra notes without a JavaScript handler. -->
+        <details><summary>Data notes</summary><p>Dots compare values on a common scale; no hierarchy is implied. This chart shows the ten largest values, while the $7.33 billion total includes all 29 categories. Colours match comparison fruits elsewhere; other categories use a neutral colour. Estimates supplied by Hort Innovation.</p></details>
       </figure>
       </div>
     </section>
@@ -53,11 +59,11 @@
       <h2><img class="section-icon" src="assets/icons/orange.webp" alt="" width="44" height="44">Where it grows</h2>
       <p>Different fruits come from different parts of Australia. Compare the states first, then look more closely at the growing regions of bananas and avocados.</p>
       <figure>
-        <h3><img class="fruit-icon" src="assets/icons/blueberries.webp" alt="" width="28" height="28">Some fruits depend heavily on one state</h3>
-        <p class="chart-subtitle">Queensland produces 94% of Australia's bananas, New South Wales 85% of its blueberries, and Victoria 81% of its pears.</p>
+        <h3>Some fruits depend heavily on one state</h3>
+        <p class="chart-subtitle"><mark>94% of bananas come from Queensland</mark>, 85% of blueberries from NSW, and 81% of pears from Victoria.</p>
         <div class="chart" id="fruit_heatmap" aria-label="Heatmap of state shares of national production for ten fruits"></div>
-        <figcaption>Each row uses that fruit's national production as its denominator. A dash on grey means not reported, not zero. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS, Table 2</a>, 2024–25.</figcaption>
-        <details><summary>State names and data notes</summary><p>Percentages are rounded. NSW: New South Wales; VIC: Victoria; QLD: Queensland; SA: South Australia; WA: Western Australia; TAS: Tasmania; NT: Northern Territory; ACT: Australian Capital Territory.</p></details>
+        <figcaption>Colour shows each state's share of that fruit's national production. Grey means not reported, not zero; hover for exact percentages. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS, Table 2</a>, 2024–25.</figcaption>
+        <details><summary>State names and data notes</summary><p>NSW: New South Wales; VIC: Victoria; QLD: Queensland; SA: South Australia; WA: Western Australia; TAS: Tasmania; NT: Northern Territory; ACT: Australian Capital Territory.</p></details>
       </figure>
       <figure>
         <h3>Different fruits, different growing states</h3>
@@ -67,15 +73,18 @@
         <details><summary>Data notes</summary><p>“All reported fruit” sums available categories in ABS Table 2. The sequential colour scale adjusts for each fruit; colours should not be compared across different selections.</p></details>
       </figure>
       <figure>
-        <h3>A closer look at two fruits</h3>
-        <p class="chart-subtitle">Bananas are concentrated in Far North Queensland; avocados also have major growing regions in south-west Western Australia.</p>
+        <h3>Zooming in on the growing regions</h3>
+        <p class="chart-subtitle">Bananas cluster in <strong>tropical North Queensland</strong>; avocados have another major production centre in <strong>south-west WA</strong>.</p>
+        <div class="regional-layout">
         <div class="chart" id="fruit_symbols" aria-label="Proportional symbol map comparing banana and avocado producing regions"></div>
+        <aside class="regional-note" aria-live="polite"><h4><span id="regional_fruit">Bananas</span>: leading regions nationally</h4><ol id="regional_leaders"></ol><p>Names and exact totals help separate the nearby growing regions. Circle area uses the same scale in every view.</p></aside>
+        </div>
         <figcaption>Circle area represents tonnes on a shared scale for both fruits. Points locate regions, not farms. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS</a>, experimental 2024–25 estimates.</figcaption>
-        <details><summary>Regional coverage</summary><p>This case study uses SA2 2021 geography. Detailed regional estimates are available for bananas and avocados, but not every fruit. Rounded regional sums differ slightly from national totals.</p></details>
+        <details><summary>Regional coverage</summary><p>This case study uses SA2 2021 geography. Detailed regional estimates are available for bananas and avocados, but not every fruit. Nearby circles may overlap in the national view; the close-ups retain their geographic positions. Rounded regional sums differ slightly from national totals.</p></details>
       </figure>
     <figure>
-      <h3><img class="fruit-icon" src="assets/icons/mango.webp" alt="" width="28" height="28">What makes up each state's harvest?</h3>
-      <p class="chart-subtitle">Reported tonnes across the same ten comparison fruits, 2024–25.</p>
+      <h3>What makes up each state's harvest?</h3>
+      <p class="chart-subtitle"><strong>Queensland's banana links and NSW's orange links stand out.</strong> Link widths compare reported tonnes across ten fruits in 2024–25.</p>
       <div class="chart" id="fruit_sankey" aria-label="Sankey diagram of state and fruit production"></div>
       <figcaption>Link widths show <strong>2.089 million reported tonnes</strong> across ten fruits, not transport. Missing observations are not zero. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS, Table 2</a>.</figcaption>
       <details><summary>Coverage and layout</summary><p>Only positive reported observations are linked. ACT has no positive reported observations in this comparison. d3-sankey calculates the layout during preparation; Vega draws the diagram. Highlighting a state retains all node positions and the original scale.</p></details>
@@ -87,13 +96,13 @@
       <p>Fruit production has changed unevenly. Some crops have grown substantially, while others have declined. Production volume tells one part of the story; the value of that fruit tells another.</p>
       <figure>
         <h3>More avocados and mandarins, fewer pears</h3>
-        <p class="chart-subtitle">Between 2020–21 and 2024–25, avocado production rose 68% and mandarin production rose 45%, while pear production fell 42%.</p>
+        <p class="chart-subtitle">Between 2020–21 and 2024–25: <mark>avocados +68%</mark>, <strong>mandarins +45%</strong>, and <strong>pears −42%</strong>.</p>
         <div class="chart" id="fruit_slope" aria-label="Slope chart comparing production of ten fruits in 2020–21 and 2024–25"></div>
         <figcaption>Lines join two snapshots, not the intervening annual trend. The vertical axis shows thousands of tonnes and starts at zero. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS, Table 2</a>. Percent changes calculated from published tonnes.</figcaption>
       </figure>
       <figure>
         <h3>The value rankings have shifted</h3>
-        <p class="chart-subtitle">Table grapes stayed first among these ten fruits. By 2024–25, bananas and avocados both ranked above apples.</p>
+        <p class="chart-subtitle"><mark>Table grapes stayed first</mark> among these ten fruits; bananas and avocados both finished above apples.</p>
         <div class="chart" id="fruit_bump" aria-label="Bump chart of farmgate-value rankings for ten fruits over five years"></div>
         <figcaption>Rank 1 is the highest farmgate value within this fixed group of ten fruits. The chart shows changes in order, not the size of the dollar gaps. Values are in current dollars. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS, Table 2</a>, 2020–21 to 2024–25.</figcaption>
       </figure>
@@ -101,12 +110,13 @@
         <h3>More fruit does not always mean more value</h3>
         <p class="chart-subtitle">Production volume and farmgate value do not always move together. Each labelled point is one financial year.</p>
         <div class="chart" id="fruit_trajectory" aria-label="Connected scatterplot of production volume and farmgate value for a selected fruit"></div>
+        <p id="trajectory_insight" class="insight" aria-live="polite"></p>
         <figcaption>Lines follow financial-year order. Axes adjust to each fruit and do not start at zero. <a href="https://www.abs.gov.au/statistics/industry/agriculture/australian-agriculture-horticulture/2024-25">Source: ABS, Table 2</a>, 2020–21 to 2024–25.</figcaption>
         <details><summary>Interpreting value</summary><p>Farmgate values are nominal, not inflation-adjusted or supermarket prices. This chart does not establish what caused a change in value.</p></details>
       </figure>
     <figure>
       <h3>Where did the increase in value come from?</h3>
-      <p class="chart-subtitle">Reported fruit value rose by $1.486 billion between 2020–21 and 2024–25.</p>
+      <p class="chart-subtitle">A <mark>$1.486 billion increase</mark> in reported fruit value, with table grapes and avocados the largest individual contributors, 2020–21 to 2024–25.</p>
       <div class="chart" id="fruit_waterfall" aria-label="Waterfall of contributions to fruit value growth"></div>
       <figcaption>Five largest gains, two largest declines and the net change in the other 22 categories. Values are current dollars, not inflation-adjusted. Source: ABS, Table 2.</figcaption>
     </figure>
@@ -116,15 +126,22 @@
       <h2><img class="section-icon" src="assets/icons/grapes.webp" alt="" width="44" height="44">Beyond our borders</h2>
       <p>Australia exports fruit to markets across Asia, the Pacific and beyond. Different fruits have different overseas destinations, so this final map compares five export categories.</p>
       <figure>
-        <h3><img class="fruit-icon" src="assets/icons/strawberry.webp" alt="" width="28" height="28">Where Australian fruit goes overseas</h3>
-        <p class="chart-subtitle">Eight largest destinations by export volume, for each selection. Calendar year 2025.</p>
+        <h3>Where Australian fruit goes overseas</h3>
+        <p class="chart-subtitle">Eight largest destinations by export volume, calendar 2025. <strong>Route colours match destinations in the table.</strong></p>
+        <div class="exports-layout">
+        <div>
         <div class="chart" id="fruit_exports" aria-label="Flow map of Australian exports across five fruit categories"></div>
+        <!-- main.js fills this sentence and the table from the same selected export category. -->
+        <!-- aria-live politely announces a changed coverage sentence to screen-reader users. -->
         <p id="export_coverage" class="chart-subtitle" aria-live="polite"></p>
+        </div>
         <table class="export-table">
           <caption>Destinations shown on the map</caption>
           <thead><tr><th scope="col">Destination</th><th scope="col">Tonnes</th><th scope="col">Share</th></tr></thead>
+          <!-- Rows are built locally from prepared export data, not fetched from a live trade API. -->
           <tbody id="export_destinations"></tbody>
         </table>
+        </div>
         <figcaption>Five selected export categories, not all Australian fruit exports. Line widths rescale with each selection. Sources: <a href="https://wits.worldbank.org/trade/comtrade/en/country/AUS/year/2025/tradeflow/Exports/partner/ALL/product/080610">UN Comtrade via World Bank WITS</a> and <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</figcaption>
         <details><summary>Trade coverage and map notes</summary><p>The categories are fresh grapes, fresh apples, oranges, mandarins and related citrus, and fresh strawberries. Citrus codes include fresh or dried fruit; mandarins include clementines and similar citrus. Paths connect representative country locations, not ports or actual shipping routes. Exports cover January–December 2025; production charts use financial years. Percentages use each selection's full world export total, including destinations not mapped.</p></details>
       </figure>
@@ -147,6 +164,7 @@
     </p>
   </footer>
 
+  <!-- Load after the containers exist so document.querySelector can find each chart. -->
   <script src="js/main.js"></script>
 </body>
 </html>

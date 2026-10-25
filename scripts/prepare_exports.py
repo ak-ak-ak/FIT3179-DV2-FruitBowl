@@ -17,6 +17,8 @@ CATEGORIES = [("grapes", "Table grapes", "080610"), ("apples", "Apples", "080810
               ("strawberries", "Strawberries", "081010")]
 NAMES = {"KOR": "South Korea", "HKG": "Hong Kong", "TMP": "Timor-Leste", "NRU": "Nauru"}
 rows = []
+# PREPARATION ONLY: parse saved source tables, not a live API request when the page opens.
+# HS codes define the trade categories; these are not all Australian fruit exports.
 world_totals = {}
 for slug, category, hs_code in CATEGORIES:
     document = html.parse(str(RAW / f"exports_2025_{slug}.html"))
@@ -31,10 +33,12 @@ for slug, category, hs_code in CATEGORIES:
         link = cells[5].xpath(".//a/@href")[0]
         parts = urlparse(link).path.split("/")
         code = parts[parts.index("partner") + 1]
+        # Source quantities are kilograms. Dividing by 1,000 converts them to tonnes.
         tonnes = float(values[7].replace(",", "")) / 1000
         if values[5] == "World":
             world_totals[category] = tonnes
             continue
+        # This saved source has one incorrect partner link; validate its label before correcting it.
         if code == "WLD":
             assert values[5] == "Cote d'Ivoire", "Unexpected country link requires review"
             code = "CIV"
@@ -50,6 +54,7 @@ with (DATA / "fruit_export_destinations.csv").open("w", newline="") as stream:
     writer.writeheader()
     writer.writerows(rows)
 
+# Prefer capital-city locations, then population, for representative country points, not ports.
 places = json.loads((RAW / "ne_110m_populated_places.geojson").read_text())["features"]
 locations = {}
 for feature in sorted(places, key=lambda f: (f["properties"].get("ADM0CAP", 0), f["properties"].get("POP_MAX", 0)), reverse=True):
@@ -58,22 +63,26 @@ origin = locations["AUS"]
 flows = []
 summaries = []
 for category in ["All five categories", *[c[1] for c in CATEGORIES]]:
+    # Aggregate destinations across fruits only for the combined selection.
     chosen = rows if category == "All five categories" else [r for r in rows if r["fruit"] == category]
     totals = defaultdict(float)
     names = {}
     for row in chosen:
         totals[row["destination_code"]] += row["tonnes"]
         names[row["destination_code"]] = row["destination"]
+    # Retain the published world denominator, including partners not drawn on the map.
     total = sum(world_totals.values()) if category == "All five categories" else world_totals[category]
     # Non-geographic partner codes cannot be drawn as invented destinations.
     eligible = [(code, tonnes) for code, tonnes in totals.items() if code not in {"BUN", "OAS"}]
     leaders = sorted(eligible, key=lambda pair: pair[1], reverse=True)[:8]
     assert all(code in locations for code, _ in leaders), "A top destination has no sourced location"
+    # Coverage explains what fraction of the full selection the eight displayed links represent.
     coverage = sum(tonnes for _, tonnes in leaders) / total * 100
     summaries.append({"fruit": category, "total_tonnes": total, "coverage_pct": coverage,
                       "destination_count": len(eligible), "shown_count": len(leaders)})
     for rank, (code, tonnes) in enumerate(leaders, start=1):
         longitude, latitude = locations[code]
+        # A LineString connects representative endpoints; it is not a recorded shipping route.
         flows.append({"fruit": category, "destination": names[code], "destination_code": code,
                       "year": 2025, "tonnes": tonnes, "share_pct": tonnes / total * 100,
                       "rank": rank, "longitude": longitude, "latitude": latitude,

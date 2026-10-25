@@ -103,6 +103,14 @@ The heatmap uses `fruit_state_matrix.csv`, a complete display grid of ten select
 Run `scripts/prepare_data.py` using Python with openpyxl and pypdf installed. It extracts source tables, validates key totals and writes small CSVs. Raw reports/workbooks are development sources, not browser chart requests. Charts must load only the prepared CSVs and simplified geometry. Downloaded source files do not need to be publicly redistributed; check permission before committing the report itself. The source links above provide provenance.
 # Final Three Derived Charts
 
+## Critique Revisions
+
+The live lineup now replaces the flat treemap with `fruit_value.vl.json`, a ranked lollipop comparison of the ten highest farmgate values from the existing 29-category extract. The headline total still uses all 29 categories. This is a basic comparison idiom, not an additional advanced-idiom claim. The old treemap spec is retained but no longer embedded.
+
+`scripts/refine_charts.py` applies the final presentation revisions after the original builders and theme script: brighter categorical colours, a label-free heatmap with source-based emphasis, initial regional close-ups, axis spacing and destination-specific route colours. No source production or trade measurements are changed. Rebuild order ends with `python3 scripts/refine_charts.py`.
+
+The scatterplot's persistent annotation calculates financial-year endpoint percentage changes from the same prepared history CSV. Regional shortlists use published regional tonnes. Export route colours match their destination table keys and remain distinct among the eight displayed routes for every selection.
+
 All three derive from the existing ABS Table 2 extracts, not additional invented observations.
 
 - Unit chart: sums 29 national fruit categories in 2024-25 (2,834,995 tonnes). Five largest categories plus the remainder; floor exact percentage shares, then distribute remaining cells to the largest fractional remainders. Exactly 100 equal-area cells. Tooltips retain the source tonnes and percentage shares.

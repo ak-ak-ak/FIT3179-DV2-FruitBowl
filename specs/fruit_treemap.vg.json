@@ -88,16 +88,16 @@
         "Blueberries"
       ],
       "range": [
-        "#ce6777",
-        "#799e55",
-        "#716096",
-        "#dd952f",
-        "#d37339",
-        "#b89d32",
-        "#cb624f",
-        "#398965",
-        "#bc466d",
-        "#506794"
+        "#E75C83",
+        "#81AE36",
+        "#8A58BB",
+        "#F39A24",
+        "#ED6D38",
+        "#D4AD19",
+        "#E76643",
+        "#25A977",
+        "#D93C72",
+        "#4F73C8"
       ]
     }
   ],
@@ -132,7 +132,7 @@
             "field": "y1"
           },
           "fill": {
-            "signal": "indexof([\"Apples\", \"Pears\", \"Table grapes\", \"Oranges\", \"Mandarins\", \"Bananas\", \"Mangoes\", \"Avocados\", \"Strawberries\", \"Blueberries\"], datum.fruit) >= 0 ? scale('fruitGroup', datum.fruit) : '#c5cbd2'"
+            "signal": "indexof([\"Apples\", \"Pears\", \"Table grapes\", \"Oranges\", \"Mandarins\", \"Bananas\", \"Mangoes\", \"Avocados\", \"Strawberries\", \"Blueberries\"], datum.fruit) >= 0 ? scale('fruitGroup', datum.fruit) : '#AEBCC9'"
           },
           "tooltip": {
             "signal": "{'Fruit': datum.fruit, 'Farmgate value': '$' + format(datum.value, ',.1f') + ' million', 'Share of reported value': format(datum.share_pct, '.1f') + '%', 'Year': '2024\u201325'}"

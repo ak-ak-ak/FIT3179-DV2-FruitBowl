@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+# PREPARATION ONLY: build three JSON specs. The browser reads the resulting files, not Python.
+# Reuse a fixed fruit domain so a fruit keeps the same hue in all three charts.
 THEME = json.loads((ROOT / "data/chart_theme.json").read_text())
 FRUITS = THEME["fruits"]
 PALETTE = THEME["colors"]
@@ -25,17 +27,20 @@ TOOLTIP = [{"field": "fruit", "type": "nominal", "title": "Fruit"},
 
 
 def base(description):
+    # deepcopy prevents later chart-specific edits from changing shared nested dictionaries.
     return {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
             "description": description, "width": "container", "height": 400,
             "background": "transparent", "data": deepcopy(DATA), "config": deepcopy(CONFIG)}
 
 
 def highlight(name):
+    # A bound parameter creates the dropdown. It stores a choice; it does not remove rows.
     return [{"name": name, "value": "All fruits", "bind": {
         "input": "select", "name": "Highlight fruit: ", "options": ["All fruits", *FRUITS]}}]
 
 
 def opacity(name):
+    # Keep the selected fruit opaque and dim the rest, preserving ranks and visual context.
     return {"condition": {"test": f"{name} === 'All fruits' || datum.fruit === {name}", "value": 1}, "value": 0.15}
 
 
@@ -44,6 +49,8 @@ def save(name, spec):
     print(name)
 
 
+# SLOPE: filter to the first and last years, then layer connecting lines, points and labels.
+# y uses a quantitative, zero-based scale; axis label formatting displays thousands of tonnes.
 slope = base("Slope chart comparing production tonnes for ten fruits between 2020-21 and 2024-25. Intermediate years are not shown. Lines connect comparable observations; zero is included on the quantity axis.")
 slope["params"] = highlight("slopeFruit")
 slope["transform"] = [{"filter": {"field": "year", "oneOf": [YEARS[0], YEARS[-1]]}}]
@@ -64,6 +71,8 @@ slope["layer"] = [
 slope["layer"][1]["name"] = "slope_points"
 save("fruit_slope.vl.json", slope)
 
+# BUMP: the window transform ranks values separately for each year before drawing the lines.
+# reverse: True places rank 1 at the top; highlighting does not recalculate those ranks.
 bump = base("Ranks of nominal farmgate value within a fixed set of ten fruits, 2020-21 to 2024-25. Rank is computed separately by year, with equal values receiving equal rank. Rank does not encode the dollar gap.")
 bump["height"] = 420
 bump["params"] = highlight("bumpFruit")
@@ -85,6 +94,8 @@ bump["layer"] = [{"mark": {"type": "line", "strokeWidth": 2.5}},
 bump["layer"][1]["name"] = "bump_points"
 save("fruit_bump.vl.json", bump)
 
+# CONNECTED SCATTERPLOT: unlike highlighting above, this selector filters to one fruit.
+# x/y position encodes volume/value; zero: False lets the axes fit that fruit's trajectory.
 trajectory = base("Time-ordered connected scatterplot for a selected fruit: production tonnes versus nominal farmgate value, 2020-21 to 2024-25. Axes adjust to the selected fruit and do not start at zero. Connections represent annual sequence, not causation.")
 trajectory["params"] = [{"name": "fruitChoice", "value": "Apples",
                          "bind": {"input": "select", "name": "Fruit: ", "options": FRUITS}}]
@@ -97,6 +108,8 @@ trajectory["encoding"] = {
     "color": {"field": "fruit", "type": "nominal", "scale": {"domain": FRUITS, "range": PALETTE}, "legend": None},
     "tooltip": deepcopy(TOOLTIP) + [{"field": "farmgate_value_aud_million", "type": "quantitative", "title": "Farmgate value (A$ million)", "format": ",.1f"}]
 }
+# Explicit chronological order prevents the line from connecting points in x-value order.
+# The text-layer dy exceptions separate year labels that would otherwise overlap.
 trajectory["layer"] = [
     {"mark": {"type": "line", "strokeWidth": 2.5}, "encoding": {"order": {"field": "year", "type": "ordinal", "sort": "ascending"}}},
     {"mark": {"type": "point", "filled": True, "size": 90}},

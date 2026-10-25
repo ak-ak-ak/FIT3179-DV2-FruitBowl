@@ -10,6 +10,8 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
+# PREPARATION ONLY: run manually to write derived data; the website does not execute Python.
+# Resolve paths relative to this script, rather than whichever folder the terminal is in.
 DATA = ROOT / "data"
 RAW = DATA / "raw"
 FOCUS = {"Apples", "Avocados", "Bananas", "Blueberries", "Mandarins", "Mangoes",
@@ -17,6 +19,7 @@ FOCUS = {"Apples", "Avocados", "Bananas", "Blueberries", "Mandarins", "Mangoes",
 
 
 def save(name, rows):
+    # Use the first record's keys as CSV headings; reject an empty extract instead of hiding it.
     assert rows, name
     with (DATA / name).open("w", newline="", encoding="utf-8") as stream:
         writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
@@ -25,11 +28,13 @@ def save(name, rows):
     print(f"{name}: {len(rows)} rows")
 
 
+# Read the source spreadsheet's stored values, not formulas or chart images.
 workbook = openpyxl.load_workbook(RAW / "abs_horticulture_2024_25.xlsx",
                                 read_only=True, data_only=True)
 sheet = list(workbook["Table 2"].iter_rows(max_col=8, values_only=True))
 years = sheet[4][3:8]
 assert years == ("2020-21", "2021-22", "2022-23", "2023-24", "2024-25")
+# Each key identifies one fruit, region and year; production and value become separate fields.
 records = {}
 for row in sheet[5:]:
     code, region, item = row[:3]
@@ -42,9 +47,11 @@ for row in sheet[5:]:
         record = records.setdefault(key, {"fruit": fruit, "region_code": str(int(code)),
                                          "region": region, "year": year})
         field = "production_tonnes" if metric == "Production (t)" else "farmgate_value_aud_million"
+        # Keep published numeric zero, but leave non-numeric/unreported values blank.
         record[field] = value if isinstance(value, (int, float)) else ""
         record[field + "_status"] = "published" if isinstance(value, (int, float)) else str(value)
 
+# Keep all 29 national categories for composition; use a fixed ten-fruit set for comparisons.
 national = [r for r in records.values() if r["region"] == "Australia"]
 assert len(national) == 29 * 5
 save("fruit_national.csv", national)
@@ -54,6 +61,7 @@ for record in records.values():
     if record["region"] == "Australia" or record["year"] != "2024-25" or record["fruit"] not in FOCUS:
         continue
     row = dict(record)
+    # The heatmap denominator is this fruit's national production, not all state fruit combined.
     total = records[(row["fruit"], "0", "Australia", row["year"])]["production_tonnes"]
     row["national_production_share_pct"] = row["production_tonnes"] / total * 100 if isinstance(row["production_tonnes"], (int, float)) else ""
     state.append(row)
@@ -69,6 +77,8 @@ groups = {
     "Tropical fruit": {"Avocados", "Bananas", "Custard Apples", "Lychees", "Mangoes", "Papaya/Pawpaw", "Passionfruit", "Pineapples"},
     "Melons": {"Muskmelons", "Watermelons"}
 }
+# The root and parent IDs let Vega stratify the flat records into a treemap hierarchy.
+# group is retained metadata; the final theme colours comparison fruits directly, not groups.
 tree = [{"id": "root", "parent": None, "value": 0}]
 for row in latest:
     group = next((name for name, fruits in groups.items() if row["fruit"] in fruits), "Other fruit")
@@ -81,6 +91,7 @@ print(f"fruit_value_tree.json: {len(latest)} fruit categories, AUD {value_total:
 state_order = [("1", "NSW", "New South Wales"), ("2", "VIC", "Victoria"), ("3", "QLD", "Queensland"),
                ("4", "SA", "South Australia"), ("5", "WA", "Western Australia"), ("6", "TAS", "Tasmania"),
                ("7", "NT", "Northern Territory"), ("8", "ACT", "Australian Capital Territory")]
+# Explicitly create every fruit-state combination so missing cells remain visible in grey.
 matrix = []
 for fruit in sorted(FOCUS):
     total = records[(fruit, "0", "Australia", "2024-25")]["production_tonnes"]
@@ -93,6 +104,7 @@ for fruit in sorted(FOCUS):
                        "status": "Reported" if valid else "Not reported"})
 save("fruit_state_matrix.csv", matrix)
 
+# Choropleth density = reported tonnes / entire state land area. This is NOT orchard yield.
 areas = {r["region"]: float(r["land_area_km2"]) for r in csv.DictReader((RAW / "state_land_area.csv").open())}
 map_rows = []
 for region, area in areas.items():
@@ -108,6 +120,7 @@ for region, area in areas.items():
                          "tonnes_per_km2": tonnes / area, "reported_categories": len(selected)})
 save("fruit_state_density.csv", map_rows)
 
+# Check that the regional download is complete and its rounded production reconciles closely.
 regional = json.loads((RAW / "abs_avocado_producing_sa2_2024_25.json").read_text())
 assert not regional.get("exceededTransferLimit"), "Incomplete geographic download"
 regions = []
@@ -122,6 +135,7 @@ assert len({r["sa2_code_2021"] for r in regions}) == len(regions)
 assert abs(sum(r["production_t"] for r in regions) - 131385) <= 5
 save("avocado_sa2.csv", regions)
 
+# Supporting avocado extracts below are retained inputs, not extra charts on the final page.
 # Page 3 is a numerical table, not values estimated from chart pixels.
 page = PdfReader(RAW / "avocados_australia_2024_25.pdf").pages[2].extract_text(extraction_mode="layout")
 history = []

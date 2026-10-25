@@ -1,8 +1,10 @@
 // Loads each Vega or Vega-Lite spec into its matching chart container.
 // Add one line per chart: ["div id", "path to spec"].
+// INTERVIEW: this file embeds charts; marks, channels and selectors are declared in specs/.
+// A leading # is a CSS selector: #fruit_units finds the HTML element id="fruit_units".
 const charts = [
   ["#fruit_units", "specs/fruit_units.vl.json"],
-  ["#fruit_treemap", "specs/fruit_treemap.vg.json"],
+  ["#fruit_value", "specs/fruit_value.vl.json"],
   ["#fruit_heatmap", "specs/fruit_heatmap.vl.json"],
   ["#fruit_choropleth", "specs/fruit_choropleth.vl.json"],
   ["#fruit_symbols", "specs/fruit_symbols.vl.json"],
@@ -14,65 +16,139 @@ const charts = [
   ["#fruit_exports", "specs/fruit_exports.vg.json"],
 ];
 
+// Hide Vega's export/editor menu and draw vector SVG marks rather than a canvas image.
 const embedOptions = { actions: false, renderer: "svg" };
 
 function chartHeight(id, width) {
-  if (id === "#fruit_units") return Math.min(340, width);
-  if (id === "#fruit_sankey") return 600;
-  if (id === "#fruit_waterfall") return 420;
-  if (id === "#fruit_treemap") return width < 600 ? 460 : 430;
-  if (id === "#fruit_heatmap") return 360;
+  // Some chart heights change on mobile; maps without their own rule use the fallback below.
+  if (id === "#fruit_units") return Math.min(300, width);
+  if (id === "#fruit_value") return 320;
+  if (id === "#fruit_symbols") return width < 600 ? 350 : 360;
+  if (id === "#fruit_sankey") return width < 600 ? 540 : 470;
+  if (id === "#fruit_waterfall") return 350;
+  if (id === "#fruit_heatmap") return 310;
   if (id === "#fruit_slope") return 400;
-  if (id === "#fruit_bump") return 420;
+  if (id === "#fruit_bump") return 350;
   if (id === "#fruit_trajectory") return width < 600 ? 340 : 380;
-  if (id === "#fruit_exports") return width < 600 ? 260 : 460;
+  if (id === "#fruit_exports") return width < 600 ? 260 : Math.min(380, width * 0.48 + 30);
+  // Follow the container's proportions, with height limited to 220-440 pixels.
   return Math.min(440, Math.max(220, width * 0.65));
 }
 
 charts.forEach(async ([el, specPath]) => {
+  // Charts load independently. async/await waits for requests without blocking the page.
   const container = document.querySelector(el);
   try {
+    // fetch requests the spec; .json() parses its text into a JavaScript object.
     const response = await fetch(specPath);
     if (!response.ok) throw new Error(`Chart request failed: ${response.status}`);
     const spec = await response.json();
+    // The schema URL distinguishes plain Vega from the higher-level Vega-Lite format.
     const isVega = spec.$schema.includes("/vega/v");
     spec.height = chartHeight(el, container.clientWidth);
     if (isVega) spec.width = container.clientWidth;
+    // Measure chart labels after the intended self-hosted fonts are available.
     await document.fonts.ready;
+    // Insert the chart into its container; view is the handle used to update it later.
     const { view } = await vegaEmbed(el, spec, embedOptions);
+    if (el === "#fruit_symbols") {
+      // A readable shortlist complements overlapping regional points without moving their locations.
+      const regional = await (await fetch("data/fruit_regions_vega.geojson")).json();
+      const updateRegions = () => {
+        const fruit = view.signal("fruitChoice");
+        const leaders = regional.features.filter(f => f.properties.fruit === fruit)
+          .sort((a, b) => b.properties.production_t - a.properties.production_t).slice(0, 4);
+        document.querySelector("#regional_leaders").replaceChildren(...leaders.map(f => {
+          const item = document.createElement("li");
+          const name = document.createElement("strong");
+          name.textContent = f.properties.sa2_name_2021;
+          item.append(name, `: ${new Intl.NumberFormat("en-AU").format(f.properties.production_t)} tonnes`);
+          return item;
+        }));
+        document.querySelector("#regional_fruit").textContent = fruit;
+      };
+      updateRegions();
+      view.addSignalListener("fruitChoice", (_, fruit) => {
+        // Use a useful initial close-up for each crop; the region selector remains available.
+        view.signal("regionFocus", fruit === "Bananas" ? "North Queensland" : "South-west WA").runAsync();
+        updateRegions();
+      });
+    }
+    if (el === "#fruit_trajectory") {
+      const response = await fetch("data/fruit_history.csv");
+      if (!response.ok) throw new Error("Fruit history annotation could not load");
+      const history = vega.read(await response.text(), { type: "csv", parse: "auto" });
+      const updateTrajectoryInsight = fruit => {
+        const start = history.find(r => r.fruit === fruit && r.year === "2020-21");
+        const end = history.find(r => r.fruit === fruit && r.year === "2024-25");
+        const sentence = document.querySelector("#trajectory_insight");
+        sentence.replaceChildren();
+        const name = document.createElement("strong");
+        name.textContent = `${fruit}: `;
+        sentence.append(name);
+        [ ["production", "production_tonnes"], ["nominal farmgate value", "farmgate_value_aud_million"] ].forEach(([label, field], index) => {
+          const change = (end[field] / start[field] - 1) * 100;
+          const result = document.createElement("strong");
+          result.textContent = `${change >= 0 ? "rose" : "fell"} ${Math.abs(change).toFixed(1)}%`;
+          sentence.append(`${index ? "; " : ""}${label} `, result);
+        });
+        sentence.append(" between 2020–21 and 2024–25.");
+      };
+      updateTrajectoryInsight("Apples");
+      view.addSignalListener("fruitChoice", (_, fruit) => updateTrajectoryInsight(fruit));
+    }
     if (el === "#fruit_exports") {
+      // Only this chart has a separate HTML table and coverage sentence to synchronise.
       const exportResponse = await fetch("data/fruit_exports.json");
       if (!exportResponse.ok) throw new Error("Export summary could not load");
       const exportData = await exportResponse.json();
+      const routePalette = spec.scales.find(scale => scale.name === "destinationColor");
+      // Apply Australian number formatting, with at most one decimal place.
       const number = new Intl.NumberFormat("en-AU", { maximumFractionDigits: 1 });
       const updateExportSummary = choice => {
+        // choice is the selected category; its total includes destinations not on the map.
         const summary = exportData.summaries.find(row => row.fruit === choice);
         document.querySelector("#export_coverage").textContent = `The eight destinations shown account for ${number.format(summary.coverage_pct)}% of ${number.format(summary.total_tonnes)} tonnes exported in this selection.`;
+        // Filter to the selection and order destinations by their prepared export-volume rank.
         const rows = exportData.flows.filter(row => row.fruit === choice).sort((a, b) => a.rank - b.rank);
         const body = document.querySelector("#export_destinations");
+        // Replace the previous rows, rather than appending duplicate destinations each time.
         body.replaceChildren(...rows.map(row => {
           const tr = document.createElement("tr");
           [row.destination, number.format(row.tonnes), `${number.format(row.share_pct)}%`].forEach(value => {
             const td = document.createElement("td");
+            // Insert source values as plain text, not as HTML markup.
             td.textContent = value;
             tr.append(td);
           });
+          const key = document.createElement("span");
+          key.className = "route-key";
+          key.style.backgroundColor = routePalette.range[routePalette.domain.indexOf(row.destination_code)];
+          key.setAttribute("aria-hidden", "true");
+          tr.firstChild.prepend(key);
           return tr;
         }));
       };
+      // Fill the default table, then update it whenever Vega's dropdown signal changes.
       updateExportSummary("All five categories");
+      // The first callback argument is the unused signal name; choice is its new value.
       view.addSignalListener("fruitChoice", (_, choice) => updateExportSummary(choice));
     }
+    // Watch the chart container: changing the CSS grid can resize it without a window event.
     let previousWidth = container.clientWidth;
     const observer = new ResizeObserver(() => {
       const width = container.clientWidth;
+      // Ignore height-only changes to avoid triggering our own resize work repeatedly.
       if (width === previousWidth) return;
       previousWidth = width;
+      // Vega gets an explicit width; Vega-Lite specs declare width: "container".
       if (isVega) view.width(width);
+      // Update dimensions, recalculate layout and rerun the view asynchronously.
       view.height(chartHeight(el, width)).resize().runAsync();
     });
     observer.observe(container);
   } catch (err) {
+    // Show a readable fallback without stopping the other independently loaded charts.
     console.error(specPath, err);
     container.textContent = "This chart could not load. Please refresh the page.";
   }

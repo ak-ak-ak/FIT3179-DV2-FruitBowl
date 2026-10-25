@@ -9,9 +9,9 @@
   },
   "mark": {
     "type": "rect",
-    "stroke": "white",
-    "strokeWidth": 4,
-    "cornerRadius": 2
+    "stroke": "#FFF5C7",
+    "strokeWidth": 3,
+    "cornerRadius": 0
   },
   "encoding": {
     "x": {
@@ -37,12 +37,12 @@
           "Other reported fruit"
         ],
         "range": [
-          "#dd952f",
-          "#b89d32",
-          "#ce6777",
-          "#d37339",
-          "#716096",
-          "#c5cbd2"
+          "#F39A24",
+          "#D4AD19",
+          "#E75C83",
+          "#ED6D38",
+          "#8A58BB",
+          "#AEBCC9"
         ]
       },
       "legend": {

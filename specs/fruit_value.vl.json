@@ -1,0 +1,202 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Ranked lollipop comparison of the ten highest farmgate values among 29 reported fruit categories. No hierarchical relationship is implied.",
+  "width": "container",
+  "height": 320,
+  "background": "transparent",
+  "data": {
+    "url": "data/fruit_value_tree.json"
+  },
+  "transform": [
+    {
+      "filter": "datum.parent === 'root'"
+    },
+    {
+      "window": [
+        {
+          "op": "row_number",
+          "as": "value_rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "value",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.value_rank <= 10"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "fruit",
+      "type": "nominal",
+      "sort": {
+        "field": "value",
+        "order": "descending"
+      },
+      "axis": {
+        "title": null,
+        "ticks": false,
+        "labelLimit": 115
+      }
+    },
+    "x": {
+      "field": "value",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          1050
+        ]
+      },
+      "axis": {
+        "title": "Farmgate value (A$ million)",
+        "tickCount": 4
+      }
+    },
+    "tooltip": [
+      {
+        "field": "fruit",
+        "title": "Fruit"
+      },
+      {
+        "field": "value",
+        "type": "quantitative",
+        "title": "Value (A$ million)",
+        "format": ",.1f"
+      },
+      {
+        "field": "share_pct",
+        "type": "quantitative",
+        "title": "Share of 29-category value (%)",
+        "format": ".1f"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 3,
+        "color": "#CCB1C4"
+      },
+      "encoding": {
+        "x2": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 115,
+        "opacity": 1
+      },
+      "encoding": {
+        "color": {
+          "field": "fruit",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Apples",
+              "Apricots",
+              "Avocados",
+              "Bananas",
+              "Blueberries",
+              "Cherries",
+              "Custard Apples",
+              "Dried grapes",
+              "Grapefruit",
+              "Kiwifruit",
+              "Lemons and limes",
+              "Lychees",
+              "Mandarins",
+              "Mangoes",
+              "Muskmelons",
+              "Nashi",
+              "Nectarines and peaches",
+              "Olives",
+              "Oranges",
+              "Papaya/Pawpaw",
+              "Passionfruit",
+              "Pears",
+              "Persimmons",
+              "Pineapples",
+              "Plums",
+              "Rubus berries",
+              "Strawberries",
+              "Table grapes",
+              "Watermelons"
+            ],
+            "range": [
+              "#E75C83",
+              "#617A91",
+              "#25A977",
+              "#D4AD19",
+              "#4F73C8",
+              "#617A91",
+              "#617A91",
+              "#617A91",
+              "#617A91",
+              "#617A91",
+              "#617A91",
+              "#617A91",
+              "#ED6D38",
+              "#E76643",
+              "#617A91",
+              "#617A91",
+              "#617A91",
+              "#617A91",
+              "#F39A24",
+              "#617A91",
+              "#617A91",
+              "#81AE36",
+              "#617A91",
+              "#617A91",
+              "#617A91",
+              "#617A91",
+              "#D93C72",
+              "#8A58BB",
+              "#617A91"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "fontSize": 12,
+        "fontWeight": 700,
+        "color": "#263B32"
+      },
+      "encoding": {
+        "text": {
+          "field": "value",
+          "type": "quantitative",
+          "format": ",.1f"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "Nunito Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "domain": false,
+      "gridColor": "#E5D7AD",
+      "titlePadding": 10
+    }
+  }
+}
