@@ -34,6 +34,21 @@ const path = require('node:path');
     }
     const whitePanels=await page.locator('.chart').evaluateAll(es=>es.filter(e=>getComputedStyle(e).backgroundColor==='rgb(255, 255, 255)').length);
     if(whitePanels) throw Error('White chart panels should be transparent');
+    const radios=page.locator('#choropleth_options input[type=radio]');
+    if(await radios.count()!==11) throw Error('Expected eleven visible choropleth choices');
+    const mapColours=new Set();
+    for(const radio of await radios.all()) {
+      await radio.check();
+      await page.waitForTimeout(60);
+      mapColours.add(await page.locator('#fruit_choropleth .mark-shape.role-mark path').evaluateAll(es=>es.map(e=>e.getAttribute('fill')).join(',')));
+      if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)) throw Error('Overflow after choropleth selection');
+    }
+    if(mapColours.size<2) throw Error('Choropleth choices are not updating map colours');
+    await radios.first().check();
+    await radios.first().focus();
+    await page.keyboard.press('ArrowDown');
+    if(!await radios.nth(1).isChecked()) throw Error('Radio keyboard navigation failed');
+    await radios.first().check();
     const bumpGap=await page.locator('#fruit_bump svg').evaluate(svg=>{
       const years=[...svg.querySelectorAll('.role-axis-label text')].filter(e=>/^202\d-\d\d$/.test(e.textContent));
       const dots=[...svg.querySelectorAll('.mark-symbol.role-mark path')];

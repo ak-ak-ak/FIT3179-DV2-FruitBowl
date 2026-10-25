@@ -97,8 +97,16 @@ heat['layer'].append({'name':'insight_cells','transform':[{'filter':"(datum.frui
 save('fruit_heatmap.vl.json',heat)
 
 choro=json.loads((SPECS/'fruit_choropleth.vl.json').read_text())
-choro['layer'][0]['mark']['fill']='#CBD8CC'
-choro['layer'][1]['encoding']['color']['scale']['range']=['#D6F2D6','#087E54']
+choro['layer'][0]['mark'].update(fill='#AEBABD',stroke='#527D88',strokeWidth=0.8)
+choro['layer'][1]['mark'].update(stroke='#527D88',strokeWidth=0.8)
+choro['layer'][1]['encoding']['color']['scale']['range']=['#C4E3F0','#07516B']
+legend=choro['layer'][1]['encoding']['color']['legend']
+legend.update(gradientLength={'expr':'max(160, width - 24)'},gradientThickness=12,titleLimit=350)
+# Keep the choices in metadata for the HTML radio list; no duplicate bound select is needed.
+parameter=choro['params'][0]
+options=parameter.get('bind',{}).get('options',choro.get('usermeta',{}).get('fruitOptions'))
+choro['usermeta']={'fruitOptions':options}
+parameter.pop('bind',None)
 save('fruit_choropleth.vl.json',choro)
 
 symbols=json.loads((SPECS/'fruit_symbols.vl.json').read_text())
@@ -118,6 +126,10 @@ for name in ['fruit_slope.vl.json','fruit_bump.vl.json','fruit_trajectory.vl.jso
     spec=json.loads((SPECS/name).read_text())
     # Inner range padding separates endpoint marks from the year labels below the plot.
     spec['config']['axis'].update(labelPadding=12,labelColor='#34493E',titleColor='#34493E')
+    spec['config']['axis'].update(gridColor='#AD8596',gridOpacity=0.5,gridWidth=0.7)
+    for channel in ['x','y']:
+        encoding=spec['encoding'][channel]
+        encoding.setdefault('axis',{})['grid']=encoding.get('type')=='quantitative'
     if name=='fruit_bump.vl.json':
         spec['encoding']['y']['scale']['domain']=[0.6,10.6]
     if name=='fruit_slope.vl.json':
@@ -133,6 +145,12 @@ for name in ['fruit_slope.vl.json','fruit_bump.vl.json','fruit_trajectory.vl.jso
         text['encoding']['text']['field']='change_label'
         text['mark']['fontWeight']=700
     save(name,spec)
+
+water=json.loads((SPECS/'fruit_waterfall.vl.json').read_text())
+water['config']['axis'].update(gridColor='#AD8596',gridOpacity=0.5,gridWidth=0.7)
+water['encoding']['y']['axis']['grid']=False
+water['layer'][1]['encoding']['x']['axis']['grid']=True
+save('fruit_waterfall.vl.json',water)
 
 export=json.loads((SPECS/'fruit_exports.vg.json').read_text())
 # Colour by destination across selections, rather than give every route the same hue.

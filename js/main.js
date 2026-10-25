@@ -24,7 +24,8 @@ function chartHeight(id, width) {
   if (id === "#fruit_units") return Math.min(300, width);
   if (id === "#fruit_value") return 320;
   if (id === "#fruit_symbols") return width < 600 ? 350 : 360;
-  if (id === "#fruit_sankey") return width < 600 ? 540 : 470;
+  if (id === "#fruit_sankey") return width < 600 ? 620 : 660;
+  if (id === "#fruit_choropleth") return width < 600 ? 300 : 390;
   if (id === "#fruit_waterfall") return 350;
   if (id === "#fruit_heatmap") return 310;
   if (id === "#fruit_slope") return 400;
@@ -51,6 +52,36 @@ charts.forEach(async ([el, specPath]) => {
     await document.fonts.ready;
     // Insert the chart into its container; view is the handle used to update it later.
     const { view } = await vegaEmbed(el, spec, embedOptions);
+    // Retain native select keyboard behaviour while positioning the decorative chevron.
+    container.querySelectorAll("select").forEach(select => {
+      const shell = document.createElement("span");
+      shell.className = "select-shell";
+      select.before(shell);
+      shell.append(select);
+    });
+    if (el === "#fruit_choropleth") {
+      // Native radios expose every choice without a long dropdown or custom keyboard logic.
+      const choices = document.querySelector("#choropleth_options");
+      const inputs = spec.usermeta.fruitOptions.map(fruit => {
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "choropleth-fruit";
+        input.value = fruit;
+        input.checked = fruit === view.signal("fruitChoice");
+        const text = document.createElement("span");
+        text.textContent = fruit;
+        label.append(input, text);
+        choices.append(label);
+        input.addEventListener("change", () => {
+          if (input.checked) view.signal("fruitChoice", fruit).runAsync();
+        });
+        return input;
+      });
+      view.addSignalListener("fruitChoice", (_, fruit) => {
+        inputs.forEach(input => { input.checked = input.value === fruit; });
+      });
+    }
     if (el === "#fruit_symbols") {
       // A readable shortlist complements overlapping regional points without moving their locations.
       const regional = await (await fetch("data/fruit_regions_vega.geojson")).json();

@@ -38,6 +38,15 @@ figure { margin:24px 0 30px; min-width:0; }
 .chart { width:100%; background:transparent; margin:12px 0 10px; padding:0; }
 .regional-layout { display:grid; grid-template-columns:minmax(0,1fr) 230px; gap:24px; align-items:start; }
 .regional-layout > * { min-width:0; }
+.choropleth-layout { display:grid; grid-template-columns:182px minmax(0,1fr); gap:24px; align-items:start; }
+.choropleth-layout > * { min-width:0; }
+.fruit-panel { border:0; border-right:1px solid #ACCBB7; padding:12px 14px 12px 0; margin:12px 0; min-inline-size:0; }
+.fruit-panel legend { font-size:15px; font-weight:700; padding:0 0 8px; }
+.fruit-panel label { display:flex; align-items:center; gap:8px; min-height:32px; padding:4px 5px; font-size:14px; cursor:pointer; }
+.fruit-panel input { accent-color:#176479; margin:0; flex:0 0 auto; }
+.fruit-panel input:focus-visible { outline:2px solid #7D354C; outline-offset:3px; }
+.fruit-panel input:checked + span { font-weight:700; color:#124C5E; }
+.fruit-panel label:has(input:checked) { background:#D3EBED; }
 .exports-layout { display:grid; grid-template-columns:minmax(0,2fr) minmax(0,1fr); gap:24px; align-items:start; }
 .exports-layout > * { min-width:0; }
 .regional-note { border-left:3px solid #25A977; padding:12px 0 8px 16px; margin:12px 0; font-size:14px; }
@@ -57,13 +66,15 @@ mark { background:#FFC9DB; color:#482437; padding:1px 4px; font-weight:700; box-
 a { color:#683048; text-underline-offset:3px; }
 /* Make keyboard focus visible on links, methodology toggles and native chart selectors. */
 a:focus-visible,summary:focus-visible,select:focus-visible { outline:3px solid #7d354c; outline-offset:4px; }
-.neutral-key { display:inline-block; width:12px; height:12px; background:#e8eae7; border:1px solid #b7bdb6; }
+.neutral-key { display:inline-block; width:12px; height:12px; background:#AEBABD; border:1px solid #62787D; }
 /* These classes are created by Vega Embed, including dropdown controls under the charts. */
 .vega-embed { width:100%; }
 .vega-embed summary { display:none; }
 .vega-bindings { font-size:14px; margin-top:12px; display:flex; gap:10px 20px; flex-wrap:wrap; padding:8px 0; }
 .vega-bindings label { display:inline-flex; align-items:center; gap:8px; flex-wrap:wrap; }
-.vega-bindings select { font:inherit; padding:8px 10px; max-width:100%; background:#FFFDFB; color:var(--ink); border:2px solid #658271; border-radius:4px; min-height:40px; }
+.vega-bindings select { appearance:none; -webkit-appearance:none; font:inherit; padding:8px 38px 8px 10px; max-width:100%; background:#FFFDFB; color:var(--ink); border:2px solid #658271; border-radius:4px; min-height:40px; }
+.select-shell { position:relative; display:inline-grid; max-width:100%; }
+.select-shell::after { content:""; position:absolute; right:15px; top:50%; width:7px; height:7px; border-right:2px solid #385345; border-bottom:2px solid #385345; transform:translateY(-70%) rotate(45deg); pointer-events:none; }
 /* Align numeric columns on the right; tabular numerals give each digit equal width. */
 .export-table { width:100%; max-width:680px; border-collapse:collapse; font-size:14px; margin:18px 0; }
 .export-table caption { text-align:left; font-weight:700; margin-bottom:8px; }
@@ -81,6 +92,15 @@ footer.wrap { padding:36px 24px 50px; font-size:14px; color:var(--muted); }
  .overview .chart { min-height:380px; }
 }
 @media(max-width:800px) { .regional-layout,.exports-layout { grid-template-columns:minmax(0,1fr); gap:0; } }
+@media(max-width:800px) {
+ .choropleth-layout { grid-template-columns:minmax(0,1fr); gap:0; }
+ .fruit-panel { border-right:0; border-bottom:1px solid #ACCBB7; padding:4px 0 12px; margin:8px 0; }
+ #choropleth_options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2px 8px; }
+}
+@media(forced-colors:active) {
+ .vega-bindings select { appearance:auto; }
+ .select-shell::after { display:none; }
+}
 /* On small screens, move the bowl into normal document flow so it cannot overlap text. */
 @media(max-width:600px) {
  .wrap { padding:0 16px; }

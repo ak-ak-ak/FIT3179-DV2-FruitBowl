@@ -25,7 +25,8 @@
       "axis": {
         "title": null,
         "labelLimit": 110,
-        "ticks": false
+        "ticks": false,
+        "grid": false
       }
     },
     "tooltip": [
@@ -91,7 +92,8 @@
               "Change in farmgate value",
               "(A$ million)"
             ],
-            "tickCount": 4
+            "tickCount": 4,
+            "grid": true
           }
         },
         "x2": {
@@ -151,7 +153,9 @@
       "titleFontSize": 12,
       "titleFontWeight": "normal",
       "domain": false,
-      "gridColor": "#e8ece8"
+      "gridColor": "#AD8596",
+      "gridOpacity": 0.5,
+      "gridWidth": 0.7
     },
     "legend": {
       "labelFontSize": 12,

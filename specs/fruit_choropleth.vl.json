@@ -7,24 +7,7 @@
   "params": [
     {
       "name": "fruitChoice",
-      "value": "All reported fruit",
-      "bind": {
-        "input": "select",
-        "name": "Fruit: ",
-        "options": [
-          "All reported fruit",
-          "Apples",
-          "Avocados",
-          "Bananas",
-          "Blueberries",
-          "Mandarins",
-          "Mangoes",
-          "Oranges",
-          "Pears",
-          "Strawberries",
-          "Table grapes"
-        ]
-      }
+      "value": "All reported fruit"
     }
   ],
   "projection": {
@@ -83,9 +66,9 @@
     {
       "mark": {
         "type": "geoshape",
-        "fill": "#CBD8CC",
-        "stroke": "#ffffff",
-        "strokeWidth": 1.3
+        "fill": "#AEBABD",
+        "stroke": "#527D88",
+        "strokeWidth": 0.8
       },
       "encoding": {
         "tooltip": [
@@ -110,8 +93,8 @@
       ],
       "mark": {
         "type": "geoshape",
-        "stroke": "#ffffff",
-        "strokeWidth": 1.3
+        "stroke": "#527D88",
+        "strokeWidth": 0.8
       },
       "encoding": {
         "color": {
@@ -121,8 +104,8 @@
             "type": "linear",
             "zero": true,
             "range": [
-              "#D6F2D6",
-              "#087E54"
+              "#C4E3F0",
+              "#07516B"
             ]
           },
           "legend": {
@@ -130,8 +113,12 @@
             "orient": "bottom",
             "direction": "horizontal",
             "format": ".2f",
-            "gradientLength": 200,
-            "tickCount": 4
+            "gradientLength": {
+              "expr": "max(160, width - 24)"
+            },
+            "tickCount": 4,
+            "gradientThickness": 12,
+            "titleLimit": 350
           }
         },
         "tooltip": [
@@ -178,5 +165,20 @@
       "titleFontSize": 13,
       "titleFontWeight": "normal"
     }
+  },
+  "usermeta": {
+    "fruitOptions": [
+      "All reported fruit",
+      "Apples",
+      "Avocados",
+      "Bananas",
+      "Blueberries",
+      "Mandarins",
+      "Mangoes",
+      "Oranges",
+      "Pears",
+      "Strawberries",
+      "Table grapes"
+    ]
   }
 }

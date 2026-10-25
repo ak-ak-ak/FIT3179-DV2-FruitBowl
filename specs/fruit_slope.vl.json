@@ -24,12 +24,14 @@
       "titleFontSize": 13,
       "titleFontWeight": "normal",
       "titlePadding": 12,
-      "gridColor": "#e7ece8",
+      "gridColor": "#AD8596",
       "domain": false,
       "tickColor": "#c4cec6",
       "labelPadding": 12,
       "labelColor": "#34493E",
-      "titleColor": "#34493E"
+      "titleColor": "#34493E",
+      "gridOpacity": 0.5,
+      "gridWidth": 0.7
     },
     "legend": {
       "labelFontSize": 12,
@@ -84,7 +86,8 @@
       "axis": {
         "title": null,
         "labelAngle": 0,
-        "ticks": false
+        "ticks": false,
+        "grid": false
       }
     },
     "y": {
@@ -96,7 +99,8 @@
       "axis": {
         "title": "Production (thousand tonnes)",
         "labelExpr": "format(datum.value / 1000, ',.0f')",
-        "tickCount": 6
+        "tickCount": 6,
+        "grid": true
       }
     },
     "color": {
